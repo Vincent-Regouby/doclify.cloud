@@ -73,7 +73,7 @@ Pages d'accueil :
   • 4 avantages business
 
 Fonctionnalités :
-  • Enregistrement audio (jusqu'à 1h30)
+  • Enregistrement audio (jusqu'à 2h30)
   • Transcription IA (Whisper Large v3)
   • Résumés intelligents (Llama 3.1)
   • Mode offline avec synchronisation
