@@ -57,6 +57,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Vanta.js Birds Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
 </head>
 <body>
 
@@ -83,7 +87,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" id="hero-vanta">
     <div class="hero-content">
       <h1>Transcription Médicale par IA</h1>
       <p class="subtitle">Libérez-vous de la saisie administrative. Gagnez 2h par semaine sur votre documentation avec Doclify.</p>
@@ -305,5 +309,29 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // Vanta Birds Animation
+    VANTA.BIRDS({
+      el: "#hero-vanta",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundColor: 0x0a0a0a,
+      color1: 0xff6b35,
+      color2: 0xff8555,
+      colorMode: "lerp",
+      birdSize: 1.5,
+      wingSpan: 25.00,
+      speedLimit: 4.00,
+      separation: 50.00,
+      alignment: 30.00,
+      cohesion: 30.00,
+      quantity: 3.00
+    })
+  </script>
 </body>
 </html>
