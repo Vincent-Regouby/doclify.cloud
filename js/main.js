@@ -92,6 +92,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const phone = document.getElementById('phone').value.trim();
+      const specialty = document.getElementById('specialty').value.trim();
+      const practiceType = document.getElementById('practice-type').value;
       const subject = document.getElementById('subject').value;
       const message = document.getElementById('message').value.trim();
 
@@ -124,6 +126,8 @@ document.addEventListener('DOMContentLoaded', function() {
           name: name,
           email: email,
           phone: phone || '',
+          specialty: specialty || '',
+          practiceType: practiceType || '',
           subject: subject || '',
           message: message
         });
