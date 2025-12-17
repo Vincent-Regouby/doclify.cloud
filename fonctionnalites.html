@@ -22,7 +22,7 @@
         <li><a href="tarifs.html">Tarifs</a></li>
         <li><a href="a-propos.html">À propos</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="#" class="btn-login">Connexion</a></li>
+        <li><a href="https://my.doclify.cloud/web/login" class="btn-login">Connexion</a></li>
       </ul>
 
       <div class="hamburger">
@@ -64,8 +64,8 @@
           <h3>Fonctionnalités avancées</h3>
           <ul>
             <li>Compteur de temps en direct</li>
-            <li>Vérification de l'espace de stockage disponible</li>
-            <li>Confirmation avant suppression d'un enregistrement</li>
+            <li>Fonctionnement offline et synchronisation quand le réseau est disponible</li>
+            <li>Enregistrement chiffré pendant le traitement, supprimé après transcription</li>
             <li>Interface intuitive et accessible</li>
           </ul>
         </div>
@@ -82,8 +82,7 @@
           <ul>
             <li><strong>Modèle :</strong> Whisper Large v3 d'OpenAI optimisé pour le français médical</li>
             <li><strong>Précision :</strong> Plus de 95% de précision sur vocabulaire médical</li>
-            <li><strong>Vitesse standard :</strong> 15-20 minutes pour 1h d'audio (CPU)</li>
-            <li><strong>Mode prioritaire :</strong> 2-3 minutes pour 1h d'audio (GPU cloud)</li>
+            <li><strong>Vitesse :</strong> 3 à 5 minutes pour transcrire, analyser et résumer 1h30 de consultation (GPU)</li>
             <li><strong>Ponctuation automatique :</strong> Virgules, points, majuscules</li>
           </ul>
 
@@ -92,8 +91,7 @@
             <li>Détection automatique de la voix (VAD)</li>
             <li>Suppression des silences inutiles</li>
             <li>Reconnaissance du contexte médical</li>
-            <li>Conservation des timestamps pour référence</li>
-            <li>Gestion des accents et dialects français</li>
+            <li>Gestion des accents et dialectes français</li>
           </ul>
         </div>
       </div>
@@ -120,6 +118,14 @@
             <li>Indexation pour recherche rapide</li>
             <li>Catégorisation automatique</li>
           </ul>
+
+          <h3>Prompts par spécialité</h3>
+          <ul>
+            <li><strong>Co-conçus avec des professionnels de santé</strong></li>
+            <li>Chaque spécialité a ses propres prompts adaptés (psychologue, psychiatre, médecin généraliste...)</li>
+            <li>Comptes-rendus personnalisés selon votre pratique</li>
+            <li>Choix du format de résumé selon vos besoins</li>
+          </ul>
         </div>
       </div>
 
@@ -133,9 +139,8 @@
           <h3>Fonctionnement en mode déconnecté</h3>
           <ul>
             <li><strong>Enregistrement offline :</strong> Continuez à enregistrer partout</li>
-            <li><strong>Queue locale :</strong> Stockage sécurisé dans SQLite</li>
+            <li><strong>Queue locale :</strong> Stockage sécurisé sur le téléphone</li>
             <li><strong>Synchronisation auto :</strong> Upload automatique au retour du réseau</li>
-            <li><strong>Reprise intelligente :</strong> Continue là où vous vous êtes arrêté</li>
             <li><strong>Indicateur de statut :</strong> Visualisation des uploads en attente</li>
           </ul>
 
@@ -170,13 +175,12 @@
             <li>Droit à l'oubli : suppression complète en 1 clic</li>
             <li>Export de données personnelles (portabilité)</li>
             <li>Logs d'audit immutables</li>
-            <li>DPO désigné et audits trimestriels</li>
           </ul>
 
           <h3>Politique de rétention</h3>
           <ul>
-            <li>Audio supprimé automatiquement après traitement (24h max)</li>
-            <li>Transcriptions conservées selon vos paramètres (défaut: 365 jours)</li>
+            <li>Audio supprimé automatiquement après traitement</li>
+            <li>Transcriptions conservées selon vos paramètres</li>
             <li>Backups chiffrés avec rotation automatique</li>
           </ul>
         </div>

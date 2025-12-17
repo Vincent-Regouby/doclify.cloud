@@ -115,9 +115,37 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       if (isValid) {
-        // In a real application, this would send to a server
-        showNotification('Merci ! Nous avons bien reçu votre message. Notre équipe vous contactera sous 24h.', 'success');
-        contactForm.reset();
+        // Envoi vers webhook n8n
+        const webhookUrl = 'https://n8n.inetshore.com/webhook/ce20bece-0055-44e4-9d44-8e80783f9339';
+        const jwtToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkb2NsaWZ5LWNvbnRhY3QtZm9ybSIsImlzcyI6ImRvY2xpZnkuY2xvdWQiLCJpYXQiOjE3NjU5NTc3NTZ9.Th4jttReg0Qh5DrwcT5MXZ22da9YL4Fj4f1rJR298hQ';
+
+        // Construire les paramètres GET
+        const params = new URLSearchParams({
+          name: name,
+          email: email,
+          phone: phone || '',
+          subject: subject || '',
+          message: message
+        });
+
+        fetch(`${webhookUrl}?${params.toString()}`, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${jwtToken}`
+          }
+        })
+        .then(response => {
+          if (response.ok) {
+            showNotification('Merci ! Nous avons bien reçu votre message. Notre équipe vous contactera sous 24h.', 'success');
+            contactForm.reset();
+          } else {
+            showNotification('Une erreur est survenue. Veuillez réessayer ou nous contacter directement.', 'error');
+          }
+        })
+        .catch(error => {
+          console.error('Erreur webhook:', error);
+          showNotification('Une erreur est survenue. Veuillez réessayer ou nous contacter directement.', 'error');
+        });
       } else {
         showNotification(errorMessage, 'error');
       }

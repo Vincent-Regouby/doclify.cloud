@@ -316,6 +316,10 @@ section {
   margin-bottom: 1rem;
 }
 
+.feature-card ul + h3 {
+  margin-top: 2rem;
+}
+
 .feature-card p {
   color: var(--text-secondary);
 }
@@ -651,7 +655,13 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 3rem;
   max-width: 1400px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 1.5rem;
+}
+
+.footer-section:first-child img {
+  max-height: 75px;
+  width: auto;
+  margin-bottom: 0.5rem;
 }
 
 .footer-section h3 {
@@ -680,7 +690,7 @@ footer {
 
 .footer-bottom {
   text-align: center;
-  padding-top: 2rem;
+  padding-top: 1rem;
   border-top: 1px solid var(--border-color);
   color: var(--text-muted);
 }
