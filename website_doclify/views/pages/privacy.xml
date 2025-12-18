@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="privacy" name="Doclify Privacy Policy">
+            <t t-call="website_doclify.doclify_page_base">
+                <t t-set="page_title" t-value="'Politique de confidentialité - Doclify'"/>
+                <t t-set="page_meta_description" t-value="'Politique de confidentialité et protection des données RGPD de Doclify.'"/>
+
+                <!-- Hero Section -->
+                <section class="doclify-hero" style="padding: 3rem 0; background: linear-gradient(135deg, #F9FAFB 0%, #FFFFFF 100%); text-align: center;">
+                    <div class="doclify-container">
+                        <h1 style="margin-bottom: 1rem; font-size: 2.5rem; font-weight: 700; color: #1F2937;">
+                            Politique de confidentialité
+                        </h1>
+                        <p style="font-size: 1rem; color: #6B7280;">
+                            Dernière mise à jour : <t t-esc="datetime.datetime.now().strftime('%d/%m/%Y')"/>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Privacy Content -->
+                <section style="padding: 4rem 0;">
+                    <div class="doclify-container">
+                        <div style="max-width: 800px; margin: 0 auto;">
+
+                            <!-- Introduction -->
+                            <div style="background: #EEF2FF; padding: 2rem; border-radius: 0.75rem; margin-bottom: 3rem; border-left: 4px solid #2563EB;">
+                                <p style="color: #1F2937; font-size: 1.125rem; margin: 0;">
+                                    <strong>Doclify</strong> prend très au sérieux la protection de vos données personnelles et de celles de vos patients.
+                                    Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos données conformément au RGPD.
+                                </p>
+                            </div>
+
+                            <!-- 1. Responsable du traitement -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    1. Responsable du traitement des données
+                                </h2>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Le responsable du traitement des données est :<br/>
+                                    <strong>Doclify</strong><br/>
+                                    Paris, France<br/>
+                                    Email : <a href="mailto:dpo@doclify.cloud" style="color: #2563EB;">dpo@doclify.cloud</a>
+                                </p>
+                            </div>
+
+                            <!-- 2. Données collectées -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    2. Données collectées
+                                </h2>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">2.1 Données du médecin</h3>
+                                <p style="color: #4B5563; line-height: 1.8; margin-bottom: 1rem;">
+                                    Lors de votre inscription, nous collectons :
+                                </p>
+                                <ul style="color: #4B5563; line-height: 1.8; margin-bottom: 1.5rem;">
+                                    <li>Nom et prénom</li>
+                                    <li>Adresse email professionnelle</li>
+                                    <li>Spécialité médicale</li>
+                                    <li>Numéro RPPS (optionnel)</li>
+                                    <li>Informations de facturation</li>
+                                </ul>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">2.2 Données des consultations</h3>
+                                <p style="color: #4B5563; line-height: 1.8; margin-bottom: 1rem;">
+                                    Dans le cadre de l'utilisation du service :
+                                </p>
+                                <ul style="color: #4B5563; line-height: 1.8; margin-bottom: 1.5rem;">
+                                    <li><strong>Enregistrements audio</strong> : fichiers temporaires, supprimés automatiquement après transcription (délai maximum : 48h)</li>
+                                    <li><strong>Transcriptions</strong> : texte généré par notre IA locale</li>
+                                    <li><strong>Résumés</strong> : synthèses générées par notre IA locale</li>
+                                    <li><strong>Métadonnées</strong> : date, heure, durée de la consultation</li>
+                                    <li><strong>Données patients</strong> : nom, informations médicales saisies par le médecin</li>
+                                </ul>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">2.3 Données techniques</h3>
+                                <ul style="color: #4B5563; line-height: 1.8;">
+                                    <li>Logs de connexion (adresse IP, navigateur, OS)</li>
+                                    <li>Cookies techniques nécessaires au fonctionnement du service</li>
+                                    <li>Données d'utilisation anonymisées pour améliorer le service</li>
+                                </ul>
+                            </div>
+
+                            <!-- 3. Finalités du traitement -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    3. Finalités du traitement
+                                </h2>
+                                <p style="color: #4B5563; line-height: 1.8; margin-bottom: 1rem;">
+                                    Nous utilisons vos données uniquement pour :
+                                </p>
+                                <ul style="color: #4B5563; line-height: 1.8;">
+                                    <li>Fournir le service de transcription et de gestion de consultations</li>
+                                    <li>Gérer votre compte utilisateur</li>
+                                    <li>Assurer le support technique</li>
+                                    <li>Gérer la facturation</li>
+                                    <li>Améliorer le service (données anonymisées uniquement)</li>
+                                    <li>Respecter nos obligations légales</li>
+                                </ul>
+                            </div>
+
+                            <!-- 4. Base légale -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    4. Base légale du traitement
+                                </h2>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Le traitement de vos données repose sur :
+                                </p>
+                                <ul style="color: #4B5563; line-height: 1.8;">
+                                    <li><strong>Contrat</strong> : l'exécution du contrat de service que vous avez souscrit</li>
+                                    <li><strong>Intérêt légitime</strong> : amélioration du service, sécurité, prévention de la fraude</li>
+                                    <li><strong>Obligation légale</strong> : conservation des données comptables, réponse aux réquisitions judiciaires</li>
+                                </ul>
+                            </div>
+
+                            <!-- 5. Sécurité et confidentialité -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    5. Sécurité et confidentialité
+                                </h2>
+
+                                <div style="background: #ECFDF5; padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 1rem; border-left: 4px solid #10B981;">
+                                    <h3 style="font-size: 1.125rem; color: #059669; margin-bottom: 0.75rem;">Nos engagements de sécurité</h3>
+                                    <ul style="color: #047857; line-height: 1.8; margin: 0;">
+                                        <li><strong>Hébergement français</strong> : toutes vos données sont hébergées en France</li>
+                                        <li><strong>Chiffrement</strong> : chiffrement bout en bout (TLS 1.3 + AES-256)</li>
+                                        <li><strong>IA locale</strong> : aucune donnée n'est envoyée à des API cloud externes</li>
+                                        <li><strong>Suppression automatique</strong> : les fichiers audio sont supprimés après transcription</li>
+                                        <li><strong>Isolation</strong> : séparation stricte des données entre médecins (multi-tenant sécurisé)</li>
+                                        <li><strong>Accès restreint</strong> : seuls les administrateurs autorisés peuvent accéder aux serveurs</li>
+                                        <li><strong>Sauvegardes chiffrées</strong> : backups quotidiens chiffrés</li>
+                                    </ul>
+                                </div>
+
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Nous mettons en œuvre toutes les mesures techniques et organisationnelles appropriées pour garantir
+                                    un niveau de sécurité adapté au risque, conformément aux exigences du RGPD et en vue de la certification HDS (Hébergeur de Données de Santé).
+                                </p>
+                            </div>
+
+                            <!-- 6. Conservation des données -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    6. Durée de conservation
+                                </h2>
+                                <ul style="color: #4B5563; line-height: 1.8;">
+                                    <li><strong>Fichiers audio</strong> : supprimés automatiquement après transcription (max 48h)</li>
+                                    <li><strong>Transcriptions et résumés</strong> : conservés tant que votre compte est actif</li>
+                                    <li><strong>Données de compte</strong> : conservées pendant la durée de votre abonnement + 30 jours après résiliation</li>
+                                    <li><strong>Données de facturation</strong> : 10 ans (obligation légale comptable)</li>
+                                    <li><strong>Logs de connexion</strong> : 12 mois maximum</li>
+                                </ul>
+                            </div>
+
+                            <!-- 7. Vos droits -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    7. Vos droits RGPD
+                                </h2>
+                                <p style="color: #4B5563; line-height: 1.8; margin-bottom: 1rem;">
+                                    Conformément au RGPD, vous disposez des droits suivants :
+                                </p>
+                                <ul style="color: #4B5563; line-height: 1.8; margin-bottom: 1.5rem;">
+                                    <li><strong>Droit d'accès</strong> : obtenir une copie de toutes vos données</li>
+                                    <li><strong>Droit de rectification</strong> : corriger vos données inexactes</li>
+                                    <li><strong>Droit à l'effacement</strong> : supprimer vos données (sous conditions)</li>
+                                    <li><strong>Droit à la portabilité</strong> : récupérer vos données dans un format structuré</li>
+                                    <li><strong>Droit d'opposition</strong> : vous opposer à certains traitements</li>
+                                    <li><strong>Droit à la limitation</strong> : limiter le traitement de vos données</li>
+                                </ul>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Pour exercer vos droits, contactez-nous à :
+                                    <a href="mailto:dpo@doclify.cloud" style="color: #2563EB; font-weight: 600;">dpo@doclify.cloud</a>
+                                    <br/>
+                                    Nous répondrons dans un délai d'un mois maximum.
+                                </p>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Vous avez également le droit d'introduire une réclamation auprès de la CNIL :
+                                    <a href="https://www.cnil.fr" target="_blank" rel="noopener" style="color: #2563EB;">www.cnil.fr</a>
+                                </p>
+                            </div>
+
+                            <!-- 8. Partage des données -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    8. Partage et transfert de données
+                                </h2>
+                                <div style="background: #FEF2F2; padding: 1.5rem; border-radius: 0.5rem; border-left: 4px solid #EF4444; margin-bottom: 1rem;">
+                                    <p style="color: #991B1B; font-weight: 600; margin: 0;">
+                                        ❌ Nous ne vendons JAMAIS vos données à des tiers.
+                                    </p>
+                                </div>
+                                <p style="color: #4B5563; line-height: 1.8; margin-bottom: 1rem;">
+                                    Vos données ne sont partagées qu'avec :
+                                </p>
+                                <ul style="color: #4B5563; line-height: 1.8;">
+                                    <li><strong>Hébergeur</strong> : serveurs français (sous contrat de confidentialité)</li>
+                                    <li><strong>Processeur de paiement</strong> : uniquement les données de facturation nécessaires</li>
+                                    <li><strong>Autorités compétentes</strong> : en cas de réquisition judiciaire uniquement</li>
+                                </ul>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    <strong>Aucun transfert hors UE</strong> : toutes vos données restent en France/UE.
+                                </p>
+                            </div>
+
+                            <!-- 9. Cookies -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    9. Cookies
+                                </h2>
+                                <p style="color: #4B5563; line-height: 1.8; margin-bottom: 1rem;">
+                                    Nous utilisons uniquement des cookies techniques strictement nécessaires au fonctionnement du service :
+                                </p>
+                                <ul style="color: #4B5563; line-height: 1.8;">
+                                    <li>Cookie de session (authentification)</li>
+                                    <li>Cookie CSRF (sécurité)</li>
+                                    <li>Préférences utilisateur (langue, thème)</li>
+                                </ul>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Nous n'utilisons <strong>aucun cookie publicitaire ou de tracking</strong>.
+                                </p>
+                            </div>
+
+                            <!-- 10. Modifications -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    10. Modifications de cette politique
+                                </h2>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Nous pouvons mettre à jour cette politique de confidentialité. En cas de modification substantielle,
+                                    nous vous en informerons par email au moins 30 jours avant la prise d'effet.
+                                </p>
+                            </div>
+
+                            <!-- 11. Contact -->
+                            <div style="background: #EEF2FF; padding: 2rem; border-radius: 0.75rem; border-left: 4px solid #2563EB;">
+                                <h2 style="font-size: 1.5rem; color: #1F2937; margin-bottom: 1rem;">Questions ?</h2>
+                                <p style="color: #4B5563; line-height: 1.8; margin-bottom: 1rem;">
+                                    Pour toute question concernant la protection de vos données :
+                                </p>
+                                <p style="color: #4B5563; line-height: 1.8; margin: 0;">
+                                    <strong>Délégué à la Protection des Données (DPO)</strong><br/>
+                                    Email : <a href="mailto:dpo@doclify.cloud" style="color: #2563EB; font-weight: 600;">dpo@doclify.cloud</a><br/>
+                                    Téléphone : À venir<br/>
+                                    Adresse : Doclify, Paris, France
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </t>
+        </template>
+    </data>
+</odoo>

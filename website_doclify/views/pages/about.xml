@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="about" name="Doclify About Page">
+            <t t-call="website_doclify.doclify_page_base">
+                <t t-set="page_title" t-value="'À propos - Doclify'"/>
+                <t t-set="page_meta_description" t-value="'Découvrez l\'histoire de Doclify : notre mission est de libérer le temps des médecins grâce à l\'IA locale et souveraine.'"/>
+
+                <!-- Hero Section -->
+                <section class="doclify-hero" style="padding: 4rem 0; background: linear-gradient(135deg, #F9FAFB 0%, #FFFFFF 100%); text-align: center;">
+                    <div class="doclify-container">
+                        <h1 style="margin-bottom: 1.5rem; font-size: 3rem; font-weight: 700; color: #1F2937;">
+                            Notre mission : libérer le temps des médecins
+                        </h1>
+                        <p style="font-size: 1.125rem; color: #6B7280; max-width: 700px; margin: 0 auto;">
+                            Nous croyons que les médecins devraient passer leur temps à soigner, pas à rédiger des comptes-rendus.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Story Section -->
+                <section style="padding: 6rem 0;">
+                    <div class="doclify-container">
+                        <div style="max-width: 800px; margin: 0 auto;">
+                            <h2 style="font-size: 2rem; margin-bottom: 2rem; color: #1F2937; text-align: center;">L'histoire de Doclify</h2>
+
+                            <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem; border-left: 4px solid #2563EB;">
+                                <p style="color: #4B5563; font-size: 1.125rem; line-height: 1.8; margin-bottom: 1rem;">
+                                    Doclify est né d'un constat simple : les médecins et psychologues passent en moyenne <strong>45 minutes par jour</strong> à rédiger des comptes-rendus de consultation. C'est du temps précieux qui pourrait être consacré aux patients.
+                                </p>
+                                <p style="color: #4B5563; font-size: 1.125rem; line-height: 1.8; margin-bottom: 1rem;">
+                                    Nous avons voulu créer une solution qui combine la puissance de l'IA moderne avec les exigences de sécurité et de souveraineté des données du secteur médical français.
+                                </p>
+                                <p style="color: #4B5563; font-size: 1.125rem; line-height: 1.8; margin: 0;">
+                                    Le résultat ? Une plateforme 100% française, avec une IA locale (pas de cloud externe), conforme RGPD, et accessible à un tarif honnête de 49€/mois.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Values Section -->
+                <section style="padding: 6rem 0; background: #F9FAFB;">
+                    <div class="doclify-container">
+                        <div style="text-align: center; margin-bottom: 3rem;">
+                            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #1F2937;">Nos valeurs</h2>
+                            <p style="font-size: 1.125rem; color: #6B7280;">Ce qui guide chacune de nos décisions</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                            <!-- Value 1 -->
+                            <div style="background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+                                <div style="font-size: 3rem; margin-bottom: 1rem;">🇫🇷</div>
+                                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #1F2937;">Souveraineté</h3>
+                                <p style="color: #6B7280; margin: 0;">
+                                    Vos données restent en France, sur nos serveurs. Pas de cloud américain, pas de dépendance externe.
+                                </p>
+                            </div>
+
+                            <!-- Value 2 -->
+                            <div style="background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+                                <div style="font-size: 3rem; margin-bottom: 1rem;">🔒</div>
+                                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #1F2937;">Sécurité</h3>
+                                <p style="color: #6B7280; margin: 0;">
+                                    Chiffrement bout en bout, conformité RGPD, certification HDS en cours. La sécurité n'est pas une option.
+                                </p>
+                            </div>
+
+                            <!-- Value 3 -->
+                            <div style="background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+                                <div style="font-size: 3rem; margin-bottom: 1rem;">💡</div>
+                                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #1F2937;">Innovation</h3>
+                                <p style="color: #6B7280; margin: 0;">
+                                    Nous utilisons les meilleures IA (Whisper, Llama3) mais en local, pour allier performance et souveraineté.
+                                </p>
+                            </div>
+
+                            <!-- Value 4 -->
+                            <div style="background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+                                <div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
+                                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #1F2937;">Transparence</h3>
+                                <p style="color: #6B7280; margin: 0;">
+                                    Un seul tarif clair, pas de frais cachés, pas de limite artificielle. Ce que vous voyez est ce que vous payez.
+                                </p>
+                            </div>
+
+                            <!-- Value 5 -->
+                            <div style="background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+                                <div style="font-size: 3rem; margin-bottom: 1rem;">⚡</div>
+                                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #1F2937;">Simplicité</h3>
+                                <p style="color: #6B7280; margin: 0;">
+                                    Une solution qui fonctionne dès le premier jour, sans formation complexe ni installation technique.
+                                </p>
+                            </div>
+
+                            <!-- Value 6 -->
+                            <div style="background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+                                <div style="font-size: 3rem; margin-bottom: 1rem;">❤️</div>
+                                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #1F2937;">Au service des soignants</h3>
+                                <p style="color: #6B7280; margin: 0;">
+                                    Nous développons Doclify pour vous permettre de vous concentrer sur l'essentiel : soigner.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technology Section -->
+                <section style="padding: 6rem 0;">
+                    <div class="doclify-container">
+                        <div style="text-align: center; margin-bottom: 3rem;">
+                            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #1F2937;">Notre stack technologique</h2>
+                            <p style="font-size: 1.125rem; color: #6B7280;">Des technologies éprouvées et open-source</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto;">
+                            <div style="background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin-bottom: 1rem;">🎙️ Whisper (OpenAI)</h3>
+                                <p style="color: #6B7280; margin: 0;">
+                                    Le meilleur modèle de transcription audio au monde, reconnu pour sa précision exceptionnelle en français. <strong>Mais exécuté localement sur nos serveurs</strong>.
+                                </p>
+                            </div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin-bottom: 1rem;">🦙 Llama 3 (Meta)</h3>
+                                <p style="color: #6B7280; margin: 0;">
+                                    IA de résumé conversationnel open-source, optimisée pour générer des résumés médicaux structurés et pertinents. <strong>100% local via Ollama</strong>.
+                                </p>
+                            </div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin-bottom: 1rem;">📱 Flutter</h3>
+                                <p style="color: #6B7280; margin: 0;">
+                                    Framework de Google pour des applications mobiles natives iOS et Android performantes, avec support offline complet.
+                                </p>
+                            </div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin-bottom: 1rem;">💼 Odoo 19</h3>
+                                <p style="color: #6B7280; margin: 0;">
+                                    CRM open-source leader mondial, adapté pour la gestion de patients et consultations médicales.
+                                </p>
+                            </div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin-bottom: 1rem;">🐍 FastAPI</h3>
+                                <p style="color: #6B7280; margin: 0;">
+                                    API Gateway moderne et performant pour orchestrer les traitements IA et la communication avec les apps mobiles.
+                                </p>
+                            </div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin-bottom: 1rem;">📦 MinIO</h3>
+                                <p style="color: #6B7280; margin: 0;">
+                                    Stockage objet S3-compatible pour un upload résilient et sécurisé des enregistrements audio.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact CTA -->
+                <section class="doclify-cta" style="padding: 6rem 0; background: linear-gradient(135deg, #2563EB 0%, #8B5CF6 100%); color: white; text-align: center;">
+                    <div class="doclify-container">
+                        <h2 style="color: white; margin-bottom: 1.5rem; font-size: 2.5rem;">Une question ? Contactez-nous</h2>
+                        <p style="font-size: 1.125rem; margin-bottom: 2rem; opacity: 0.9;">
+                            Notre équipe est là pour répondre à toutes vos questions
+                        </p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                            <a href="/contact" class="doclify-btn btn-lg" style="background: white; color: #2563EB; display: inline-block; padding: 1rem 2rem; font-size: 1.125rem; font-weight: 600; text-align: center; border-radius: 0.5rem; text-decoration: none;">
+                                Nous contacter
+                            </a>
+                            <a href="/web/login?redirect=/web/signup" class="doclify-btn btn-lg" style="background: transparent; color: white; border: 2px solid white; display: inline-block; padding: 1rem 2rem; font-size: 1.125rem; font-weight: 600; text-align: center; border-radius: 0.5rem; text-decoration: none;">
+                                Essai gratuit
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </t>
+        </template>
+    </data>
+</odoo>

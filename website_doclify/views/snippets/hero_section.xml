@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Hero Section Snippet -->
+        <template id="snippet_hero_section" name="Hero Section">
+            <section class="doclify-hero s_doclify_hero" style="padding: 6rem 0; background: linear-gradient(135deg, #F9FAFB 0%, #FFFFFF 100%); text-align: center;">
+                <div class="doclify-container container">
+                    <h1 class="o_default_snippet_text" style="margin-bottom: 1.5rem; background: linear-gradient(135deg, #2563EB 0%, #8B5CF6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 3rem; font-weight: 700;">
+                        Votre titre principal ici
+                    </h1>
+                    <p class="hero-subtitle o_default_snippet_text" style="font-size: 1.125rem; color: #6B7280; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        Votre sous-titre explicatif qui développe le message principal
+                    </p>
+                    <div class="hero-cta" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="#" class="doclify-btn btn-primary btn-lg">Action principale</a>
+                        <a href="#" class="doclify-btn btn-outline btn-lg">Action secondaire</a>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+        <!-- Register snippet in the Website Builder -->
+        <record id="snippet_hero_section_register" model="ir.ui.view">
+            <field name="key">website_doclify.snippet_hero_section</field>
+            <field name="name">Doclify Hero Section</field>
+            <field name="type">qweb</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="website.snippets"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='snippet_structure']" position="inside">
+                    <t t-snippet="website_doclify.snippet_hero_section"
+                       t-thumbnail="/website_doclify/static/src/img/snippet_hero.png"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

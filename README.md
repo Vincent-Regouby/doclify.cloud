@@ -1,281 +1,250 @@
-Join the Skool - https://www.skool.com/iss-ai-automation-school-6342/about
+# Doclify Website - Module Odoo 19
 
-# Claude Code Agent Orchestration System v2 🚀
+Site web officiel de Doclify, une solution SaaS de transcription médicale par IA pour psychologues et médecins.
 
-A simple yet powerful orchestration system for Claude Code that uses specialized agents to manage complex projects from start to finish, with mandatory human oversight and visual testing.
+## Apercu
 
-## 🎯 What Is This?
+Ce projet contient :
+- Un **module Odoo 19** (`website_doclify`) pour le site web public
+- Une configuration **Docker Compose** pour le développement et les tests
+- Les pages de présentation, tarifs, contact et pages légales
 
-This is a **custom Claude Code orchestration system** that transforms how you build software projects. Claude Code itself acts as the orchestrator with its 200k context window, managing the big picture while delegating individual tasks to specialized subagents:
-
-- **🧠 Claude (You)** - The orchestrator with 200k context managing todos and the big picture
-- **✍️ Coder Subagent** - Implements one todo at a time in its own clean context
-- **👁️ Tester Subagent** - Verifies implementations using Playwright in its own context
-- **🆘 Stuck Subagent** - Human escalation point when ANY problem occurs
-
-## ⚡ Key Features
-
-- **No Fallbacks**: When ANY agent hits a problem, you get asked - no assumptions, no workarounds
-- **Visual Testing**: Playwright MCP integration for screenshot-based verification
-- **Todo Tracking**: Always see exactly where your project stands
-- **Simple Flow**: Claude creates todos → delegates to coder → tester verifies → repeat
-- **Human Control**: The stuck agent ensures you're always in the loop
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-1. **Claude Code CLI** installed ([get it here](https://docs.claude.com/en/docs/claude-code))
-2. **Node.js** (for Playwright MCP)
-
-### Installation
-
-```bash
-# Clone this repository
-git clone https://github.com/IncomeStreamSurfer/claude-code-agents-wizard-v2.git
-cd claude-code-agents-wizard-v2
-
-# Start Claude Code in this directory
-claude
-```
-
-That's it! The agents are automatically loaded from the `.claude/` directory.
-
-## 📖 How to Use
-
-### Starting a Project
-
-When you want to build something, just tell Claude your requirements:
+## Architecture
 
 ```
-You: "Build a todo app with React and TypeScript"
-```
-
-Claude will automatically:
-1. Create a detailed todo list using TodoWrite
-2. Delegate the first todo to the **coder** subagent
-3. The coder implements in its own clean context window
-4. Delegate verification to the **tester** subagent (Playwright screenshots)
-5. If ANY problem occurs, the **stuck** subagent asks you what to do
-6. Mark todo complete and move to the next one
-7. Repeat until project complete
-
-### The Workflow
-
-```
-USER: "Build X"
-    ↓
-CLAUDE: Creates detailed todos with TodoWrite
-    ↓
-CLAUDE: Invokes coder subagent for todo #1
-    ↓
-CODER (own context): Implements feature
-    ↓
-    ├─→ Problem? → Invokes STUCK → You decide → Continue
-    ↓
-CODER: Reports completion
-    ↓
-CLAUDE: Invokes tester subagent
-    ↓
-TESTER (own context): Playwright screenshots & verification
-    ↓
-    ├─→ Test fails? → Invokes STUCK → You decide → Continue
-    ↓
-TESTER: Reports success
-    ↓
-CLAUDE: Marks todo complete, moves to next
-    ↓
-Repeat until all todos done ✅
-```
-
-## 🛠️ How It Works
-
-### Claude (The Orchestrator)
-**Your 200k Context Window**
-
-- Creates and maintains comprehensive todo lists
-- Sees the complete project from A-Z
-- Delegates individual todos to specialized subagents
-- Tracks overall progress across all tasks
-- Maintains project state and context
-
-**How it works**: Claude IS the orchestrator - it uses its 200k context to manage everything
-
-### Coder Subagent
-**Fresh Context Per Task**
-
-- Gets invoked with ONE specific todo item
-- Works in its own clean context window
-- Writes clean, functional code
-- **Never uses fallbacks** - invokes stuck agent immediately
-- Reports completion back to Claude
-
-**When it's used**: Claude delegates each coding todo to this subagent
-
-### Tester Subagent
-**Fresh Context Per Verification**
-
-- Gets invoked after each coder completion
-- Works in its own clean context window
-- Uses **Playwright MCP** to see rendered output
-- Takes screenshots to verify layouts
-- Tests interactions (clicks, forms, navigation)
-- **Never marks failing tests as passing**
-- Reports pass/fail back to Claude
-
-**When it's used**: Claude delegates testing after every implementation
-
-### Stuck Subagent
-**Fresh Context Per Problem**
-
-- Gets invoked when coder or tester hits a problem
-- Works in its own clean context window
-- **ONLY subagent** that can ask you questions
-- Presents clear options for you to choose
-- Blocks progress until you respond
-- Returns your decision to the calling agent
-- Ensures no blind fallbacks or workarounds
-
-**When it's used**: Whenever ANY subagent encounters ANY problem
-
-## 🚨 The "No Fallbacks" Rule
-
-**This is the key differentiator:**
-
-Traditional AI: Hits error → tries workaround → might fail silently
-**This system**: Hits error → asks you → you decide → proceeds correctly
-
-Every agent is **hardwired** to invoke the stuck agent rather than use fallbacks. You stay in control.
-
-## 💡 Example Session
-
-```
-You: "Build a landing page with a contact form"
-
-Claude creates todos:
-  [ ] Set up HTML structure
-  [ ] Create hero section
-  [ ] Add contact form with validation
-  [ ] Style with CSS
-  [ ] Test form submission
-
-Claude invokes coder(todo #1: "Set up HTML structure")
-
-Coder (own context): Creates index.html
-Coder: Reports completion to Claude
-
-Claude invokes tester("Verify HTML structure loads")
-
-Tester (own context): Uses Playwright to navigate
-Tester: Takes screenshot
-Tester: Verifies HTML structure visible
-Tester: Reports success to Claude
-
-Claude: Marks todo #1 complete ✓
-
-Claude invokes coder(todo #2: "Create hero section")
-
-Coder (own context): Implements hero section
-Coder: ERROR - image file not found
-Coder: Invokes stuck subagent
-
-Stuck (own context): Asks YOU:
-  "Hero image 'hero.jpg' not found. How to proceed?"
-  Options:
-  - Use placeholder image
-  - Download from Unsplash
-  - Skip image for now
-
-You choose: "Download from Unsplash"
-
-Stuck: Returns your decision to coder
-Coder: Proceeds with Unsplash download
-Coder: Reports completion to Claude
-
-... and so on until all todos done
-```
-
-## 📁 Repository Structure
-
-```
-.
-├── .claude/
-│   ├── CLAUDE.md              # Orchestration instructions for main Claude
-│   └── agents/
-│       ├── coder.md          # Coder subagent definition
-│       ├── tester.md         # Tester subagent definition
-│       └── stuck.md          # Stuck subagent definition
-├── .mcp.json                  # Playwright MCP configuration
-├── .gitignore
+recording-app-website/
+├── docker-compose.yml          # Configuration Docker (Odoo 19 + PostgreSQL)
+├── odoo.conf                   # Configuration Odoo (optionnel)
+├── website_doclify/            # Module Odoo
+│   ├── __init__.py
+│   ├── __manifest__.py
+│   ├── controllers/
+│   │   ├── __init__.py
+│   │   └── main.py             # Routes HTTP (8 endpoints)
+│   ├── data/
+│   │   ├── website_data.xml    # Configuration du site
+│   │   └── menu_data.xml       # Menu de navigation
+│   ├── models/
+│   │   └── __init__.py
+│   ├── security/
+│   │   └── ir.model.access.csv # Droits d'accès
+│   ├── static/src/
+│   │   ├── scss/
+│   │   │   ├── primary_variables.scss  # Variables de thème
+│   │   │   └── doclify_theme.scss      # Styles CSS
+│   │   ├── js/
+│   │   │   └── doclify.js              # JavaScript frontend
+│   │   └── img/
+│   └── views/
+│       ├── templates.xml               # Header/footer personnalisés
+│       └── pages/
+│           ├── homepage.xml            # Page d'accueil
+│           ├── features.xml            # Fonctionnalités
+│           ├── pricing.xml             # Tarifs
+│           ├── about.xml               # À propos
+│           ├── contact.xml             # Contact
+│           ├── privacy.xml             # Confidentialité (RGPD)
+│           └── terms.xml               # CGV
 └── README.md
 ```
 
-## 🎓 Learn More
+## Démarrage rapide
 
-### Resources
+### Prérequis
 
-- **[SEO Grove](https://seogrove.ai)** - AI-powered SEO automation platform
-- **[ISS AI Automation School](https://www.skool.com/iss-ai-automation-school-6342/about)** - Join our community to learn AI automation
-- **[Income Stream Surfers YouTube](https://www.youtube.com/incomestreamsurfers)** - Tutorials, breakdowns, and AI automation content
+- Docker et Docker Compose installés
+- Ports 8079 et 5440 disponibles
 
-### Support
+### Lancement
 
-Have questions or want to share what you built?
-- Join the [ISS AI Automation School community](https://www.skool.com/iss-ai-automation-school-6342/about)
-- Subscribe to [Income Stream Surfers on YouTube](https://www.youtube.com/incomestreamsurfers)
-- Check out [SEO Grove](https://seogrove.ai) for automated SEO solutions
+```bash
+# Cloner le projet
+cd /path/to/recording-app-website
 
-## 🤝 Contributing
+# Démarrer les containers
+docker-compose up -d
 
-This is an open system! Feel free to:
-- Add new specialized agents
-- Improve existing agent prompts
-- Share your agent configurations
-- Submit PRs with enhancements
+# Attendre ~30 secondes pour l'initialisation
+sleep 30
 
-## 📝 How It Works Under the Hood
+# Installer le module website_doclify
+docker-compose exec odoo odoo --stop-after-init -d odoo -i website_doclify \
+  --db_host=db --db_user=odoo --db_password=odoo_secret_2024
 
-This system leverages Claude Code's [subagent system](https://docs.claude.com/en/docs/claude-code/sub-agents):
+# Redémarrer Odoo
+docker-compose restart odoo
+```
 
-1. **CLAUDE.md** instructs main Claude to be the orchestrator
-2. **Subagents** are defined in `.claude/agents/*.md` files
-3. **Each subagent** gets its own fresh context window
-4. **Main Claude** maintains the 200k context with todos and project state
-5. **Playwright MCP** is configured in `.mcp.json` for visual testing
+### Accès
 
-The magic happens because:
-- **Claude (200k context)** = Maintains big picture, manages todos
-- **Coder (fresh context)** = Implements one task at a time
-- **Tester (fresh context)** = Verifies one implementation at a time
-- **Stuck (fresh context)** = Handles one problem at a time with human input
-- **Each subagent** has specific tools and hardwired escalation rules
+- **Site web** : http://localhost:8079/
+- **Backend Odoo** : http://localhost:8079/web/login
+- **Identifiants** : admin / admin (première connexion)
 
-## 🎯 Best Practices
+## Pages disponibles
 
-1. **Trust Claude** - Let it create and manage the todo list
-2. **Review screenshots** - The tester provides visual proof of every implementation
-3. **Make decisions when asked** - The stuck agent needs your guidance
-4. **Don't interrupt the flow** - Let subagents complete their work
-5. **Check the todo list** - Always visible, tracks real progress
+| Page | URL | Description |
+|------|-----|-------------|
+| Accueil | `/` | Hero, problème/solution, features, CTA |
+| Fonctionnalités | `/fonctionnalites` | 6 fonctionnalités détaillées |
+| Tarifs | `/tarifs` | 49€/mois + FAQ |
+| À propos | `/a-propos` | Histoire, valeurs, équipe |
+| Contact | `/contact` | Formulaire de contact |
+| Confidentialité | `/confidentialite` | Politique RGPD |
+| CGV | `/conditions-generales` | Conditions générales |
+| Espace Médecin | `/web/login` | Connexion au backoffice |
 
-## 🔥 Pro Tips
+## Commandes Docker
 
-- Use `/agents` command to see all available subagents
-- Claude maintains the todo list in its 200k context - check anytime
-- Screenshots from tester are saved and can be reviewed
-- Each subagent has specific tools - check their `.md` files
-- Subagents get fresh contexts - no context pollution!
+```bash
+# Démarrer les containers
+docker-compose up -d
 
-## 📜 License
+# Arrêter les containers
+docker-compose down
 
-MIT - Use it, modify it, share it!
+# Voir les logs Odoo
+docker-compose logs -f odoo
 
-## 🙏 Credits
+# Redémarrer Odoo (après modifications)
+docker-compose restart odoo
 
-Built by [Income Stream Surfer](https://www.youtube.com/incomestreamsurfers)
+# Mettre à jour le module après modifications
+docker-compose exec odoo odoo --stop-after-init -d odoo -u website_doclify \
+  --db_host=db --db_user=odoo --db_password=odoo_secret_2024
 
-Powered by Claude Code's agent system and Playwright MCP.
+# Accéder au shell Odoo
+docker-compose exec odoo odoo shell -d odoo \
+  --db_host=db --db_user=odoo --db_password=odoo_secret_2024
+
+# Supprimer toutes les données (reset complet)
+docker-compose down -v
+```
+
+## Configuration
+
+### Ports
+
+| Service | Port interne | Port externe |
+|---------|--------------|--------------|
+| Odoo HTTP | 8069 | 8079 |
+| Odoo Longpolling | 8072 | 8082 |
+| PostgreSQL | 5432 | 5440 |
+
+### Variables d'environnement
+
+```yaml
+# PostgreSQL
+POSTGRES_DB: odoo
+POSTGRES_USER: odoo
+POSTGRES_PASSWORD: odoo_secret_2024
+
+# Odoo
+HOST: db
+USER: odoo
+PASSWORD: odoo_secret_2024
+```
+
+## Développement
+
+### Modifier le module
+
+1. Éditez les fichiers dans `website_doclify/`
+2. Mettez à jour le module :
+   ```bash
+   docker-compose exec odoo odoo --stop-after-init -d odoo -u website_doclify \
+     --db_host=db --db_user=odoo --db_password=odoo_secret_2024
+   docker-compose restart odoo
+   ```
+
+### Ajouter une nouvelle page
+
+1. Créer le fichier XML dans `views/pages/nouvelle_page.xml`
+2. Ajouter la route dans `controllers/main.py`
+3. Ajouter le fichier au manifest `__manifest__.py`
+4. Mettre à jour le module
+
+### Personnaliser le thème
+
+Les couleurs sont définies dans `static/src/scss/primary_variables.scss` :
+
+```scss
+$primary: #2563EB;      // Bleu médical
+$secondary: #10B981;    // Vert succès
+$accent: #8B5CF6;       // Violet IA/tech
+$text-dark: #1F2937;    // Gris foncé
+$bg-light: #F9FAFB;     // Gris clair
+```
+
+## Processus de création
+
+### Ce qui a été fait
+
+1. **Analyse du PRD et de l'analyse business** pour comprendre le positionnement de Doclify
+2. **Consultation de la documentation Odoo 19** via Context7 MCP
+3. **Création du module Odoo** avec :
+   - Structure standard Odoo 19
+   - Templates QWeb pour les pages
+   - Contrôleurs Python pour les routes
+   - Assets SCSS/JS pour le thème
+4. **Configuration Docker** avec :
+   - PostgreSQL 15 Alpine
+   - Odoo 19 officiel
+   - Volumes persistants
+   - Mode développement activé
+
+### Problèmes rencontrés et solutions
+
+| Problème | Solution |
+|----------|----------|
+| Modèle `website.seo.metadata` inexistant | Utilisation de la fonction `write` sur le modèle `website` |
+| Référence `website.footer_menu` inexistante | Simplification des menus (uniquement menu principal) |
+| Snippets incompatibles Odoo 19 | Suppression des snippets du manifest (à refaire selon la doc v19) |
+| Permissions fichiers | Correction avec `chmod 755` sur les dossiers |
+
+### Améliorations futures
+
+- [ ] Recréer les snippets compatibles Odoo 19
+- [ ] Ajouter le formulaire de contact fonctionnel (CRM)
+- [ ] Intégrer les traductions i18n
+- [ ] Ajouter un blog
+- [ ] Configurer le SSL/HTTPS pour la production
+- [ ] Optimiser les performances (cache, CDN)
+
+## Déploiement en production
+
+### Checklist
+
+1. [ ] Changer le mot de passe admin
+2. [ ] Configurer un domaine DNS
+3. [ ] Activer HTTPS (nginx/traefik)
+4. [ ] Désactiver le mode développement
+5. [ ] Configurer les sauvegardes
+6. [ ] Configurer le serveur SMTP
+7. [ ] Ajouter Google Analytics
+
+### Variables de production
+
+```yaml
+# docker-compose.prod.yml
+services:
+  odoo:
+    command: []  # Supprimer --dev
+    environment:
+      - PROXY_MODE=True
+```
+
+## Ressources
+
+- [Documentation Odoo 19](https://www.odoo.com/documentation/19.0/)
+- [PRD Doclify](./PRD_Medical_Recording_SaaS_v3_Consolidated.md)
+- [Analyse Business](../recording-app/BUSINESS_ANALYSIS.md)
+
+## Licence
+
+LGPL-3.0 - Compatible avec la licence Odoo.
 
 ---
 
-**Ready to build something amazing?** Just run `claude` in this directory and tell it what you want to create! 🚀
+**Doclify** - Transcription médicale par IA
+https://doclify.cloud

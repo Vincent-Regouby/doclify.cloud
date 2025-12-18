@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="pricing" name="Doclify Pricing Page">
+            <t t-call="website_doclify.doclify_page_base">
+                <t t-set="page_title" t-value="'Tarifs - Doclify'"/>
+                <t t-set="page_meta_description" t-value="'Tarif Doclify : 49€/mois HT pour enregistrements illimités, transcription IA, CRM médical complet. Essai gratuit 14 jours sans carte bancaire.'"/>
+
+                <!-- Hero Section -->
+                <section class="doclify-hero" style="padding: 4rem 0; background: linear-gradient(135deg, #F9FAFB 0%, #FFFFFF 100%); text-align: center;">
+                    <div class="doclify-container">
+                        <h1 style="margin-bottom: 1.5rem; font-size: 3rem; font-weight: 700; color: #1F2937;">
+                            Un tarif simple et transparent
+                        </h1>
+                        <p style="font-size: 1.125rem; color: #6B7280; max-width: 700px; margin: 0 auto 2rem;">
+                            Pas de frais cachés, pas de limite d'utilisation. Juste un tarif honnête pour un service premium.
+                        </p>
+                        <div style="display: inline-flex; background: #EEF2FF; padding: 0.75rem 1.5rem; border-radius: 2rem; font-weight: 600; color: #2563EB;">
+                            ✨ Essai gratuit 14 jours • Aucune carte bancaire requise
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Main Pricing Card -->
+                <section style="padding: 4rem 0;">
+                    <div class="doclify-container">
+                        <div style="max-width: 600px; margin: 0 auto; background: white; padding: 3rem 2rem; border-radius: 1rem; box-shadow: 0 20px 25px rgba(0,0,0,0.1); text-align: center; border: 3px solid #2563EB; position: relative;">
+                            <!-- Recommended Badge -->
+                            <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #2563EB; color: white; padding: 0.5rem 1.5rem; border-radius: 1rem; font-weight: 600; font-size: 0.875rem;">
+                                Recommandé
+                            </div>
+
+                            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #1F2937;">Praticien</h2>
+                            <p style="color: #6B7280; margin-bottom: 2rem;">Pour médecins, psychologues et psychiatres</p>
+
+                            <div class="price" style="margin: 2rem 0;">
+                                <div style="font-size: 4rem; font-weight: 700; color: #2563EB; line-height: 1;">
+                                    49<span style="font-size: 2rem;">€</span>
+                                </div>
+                                <div style="font-size: 1.125rem; color: #6B7280; margin-top: 0.5rem;">par mois HT</div>
+                                <div style="font-size: 0.875rem; color: #9CA3AF; margin-top: 0.25rem;">(58,80€ TTC)</div>
+                            </div>
+
+                            <a href="/web/login?redirect=/web/signup" class="doclify-btn btn-primary btn-lg" style="display: block; width: 100%; margin-bottom: 1rem; background: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%); color: white; padding: 1rem 2rem; font-size: 1.125rem; font-weight: 600; text-align: center; border-radius: 0.5rem; text-decoration: none; border: none;">
+                                Commencer gratuitement
+                            </a>
+                            <p style="font-size: 0.875rem; color: #6B7280; margin-bottom: 3rem;">14 jours d'essai gratuit • Sans engagement</p>
+
+                            <!-- Features List -->
+                            <div style="text-align: left; border-top: 2px solid #E5E7EB; padding-top: 2rem;">
+                                <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; color: #1F2937; text-align: center;">Tout illimité :</h3>
+                                <ul style="list-style: none; padding: 0; margin: 0;">
+                                    <li style="padding: 1rem 0; border-bottom: 1px solid #E5E7EB; display: flex; align-items: start;">
+                                        <span style="color: #10B981; font-weight: 700; margin-right: 1rem; font-size: 1.5rem; flex-shrink: 0;">✓</span>
+                                        <div>
+                                            <strong style="color: #1F2937;">Enregistrements illimités</strong>
+                                            <p style="color: #6B7280; margin: 0.25rem 0 0; font-size: 0.875rem;">Aucune limite mensuelle, enregistrez autant que nécessaire</p>
+                                        </div>
+                                    </li>
+                                    <li style="padding: 1rem 0; border-bottom: 1px solid #E5E7EB; display: flex; align-items: start;">
+                                        <span style="color: #10B981; font-weight: 700; margin-right: 1rem; font-size: 1.5rem; flex-shrink: 0;">✓</span>
+                                        <div>
+                                            <strong style="color: #1F2937;">Transcription IA automatique</strong>
+                                            <p style="color: #6B7280; margin: 0.25rem 0 0; font-size: 0.875rem;">Whisper local, optimisé pour le français médical</p>
+                                        </div>
+                                    </li>
+                                    <li style="padding: 1rem 0; border-bottom: 1px solid #E5E7EB; display: flex; align-items: start;">
+                                        <span style="color: #10B981; font-weight: 700; margin-right: 1rem; font-size: 1.5rem; flex-shrink: 0;">✓</span>
+                                        <div>
+                                            <strong style="color: #1F2937;">Résumé et analyse Freudienne</strong>
+                                            <p style="color: #6B7280; margin: 0.25rem 0 0; font-size: 0.875rem;">Grille psychanalytique en 11 sections</p>
+                                        </div>
+                                    </li>
+                                    <li style="padding: 1rem 0; border-bottom: 1px solid #E5E7EB; display: flex; align-items: start;">
+                                        <span style="color: #10B981; font-weight: 700; margin-right: 1rem; font-size: 1.5rem; flex-shrink: 0;">✓</span>
+                                        <div>
+                                            <strong style="color: #1F2937;">CRM médical complet</strong>
+                                            <p style="color: #6B7280; margin: 0.25rem 0 0; font-size: 0.875rem;">Gestion patients, historique, recherche full-text</p>
+                                        </div>
+                                    </li>
+                                    <li style="padding: 1rem 0; border-bottom: 1px solid #E5E7EB; display: flex; align-items: start;">
+                                        <span style="color: #10B981; font-weight: 700; margin-right: 1rem; font-size: 1.5rem; flex-shrink: 0;">✓</span>
+                                        <div>
+                                            <strong style="color: #1F2937;">Applications mobiles iOS et Android</strong>
+                                            <p style="color: #6B7280; margin: 0.25rem 0 0; font-size: 0.875rem;">Enregistrement offline, synchronisation auto</p>
+                                        </div>
+                                    </li>
+                                    <li style="padding: 1rem 0; border-bottom: 1px solid #E5E7EB; display: flex; align-items: start;">
+                                        <span style="color: #10B981; font-weight: 700; margin-right: 1rem; font-size: 1.5rem; flex-shrink: 0;">✓</span>
+                                        <div>
+                                            <strong style="color: #1F2937;">Stockage sécurisé illimité</strong>
+                                            <p style="color: #6B7280; margin: 0.25rem 0 0; font-size: 0.875rem;">Toutes vos consultations accessibles à vie</p>
+                                        </div>
+                                    </li>
+                                    <li style="padding: 1rem 0; border-bottom: 1px solid #E5E7EB; display: flex; align-items: start;">
+                                        <span style="color: #10B981; font-weight: 700; margin-right: 1rem; font-size: 1.5rem; flex-shrink: 0;">✓</span>
+                                        <div>
+                                            <strong style="color: #1F2937;">Export PDF et CSV</strong>
+                                            <p style="color: #6B7280; margin: 0.25rem 0 0; font-size: 0.875rem;">Exportez vos comptes-rendus facilement</p>
+                                        </div>
+                                    </li>
+                                    <li style="padding: 1rem 0; border-bottom: 1px solid #E5E7EB; display: flex; align-items: start;">
+                                        <span style="color: #10B981; font-weight: 700; margin-right: 1rem; font-size: 1.5rem; flex-shrink: 0;">✓</span>
+                                        <div>
+                                            <strong style="color: #1F2937;">Support prioritaire</strong>
+                                            <p style="color: #6B7280; margin: 0.25rem 0 0; font-size: 0.875rem;">Assistance par email sous 24h</p>
+                                        </div>
+                                    </li>
+                                    <li style="padding: 1rem 0; display: flex; align-items: start;">
+                                        <span style="color: #10B981; font-weight: 700; margin-right: 1rem; font-size: 1.5rem; flex-shrink: 0;">✓</span>
+                                        <div>
+                                            <strong style="color: #1F2937;">Mises à jour gratuites</strong>
+                                            <p style="color: #6B7280; margin: 0.25rem 0 0; font-size: 0.875rem;">Nouvelles fonctionnalités incluses</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Security Badges -->
+                            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid #E5E7EB;">
+                                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: #4B5563;">
+                                        <span style="font-size: 1.25rem;">🔒</span>
+                                        <span>RGPD</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: #4B5563;">
+                                        <span style="font-size: 1.25rem;">🇫🇷</span>
+                                        <span>Hébergement français</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: #4B5563;">
+                                        <span style="font-size: 1.25rem;">🤖</span>
+                                        <span>IA locale</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Comparison with Competitors -->
+                <section style="padding: 6rem 0; background: #F9FAFB;">
+                    <div class="doclify-container">
+                        <div style="text-align: center; margin-bottom: 3rem;">
+                            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #1F2937;">Pourquoi Doclify est différent</h2>
+                            <p style="font-size: 1.125rem; color: #6B7280;">Comparaison avec les solutions concurrentes</p>
+                        </div>
+
+                        <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow-x: auto;">
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <thead>
+                                    <tr style="border-bottom: 2px solid #E5E7EB;">
+                                        <th style="padding: 1rem; text-align: left; color: #1F2937; font-weight: 600;">Fonctionnalité</th>
+                                        <th style="padding: 1rem; text-align: center; color: #2563EB; font-weight: 700; background: #EEF2FF;">Doclify<br/><span style="font-size: 1.5rem;">49€/mois</span></th>
+                                        <th style="padding: 1rem; text-align: center; color: #6B7280;">Concurrent A<br/><span style="font-size: 1.125rem;">119$/mois</span></th>
+                                        <th style="padding: 1rem; text-align: center; color: #6B7280;">Concurrent B<br/><span style="font-size: 1.125rem;">600$/mois</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #E5E7EB;">
+                                        <td style="padding: 1rem; color: #4B5563;">Enregistrements illimités</td>
+                                        <td style="padding: 1rem; text-align: center; color: #10B981; font-size: 1.5rem;">✓</td>
+                                        <td style="padding: 1rem; text-align: center; color: #6B7280;">Limité à 100/mois</td>
+                                        <td style="padding: 1rem; text-align: center; color: #10B981; font-size: 1.5rem;">✓</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #E5E7EB; background: #F9FAFB;">
+                                        <td style="padding: 1rem; color: #4B5563;">IA locale (pas de cloud)</td>
+                                        <td style="padding: 1rem; text-align: center; color: #10B981; font-size: 1.5rem;">✓</td>
+                                        <td style="padding: 1rem; text-align: center; color: #EF4444; font-size: 1.5rem;">✗</td>
+                                        <td style="padding: 1rem; text-align: center; color: #EF4444; font-size: 1.5rem;">✗</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #E5E7EB;">
+                                        <td style="padding: 1rem; color: #4B5563;">Hébergement français</td>
+                                        <td style="padding: 1rem; text-align: center; color: #10B981; font-size: 1.5rem;">✓</td>
+                                        <td style="padding: 1rem; text-align: center; color: #EF4444; font-size: 1.5rem;">✗</td>
+                                        <td style="padding: 1rem; text-align: center; color: #EF4444; font-size: 1.5rem;">✗</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #E5E7EB; background: #F9FAFB;">
+                                        <td style="padding: 1rem; color: #4B5563;">Analyse Freudienne</td>
+                                        <td style="padding: 1rem; text-align: center; color: #10B981; font-size: 1.5rem;">✓</td>
+                                        <td style="padding: 1rem; text-align: center; color: #EF4444; font-size: 1.5rem;">✗</td>
+                                        <td style="padding: 1rem; text-align: center; color: #EF4444; font-size: 1.5rem;">✗</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #E5E7EB;">
+                                        <td style="padding: 1rem; color: #4B5563;">CRM intégré</td>
+                                        <td style="padding: 1rem; text-align: center; color: #10B981; font-size: 1.5rem;">✓</td>
+                                        <td style="padding: 1rem; text-align: center; color: #EF4444; font-size: 1.5rem;">✗</td>
+                                        <td style="padding: 1rem; text-align: center; color: #10B981; font-size: 1.5rem;">✓</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #E5E7EB; background: #F9FAFB;">
+                                        <td style="padding: 1rem; color: #4B5563;">Applications mobiles</td>
+                                        <td style="padding: 1rem; text-align: center; color: #10B981; font-size: 1.5rem;">✓</td>
+                                        <td style="padding: 1rem; text-align: center; color: #10B981; font-size: 1.5rem;">✓</td>
+                                        <td style="padding: 1rem; text-align: center; color: #10B981; font-size: 1.5rem;">✓</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 1rem; color: #4B5563;">Mode offline</td>
+                                        <td style="padding: 1rem; text-align: center; color: #10B981; font-size: 1.5rem;">✓</td>
+                                        <td style="padding: 1rem; text-align: center; color: #EF4444; font-size: 1.5rem;">✗</td>
+                                        <td style="padding: 1rem; text-align: center; color: #10B981; font-size: 1.5rem;">✓</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section style="padding: 6rem 0;">
+                    <div class="doclify-container">
+                        <div style="text-align: center; margin-bottom: 3rem;">
+                            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #1F2937;">Questions fréquentes</h2>
+                        </div>
+
+                        <div style="max-width: 800px; margin: 0 auto;">
+                            <div style="background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 1.5rem;">
+                                <h3 style="font-size: 1.25rem; color: #1F2937; margin-bottom: 1rem;">Puis-je annuler à tout moment ?</h3>
+                                <p style="color: #6B7280; margin: 0;">Oui, vous pouvez annuler votre abonnement à tout moment sans frais. Vos données restent accessibles pendant 30 jours après annulation.</p>
+                            </div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 1.5rem;">
+                                <h3 style="font-size: 1.25rem; color: #1F2937; margin-bottom: 1rem;">L'essai gratuit nécessite-t-il une carte bancaire ?</h3>
+                                <p style="color: #6B7280; margin: 0;">Non, l'essai de 14 jours est 100% gratuit et ne nécessite aucune carte bancaire. Vous ne serez facturé que si vous décidez de continuer après l'essai.</p>
+                            </div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 1.5rem;">
+                                <h3 style="font-size: 1.25rem; color: #1F2937; margin-bottom: 1rem;">Y a-t-il des frais supplémentaires ?</h3>
+                                <p style="color: #6B7280; margin: 0;">Non, absolument aucun frais supplémentaire. Le tarif de 49€/mois HT inclut tout : enregistrements illimités, transcriptions, CRM, applications mobiles, support, mises à jour.</p>
+                            </div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 1.5rem;">
+                                <h3 style="font-size: 1.25rem; color: #1F2937; margin-bottom: 1rem;">Proposez-vous des réductions pour plusieurs utilisateurs ?</h3>
+                                <p style="color: #6B7280; margin: 0;">Pour les cabinets de groupe (3+ praticiens), contactez-nous pour obtenir un tarif préférentiel : <a href="/contact" style="color: #2563EB;">contact@doclify.cloud</a></p>
+                            </div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                <h3 style="font-size: 1.25rem; color: #1F2937; margin-bottom: 1rem;">Mes données sont-elles vraiment sécurisées ?</h3>
+                                <p style="color: #6B7280; margin: 0;">Absolument. Vos données sont hébergées en France, chiffrées bout en bout, et notre IA fonctionne 100% en local (pas de cloud externe). Nous sommes conformes RGPD et prêts pour la certification HDS.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Final CTA -->
+                <section class="doclify-cta" style="padding: 6rem 0; background: linear-gradient(135deg, #2563EB 0%, #8B5CF6 100%); color: white; text-align: center;">
+                    <div class="doclify-container">
+                        <h2 style="color: white; margin-bottom: 1.5rem; font-size: 2.5rem;">Commencez dès aujourd'hui</h2>
+                        <p style="font-size: 1.125rem; margin-bottom: 2rem; opacity: 0.9;">
+                            Rejoignez les médecins qui gagnent 2h par semaine avec Doclify
+                        </p>
+                        <a href="/web/login?redirect=/web/signup" class="doclify-btn btn-lg" style="background: white; color: #2563EB; display: inline-block; padding: 1rem 2rem; font-size: 1.125rem; font-weight: 600; text-align: center; border-radius: 0.5rem; text-decoration: none;">
+                            Essai gratuit 14 jours
+                        </a>
+                        <p style="margin-top: 1rem; font-size: 0.875rem; opacity: 0.8;">Aucune carte bancaire • Sans engagement</p>
+                    </div>
+                </section>
+            </t>
+        </template>
+    </data>
+</odoo>

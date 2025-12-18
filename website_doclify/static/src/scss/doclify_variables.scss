@@ -1,0 +1,120 @@
+// Doclify Theme Variables
+// Medical/Tech Professional Color Scheme
+
+// Primary Colors
+$primary: #2563EB;
+$primary-dark: #1E40AF;
+$primary-light: #3B82F6;
+
+$secondary: #10B981;
+$secondary-dark: #059669;
+$secondary-light: #34D399;
+
+$accent: #8B5CF6;
+$accent-dark: #7C3AED;
+$accent-light: #A78BFA;
+
+// Neutral Colors
+$gray-900: #1F2937;
+$gray-800: #374151;
+$gray-700: #4B5563;
+$gray-600: #6B7280;
+$gray-500: #9CA3AF;
+$gray-400: #D1D5DB;
+$gray-300: #E5E7EB;
+$gray-200: #F3F4F6;
+$gray-100: #F9FAFB;
+$white: #FFFFFF;
+
+// Semantic Colors
+$success: $secondary;
+$info: $primary;
+$warning: #F59E0B;
+$danger: #EF4444;
+
+// Typography
+$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-heading: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-sm: 0.875rem;
+$font-size-xs: 0.75rem;
+
+$line-height-base: 1.6;
+$line-height-heading: 1.2;
+
+// Spacing
+$spacer: 1rem;
+
+// Border Radius
+$border-radius: 0.5rem;
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 0.75rem;
+$border-radius-xl: 1rem;
+$border-radius-2xl: 1.5rem;
+
+// Shadows
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+// Transitions
+$transition-base: all 0.3s ease;
+$transition-fast: all 0.15s ease;
+
+// Container
+$container-max-width: 1200px;
+$container-padding: 1.5rem;
+
+// Header
+$header-height: 72px;
+$header-bg: rgba(255, 255, 255, 0.95);
+$header-shadow: $shadow-sm;
+
+// Footer
+$footer-bg: $gray-900;
+$footer-text: $gray-400;
+
+// Buttons
+$btn-padding-y: 0.75rem;
+$btn-padding-x: 1.5rem;
+$btn-font-size: 1rem;
+$btn-border-radius: $border-radius;
+
+$btn-lg-padding-y: 1rem;
+$btn-lg-padding-x: 2rem;
+$btn-lg-font-size: 1.125rem;
+
+$btn-sm-padding-y: 0.5rem;
+$btn-sm-padding-x: 1rem;
+$btn-sm-font-size: 0.875rem;
+
+// Cards
+$card-bg: $white;
+$card-border-radius: $border-radius-lg;
+$card-shadow: $shadow;
+$card-padding: 2rem;
+
+// Forms
+$input-bg: $white;
+$input-border: $gray-300;
+$input-border-radius: $border-radius;
+$input-padding-y: 0.75rem;
+$input-padding-x: 1rem;
+$input-focus-border: $primary;
+
+// Z-index
+$zindex-header: 1000;
+$zindex-dropdown: 1010;
+$zindex-modal: 1050;
+$zindex-tooltip: 1060;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;

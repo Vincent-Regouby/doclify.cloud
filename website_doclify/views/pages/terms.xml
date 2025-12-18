@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="terms" name="Doclify Terms of Service">
+            <t t-call="website_doclify.doclify_page_base">
+                <t t-set="page_title" t-value="'Conditions générales de vente - Doclify'"/>
+                <t t-set="page_meta_description" t-value="'Conditions générales de vente et d\'utilisation du service Doclify.'"/>
+
+                <!-- Hero Section -->
+                <section class="doclify-hero" style="padding: 3rem 0; background: linear-gradient(135deg, #F9FAFB 0%, #FFFFFF 100%); text-align: center;">
+                    <div class="doclify-container">
+                        <h1 style="margin-bottom: 1rem; font-size: 2.5rem; font-weight: 700; color: #1F2937;">
+                            Conditions générales de vente
+                        </h1>
+                        <p style="font-size: 1rem; color: #6B7280;">
+                            Dernière mise à jour : <t t-esc="datetime.datetime.now().strftime('%d/%m/%Y')"/>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Terms Content -->
+                <section style="padding: 4rem 0;">
+                    <div class="doclify-container">
+                        <div style="max-width: 800px; margin: 0 auto;">
+
+                            <!-- Introduction -->
+                            <div style="background: #EEF2FF; padding: 2rem; border-radius: 0.75rem; margin-bottom: 3rem; border-left: 4px solid #2563EB;">
+                                <p style="color: #1F2937; font-size: 1.125rem; margin: 0;">
+                                    Les présentes Conditions Générales de Vente (CGV) régissent l'utilisation du service <strong>Doclify</strong>,
+                                    plateforme SaaS de transcription et gestion de consultations médicales par intelligence artificielle.
+                                </p>
+                            </div>
+
+                            <!-- 1. Définitions -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    1. Définitions
+                                </h2>
+                                <ul style="color: #4B5563; line-height: 1.8;">
+                                    <li><strong>"Service"</strong> : la plateforme Doclify accessible via web et applications mobiles</li>
+                                    <li><strong>"Client"</strong> ou <strong>"Praticien"</strong> : le professionnel de santé souscrivant au Service</li>
+                                    <li><strong>"Doclify"</strong> ou <strong>"Nous"</strong> : l'éditeur du Service</li>
+                                    <li><strong>"Abonnement"</strong> : la souscription mensuelle au Service</li>
+                                    <li><strong>"Données"</strong> : toutes les données créées ou stockées via le Service</li>
+                                </ul>
+                            </div>
+
+                            <!-- 2. Objet -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    2. Objet du service
+                                </h2>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Doclify propose un service SaaS permettant aux professionnels de santé de :
+                                </p>
+                                <ul style="color: #4B5563; line-height: 1.8;">
+                                    <li>Enregistrer des consultations médicales via application mobile</li>
+                                    <li>Obtenir une transcription automatique par IA locale</li>
+                                    <li>Générer des résumés structurés</li>
+                                    <li>Gérer les dossiers patients via CRM web</li>
+                                    <li>Consulter et éditer les comptes-rendus</li>
+                                </ul>
+                            </div>
+
+                            <!-- 3. Souscription -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    3. Souscription et activation
+                                </h2>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">3.1 Conditions d'éligibilité</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Le Service est réservé aux professionnels de santé exerçant en France métropolitaine et DOM-TOM.
+                                    Le Client garantit être un professionnel de santé autorisé à exercer.
+                                </p>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">3.2 Essai gratuit</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Un essai gratuit de 14 jours est proposé sans engagement et sans carte bancaire requise.
+                                    À l'issue de cette période, le Service est automatiquement désactivé sauf souscription d'un abonnement payant.
+                                </p>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">3.3 Activation du compte</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    L'activation du compte nécessite :
+                                </p>
+                                <ul style="color: #4B5563; line-height: 1.8;">
+                                    <li>Une adresse email professionnelle valide</li>
+                                    <li>La validation des présentes CGV</li>
+                                    <li>L'acceptation de la politique de confidentialité</li>
+                                </ul>
+                            </div>
+
+                            <!-- 4. Tarifs et facturation -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    4. Tarifs et facturation
+                                </h2>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">4.1 Tarif de l'abonnement</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Le tarif en vigueur est de <strong>49€ HT par mois et par praticien</strong> (58,80€ TTC).
+                                    Ce tarif inclut :
+                                </p>
+                                <ul style="color: #4B5563; line-height: 1.8;">
+                                    <li>Enregistrements illimités</li>
+                                    <li>Transcriptions et résumés IA illimités</li>
+                                    <li>CRM complet</li>
+                                    <li>Applications mobiles iOS et Android</li>
+                                    <li>Stockage illimité</li>
+                                    <li>Support technique</li>
+                                </ul>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">4.2 Modalités de paiement</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    L'abonnement est facturé mensuellement à date anniversaire de souscription.
+                                    Le paiement s'effectue par prélèvement automatique sur carte bancaire ou virement SEPA.
+                                </p>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">4.3 Modification des tarifs</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Doclify se réserve le droit de modifier ses tarifs. Toute modification sera notifiée au Client
+                                    au moins 30 jours avant sa prise d'effet. Le Client peut résilier son abonnement avant cette date
+                                    s'il n'accepte pas la nouvelle tarification.
+                                </p>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">4.4 Défaut de paiement</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    En cas de défaut de paiement, le Service sera suspendu après relance. La suspension n'entraîne
+                                    pas la suppression des données, qui restent accessibles pendant 30 jours.
+                                </p>
+                            </div>
+
+                            <!-- 5. Durée et résiliation -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    5. Durée et résiliation
+                                </h2>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">5.1 Durée</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    L'abonnement est souscrit pour une durée d'un mois, renouvelable tacitement.
+                                    Aucun engagement de durée n'est imposé.
+                                </p>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">5.2 Résiliation par le Client</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Le Client peut résilier son abonnement à tout moment depuis son espace personnel,
+                                    avec effet au terme de la période de facturation en cours. Aucun remboursement prorata temporis
+                                    n'est effectué pour le mois en cours.
+                                </p>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">5.3 Résiliation par Doclify</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Doclify peut résilier l'abonnement en cas de :
+                                </p>
+                                <ul style="color: #4B5563; line-height: 1.8;">
+                                    <li>Manquement grave aux CGV</li>
+                                    <li>Usage frauduleux du Service</li>
+                                    <li>Non-paiement persistant (après relance)</li>
+                                    <li>Cessation d'activité de Doclify (préavis de 3 mois)</li>
+                                </ul>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">5.4 Effets de la résiliation</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    À la résiliation, le Client dispose de 30 jours pour exporter ses données.
+                                    Passé ce délai, les données sont supprimées définitivement (sauf obligation légale de conservation).
+                                </p>
+                            </div>
+
+                            <!-- 6. Obligations -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    6. Obligations des parties
+                                </h2>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">6.1 Obligations de Doclify</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Doclify s'engage à :
+                                </p>
+                                <ul style="color: #4B5563; line-height: 1.8;">
+                                    <li>Fournir un service accessible 24/7 avec un taux de disponibilité visé de 99,5%</li>
+                                    <li>Assurer la sécurité et la confidentialité des données (conformité RGPD)</li>
+                                    <li>Héberger les données en France uniquement</li>
+                                    <li>Utiliser uniquement des IA locales (pas de cloud externe)</li>
+                                    <li>Supprimer automatiquement les fichiers audio après transcription</li>
+                                    <li>Fournir un support technique par email</li>
+                                    <li>Maintenir et améliorer le Service</li>
+                                </ul>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">6.2 Obligations du Client</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Le Client s'engage à :
+                                </p>
+                                <ul style="color: #4B5563; line-height: 1.8;">
+                                    <li>Utiliser le Service dans le cadre de son activité professionnelle médicale</li>
+                                    <li>Respecter le secret médical et les règles déontologiques</li>
+                                    <li>Informer ses patients de l'utilisation du Service (consentement)</li>
+                                    <li>Ne pas tenter de contourner les mesures de sécurité</li>
+                                    <li>Ne pas utiliser le Service à des fins illégales</li>
+                                    <li>Maintenir ses identifiants confidentiels</li>
+                                    <li>Vérifier et valider les transcriptions/résumés générés par l'IA</li>
+                                </ul>
+                            </div>
+
+                            <!-- 7. Propriété intellectuelle -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    7. Propriété intellectuelle et données
+                                </h2>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">7.1 Propriété du Service</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Doclify est et reste l'unique propriétaire de tous les droits de propriété intellectuelle
+                                    sur le Service (logiciel, design, documentation, marques).
+                                </p>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">7.2 Propriété des données</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Le Client reste propriétaire de toutes ses données (consultations, patients, transcriptions).
+                                    Doclify s'interdit toute exploitation commerciale de ces données.
+                                </p>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">7.3 Licence d'utilisation</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Doclify accorde au Client une licence non exclusive, non transférable et révocable
+                                    d'utilisation du Service, strictement limitée à son usage professionnel médical.
+                                </p>
+                            </div>
+
+                            <!-- 8. Responsabilités -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    8. Responsabilités et garanties
+                                </h2>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">8.1 Responsabilité du Service</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Doclify s'engage à fournir le Service avec diligence mais ne peut garantir :
+                                </p>
+                                <ul style="color: #4B5563; line-height: 1.8;">
+                                    <li>Une disponibilité absolue (interruptions possibles pour maintenance)</li>
+                                    <li>Une précision à 100% des transcriptions IA (le Client doit relire et valider)</li>
+                                    <li>L'absence totale de bugs ou dysfonctionnements</li>
+                                </ul>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">8.2 Limitation de responsabilité</h3>
+                                <div style="background: #FEF2F2; padding: 1.5rem; border-radius: 0.5rem; border-left: 4px solid #EF4444;">
+                                    <p style="color: #991B1B; font-weight: 600; margin-bottom: 1rem;">
+                                        IMPORTANT : Responsabilité médicale
+                                    </p>
+                                    <p style="color: #991B1B; line-height: 1.8; margin: 0;">
+                                        <strong>Le Client reste seul responsable</strong> des décisions médicales et comptes-rendus
+                                        qu'il valide. Doclify est un outil d'aide à la rédaction, pas un dispositif médical.
+                                        Les transcriptions et résumés générés par l'IA doivent TOUJOURS être relus et validés par le praticien.
+                                    </p>
+                                </div>
+                                <p style="color: #4B5563; line-height: 1.8; margin-top: 1rem;">
+                                    En tout état de cause, la responsabilité de Doclify est limitée au montant total des sommes
+                                    versées par le Client au cours des 12 derniers mois.
+                                </p>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">8.3 Force majeure</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Doclify ne peut être tenu responsable des manquements dus à des cas de force majeure
+                                    (catastrophe naturelle, cyberattaque massive, défaillance d'infrastructure critique, etc.).
+                                </p>
+                            </div>
+
+                            <!-- 9. Données personnelles -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    9. Protection des données personnelles
+                                </h2>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Le traitement des données personnelles est régi par notre
+                                    <a href="/confidentialite" style="color: #2563EB; font-weight: 600;">Politique de Confidentialité</a>,
+                                    qui fait partie intégrante des présentes CGV.
+                                </p>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Doclify s'engage à respecter le RGPD et à mettre en œuvre toutes les mesures techniques et
+                                    organisationnelles appropriées pour garantir la sécurité des données de santé.
+                                </p>
+                            </div>
+
+                            <!-- 10. Modifications -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    10. Modifications des CGV
+                                </h2>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Doclify se réserve le droit de modifier les présentes CGV. Toute modification substantielle
+                                    sera notifiée au Client par email au moins 30 jours avant sa prise d'effet.
+                                    La poursuite de l'utilisation du Service après cette date vaut acceptation des nouvelles CGV.
+                                </p>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Le Client peut refuser les modifications en résiliant son abonnement avant la date de prise d'effet.
+                                </p>
+                            </div>
+
+                            <!-- 11. Droit applicable -->
+                            <div style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 1.75rem; color: #1F2937; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">
+                                    11. Droit applicable et litiges
+                                </h2>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">11.1 Droit applicable</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    Les présentes CGV sont régies par le droit français.
+                                </p>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">11.2 Résolution amiable</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    En cas de litige, les parties s'engagent à rechercher une solution amiable avant toute action judiciaire.
+                                    Vous pouvez nous contacter à : <a href="mailto:contact@doclify.cloud" style="color: #2563EB;">contact@doclify.cloud</a>
+                                </p>
+
+                                <h3 style="font-size: 1.25rem; color: #2563EB; margin: 1.5rem 0 1rem;">11.3 Juridiction compétente</h3>
+                                <p style="color: #4B5563; line-height: 1.8;">
+                                    À défaut de résolution amiable, les tribunaux de Paris seront seuls compétents.
+                                </p>
+                            </div>
+
+                            <!-- Contact -->
+                            <div style="background: #EEF2FF; padding: 2rem; border-radius: 0.75rem; border-left: 4px solid #2563EB;">
+                                <h2 style="font-size: 1.5rem; color: #1F2937; margin-bottom: 1rem;">Questions sur les CGV ?</h2>
+                                <p style="color: #4B5563; line-height: 1.8; margin: 0;">
+                                    Pour toute question concernant ces conditions générales :<br/>
+                                    Email : <a href="mailto:contact@doclify.cloud" style="color: #2563EB; font-weight: 600;">contact@doclify.cloud</a><br/>
+                                    Adresse : Doclify, Paris, France
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </t>
+        </template>
+    </data>
+</odoo>
