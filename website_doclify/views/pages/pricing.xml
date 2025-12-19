@@ -41,7 +41,7 @@
                                 <div style="font-size: 0.875rem; color: #9CA3AF; margin-top: 0.25rem;">(58,80€ TTC)</div>
                             </div>
 
-                            <a href="/web/login?redirect=/web/signup" class="doclify-btn btn-primary btn-lg" style="display: block; width: 100%; margin-bottom: 1rem; background: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%); color: white; padding: 1rem 2rem; font-size: 1.125rem; font-weight: 600; text-align: center; border-radius: 0.5rem; text-decoration: none; border: none;">
+                            <a href="https://app.doclify.cloud" class="doclify-btn btn-primary btn-lg" style="display: block; width: 100%; margin-bottom: 1rem; background: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%); color: white; padding: 1rem 2rem; font-size: 1.125rem; font-weight: 600; text-align: center; border-radius: 0.5rem; text-decoration: none; border: none;">
                                 Commencer gratuitement
                             </a>
                             <p style="font-size: 0.875rem; color: #6B7280; margin-bottom: 3rem;">14 jours d'essai gratuit • Sans engagement</p>
@@ -247,7 +247,7 @@
                         <p style="font-size: 1.125rem; margin-bottom: 2rem; opacity: 0.9;">
                             Rejoignez les médecins qui gagnent 2h par semaine avec Doclify
                         </p>
-                        <a href="/web/login?redirect=/web/signup" class="doclify-btn btn-lg" style="background: white; color: #2563EB; display: inline-block; padding: 1rem 2rem; font-size: 1.125rem; font-weight: 600; text-align: center; border-radius: 0.5rem; text-decoration: none;">
+                        <a href="https://app.doclify.cloud" class="doclify-btn btn-lg" style="background: white; color: #2563EB; display: inline-block; padding: 1rem 2rem; font-size: 1.125rem; font-weight: 600; text-align: center; border-radius: 0.5rem; text-decoration: none;">
                             Essai gratuit 14 jours
                         </a>
                         <p style="margin-top: 1rem; font-size: 0.875rem; opacity: 0.8;">Aucune carte bancaire • Sans engagement</p>
