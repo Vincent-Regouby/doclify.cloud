@@ -21,7 +21,7 @@
 
 **Durée estimée**: 4 heures (Jour 1)
 
-- [ ] T000 **[RGPD]** Implémenter bannière de consentement cookies sur doclify.cloud AVANT tout tracking (Constitution IV)
+- [X] T000 **[RGPD]** Implémenter bannière de consentement cookies sur doclify.cloud AVANT tout tracking (Constitution IV)
 - [ ] T001 [P] Créer/configurer compte Google Analytics 4 sur doclify.cloud (APRÈS T000)
 - [ ] T002 [P] Configurer Google Search Console et vérifier la propriété du site
 - [ ] T003 [P] Créer les 4 objectifs de conversion GA4 (inscription essai, conversion payante, téléchargement lead magnet, inscription webinaire) - ref: quickstart.md
