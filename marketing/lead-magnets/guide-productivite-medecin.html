@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Productivité Médecin - Doclify</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: #fff;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 0 auto;
+            background: #fff;
+            page-break-after: always;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                padding: 15mm 20mm;
+            }
+        }
+
+        /* Cover Page */
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .cover-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+        }
+
+        .cover-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .cover-subtitle {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            margin-bottom: 60px;
+        }
+
+        .cover-tagline {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            padding-top: 30px;
+            margin-top: auto;
+        }
+
+        /* Content Pages */
+        h1 {
+            font-size: 1.8rem;
+            color: #667eea;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: #1a1a2e;
+            margin: 30px 0 15px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: #667eea;
+            margin: 20px 0 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #f5f7ff 0%, #e8ecff 100%);
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .stat-box {
+            background: #fff;
+            border: 2px solid #667eea;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .tip-box {
+            background: #fff9e6;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tip-box strong {
+            color: #d69e00;
+        }
+
+        .warning-box {
+            background: #fff5f5;
+            border-left: 4px solid #dc3545;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .checklist {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .checklist li {
+            padding: 10px 0 10px 35px;
+            position: relative;
+            border-bottom: 1px solid #eee;
+        }
+
+        .checklist li:before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+
+        .numbered-list {
+            counter-reset: item;
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .numbered-list li {
+            padding: 15px 0 15px 50px;
+            position: relative;
+            border-bottom: 1px solid #eee;
+        }
+
+        .numbered-list li:before {
+            counter-increment: item;
+            content: counter(item);
+            position: absolute;
+            left: 0;
+            width: 32px;
+            height: 32px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9ff;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .cta-box h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            opacity: 0.9;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: auto;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 15mm;
+            right: 20mm;
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .highlight {
+            background: linear-gradient(to bottom, transparent 60%, #fef3c7 60%);
+            padding: 0 2px;
+        }
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .icon-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .icon-feature .icon {
+            width: 40px;
+            height: 40px;
+            background: #f0f4ff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page 1: Cover -->
+    <div class="page cover">
+        <div class="cover-logo">🩺 Doclify</div>
+        <h1 class="cover-title">Guide Productivité<br>du Médecin Moderne</h1>
+        <p class="cover-subtitle">7 stratégies pour récupérer 2 heures par semaine<br>sur vos tâches administratives</p>
+        <p class="cover-tagline">Un guide pratique par Doclify • 2025</p>
+    </div>
+
+    <!-- Page 2: Introduction -->
+    <div class="page">
+        <h1>Introduction</h1>
+
+        <div class="intro-box">
+            <p><strong>Cher confrère, chère consœur,</strong></p>
+            <p>Si vous lisez ce guide, c'est que comme des milliers de médecins français, vous ressentez le poids croissant des tâches administratives sur votre quotidien.</p>
+        </div>
+
+        <p>Vous n'êtes pas seul(e). En France, les médecins passent en moyenne <span class="highlight">54 minutes par jour</span> sur des tâches purement administratives. C'est plus de 4 heures par semaine. Plus de 200 heures par an.</p>
+
+        <p>200 heures que vous pourriez passer avec vos patients. Ou avec votre famille. Ou simplement à ne rien faire, à récupérer de journées souvent épuisantes.</p>
+
+        <div class="stat-box">
+            <div class="stat-number">54 min/jour</div>
+            <div class="stat-label">temps moyen passé en tâches administratives par les médecins français</div>
+        </div>
+
+        <h2>Ce que vous allez découvrir</h2>
+
+        <p>Dans ce guide, nous avons compilé <strong>7 stratégies concrètes et actionnables</strong> que les médecins les plus efficaces utilisent pour réduire leur charge administrative sans compromettre la qualité de leur documentation.</p>
+
+        <p>Ces stratégies ne sont pas théoriques. Elles viennent de médecins qui les appliquent au quotidien.</p>
+
+        <div class="tip-box">
+            <strong>💡 Conseil de lecture</strong><br>
+            Imprimez ce guide et gardez-le à portée de main. Commencez par UNE seule stratégie. Maîtrisez-la. Puis passez à la suivante. C'est la meilleure façon de créer des habitudes durables.
+        </div>
+    </div>
+
+    <!-- Page 3: Le Problème -->
+    <div class="page">
+        <h1>Le Problème : L'Épidémie de Paperasse</h1>
+
+        <h2>D'où vient cette surcharge ?</h2>
+
+        <p>La charge administrative des médecins n'a cessé d'augmenter ces 20 dernières années. Plusieurs facteurs expliquent cette explosion :</p>
+
+        <ol class="numbered-list">
+            <li><strong>Exigences réglementaires croissantes</strong> — RGPD, traçabilité, conventions, certifications HAS...</li>
+            <li><strong>Informatisation partielle</strong> — Le papier n'a pas disparu, l'informatique s'y est ajoutée</li>
+            <li><strong>Multiplication des interlocuteurs</strong> — CPAM, ARS, mutuelles, laboratoires, spécialistes...</li>
+            <li><strong>Attentes des patients</strong> — Certificats, courriers, explications détaillées...</li>
+            <li><strong>Logiciels mal conçus</strong> — Interfaces datées, workflows complexes, interopérabilité inexistante</li>
+        </ol>
+
+        <h2>Les conséquences</h2>
+
+        <div class="two-columns">
+            <div class="warning-box">
+                <strong>Sur votre santé</strong><br>
+                Fatigue chronique, stress, risque de burn-out. 49% des médecins français se déclarent en situation d'épuisement professionnel.
+            </div>
+            <div class="warning-box">
+                <strong>Sur vos patients</strong><br>
+                Moins de temps d'écoute, consultations raccourcies, relation médecin-patient dégradée.
+            </div>
+        </div>
+
+        <h2>La bonne nouvelle</h2>
+
+        <p>La technologie qui a créé une partie du problème peut aussi le résoudre. Non pas en ajoutant de la complexité, mais en <strong>automatisant intelligemment</strong> ce qui peut l'être.</p>
+
+        <p>Les 7 stratégies suivantes combinent :</p>
+        <ul style="margin-left: 20px;">
+            <li>Des changements organisationnels simples</li>
+            <li>Une meilleure utilisation des outils existants</li>
+            <li>L'adoption ciblée de nouvelles technologies</li>
+        </ul>
+    </div>
+
+    <!-- Page 4: Stratégie 1 -->
+    <div class="page">
+        <h1>Stratégie #1 : La Dictée Vocale Médicale</h1>
+
+        <div class="stat-box">
+            <div class="stat-number">3x</div>
+            <div class="stat-label">plus rapide que la frappe clavier</div>
+        </div>
+
+        <h2>Pourquoi ça fonctionne</h2>
+
+        <p>Un médecin tape en moyenne 30 à 40 mots par minute. En dictant, vous pouvez facilement atteindre 120 à 150 mots par minute. C'est <strong>3 à 4 fois plus rapide</strong>.</p>
+
+        <p>Mais la vitesse n'est pas le seul avantage. La dictée vous permet de :</p>
+
+        <ul class="checklist">
+            <li>Garder le contact visuel avec votre patient pendant que vous documentez</li>
+            <li>Capturer des observations en temps réel (visites, urgences)</li>
+            <li>Réduire la fatigue oculaire et les TMS liés au clavier</li>
+            <li>Produire des comptes-rendus plus détaillés et naturels</li>
+        </ul>
+
+        <h2>Comment bien l'implémenter</h2>
+
+        <h3>Étape 1 : Choisir le bon outil</h3>
+        <p>La reconnaissance vocale a fait d'énormes progrès. Les outils modernes comprennent le vocabulaire médical français, y compris les médicaments et termes techniques.</p>
+
+        <div class="warning-box">
+            <strong>⚠️ Attention à la confidentialité</strong><br>
+            Vérifiez que vos données ne transitent pas par des serveurs américains (Cloud Act). Privilégiez les solutions hébergées en France, certifiées HDS.
+        </div>
+
+        <h3>Étape 2 : Commencer petit</h3>
+        <p>Ne tentez pas de tout dicter immédiatement. Commencez par les observations cliniques de l'examen. Puis ajoutez les antécédents. Puis les prescriptions.</p>
+
+        <h3>Étape 3 : Créer des raccourcis</h3>
+        <p>La plupart des outils permettent de créer des "raccourcis vocaux". Par exemple, dire "examen normal" peut insérer un template complet d'examen clinique sans particularité.</p>
+
+        <div class="tip-box">
+            <strong>💡 Astuce Doclify</strong><br>
+            Doclify structure automatiquement vos dictées en sections (Motif, Antécédents, Examen, Diagnostic, Traitement). Vous dictez librement, l'IA organise.
+        </div>
+    </div>
+
+    <!-- Page 5: Stratégie 2 -->
+    <div class="page">
+        <h1>Stratégie #2 : Les Templates Intelligents</h1>
+
+        <h2>Le principe</h2>
+
+        <p>80% de vos consultations concernent 20% des motifs. Rhumes, lombalgies, renouvellements, suivis chroniques... Ces consultations "types" ne devraient pas nécessiter de repartir de zéro à chaque fois.</p>
+
+        <h2>Comment créer des templates efficaces</h2>
+
+        <ol class="numbered-list">
+            <li><strong>Identifiez vos 10 motifs les plus fréquents</strong> — Analysez une semaine de consultations pour les identifier</li>
+            <li><strong>Créez un template par motif</strong> — Incluez les sections obligatoires et les éléments à ne pas oublier</li>
+            <li><strong>Laissez des espaces personnalisables</strong> — Le template est une base, pas un carcan</li>
+            <li><strong>Intégrez les ordonnances types</strong> — Pour les prescriptions récurrentes (tout en vérifiant les interactions)</li>
+        </ol>
+
+        <h2>Exemple : Template "Infection ORL simple"</h2>
+
+        <table class="comparison-table">
+            <tr>
+                <th>Section</th>
+                <th>Contenu pré-rempli</th>
+            </tr>
+            <tr>
+                <td>Motif</td>
+                <td>Consultation pour [rhinopharyngite / angine / otite] évoluant depuis [_] jours</td>
+            </tr>
+            <tr>
+                <td>Examen</td>
+                <td>Patient en bon état général. T° [_]. Examen ORL : [gorge / tympans / nez]</td>
+            </tr>
+            <tr>
+                <td>Conclusion</td>
+                <td>[Rhinopharyngite / Angine / Otite] [virale / bactérienne]</td>
+            </tr>
+            <tr>
+                <td>Traitement</td>
+                <td>Traitement symptomatique / ATB si bactérien</td>
+            </tr>
+        </table>
+
+        <div class="tip-box">
+            <strong>💡 Gain estimé</strong><br>
+            Un bon système de templates peut vous faire gagner 5 à 10 minutes par heure de consultation.
+        </div>
+    </div>
+
+    <!-- Page 6: Stratégie 3 -->
+    <div class="page">
+        <h1>Stratégie #3 : Le Batch Processing</h1>
+
+        <h2>Le concept</h2>
+
+        <p>Le "batch processing" ou traitement par lots consiste à <strong>regrouper les tâches similaires</strong> plutôt que de les traiter au fil de l'eau. C'est l'opposé du multitasking, et c'est bien plus efficace.</p>
+
+        <h2>Pourquoi ça marche</h2>
+
+        <p>Chaque fois que vous changez de type de tâche, votre cerveau a besoin de temps pour "switcher". Ce temps de transition, appelé "coût de commutation", est estimé à <strong>15-25 minutes</strong> pour retrouver une concentration optimale.</p>
+
+        <p>En regroupant vos tâches par type, vous éliminez ces transitions inutiles.</p>
+
+        <h2>Application pratique</h2>
+
+        <div class="two-columns">
+            <div>
+                <h3>❌ Évitez</h3>
+                <ul style="margin-left: 20px; font-size: 0.9rem;">
+                    <li>Répondre aux emails entre deux patients</li>
+                    <li>Faire les courriers "quand j'ai 5 minutes"</li>
+                    <li>Traiter les résultats au fil de leur arrivée</li>
+                </ul>
+            </div>
+            <div>
+                <h3>✅ Préférez</h3>
+                <ul style="margin-left: 20px; font-size: 0.9rem;">
+                    <li>2 créneaux email par jour (10h et 17h)</li>
+                    <li>1 créneau courriers (fin de journée)</li>
+                    <li>1 créneau résultats (matin avant consultations)</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Planning type d'une journée optimisée</h2>
+
+        <table class="comparison-table">
+            <tr>
+                <th>Horaire</th>
+                <th>Activité</th>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>8h00 - 8h30</td>
+                <td>Résultats labo + imagerie</td>
+                <td>📊 Analyse</td>
+            </tr>
+            <tr>
+                <td>8h30 - 12h30</td>
+                <td>Consultations (bloc 1)</td>
+                <td>🩺 Patient</td>
+            </tr>
+            <tr>
+                <td>12h30 - 13h00</td>
+                <td>Courriers spécialistes</td>
+                <td>✉️ Admin</td>
+            </tr>
+            <tr>
+                <td>14h00 - 18h00</td>
+                <td>Consultations (bloc 2)</td>
+                <td>🩺 Patient</td>
+            </tr>
+            <tr>
+                <td>18h00 - 18h30</td>
+                <td>Emails + appels non urgents</td>
+                <td>📱 Communication</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Page 7: Stratégie 4 -->
+    <div class="page">
+        <h1>Stratégie #4 : La Délégation Intelligente</h1>
+
+        <h2>Le frein psychologique</h2>
+
+        <p>Beaucoup de médecins hésitent à déléguer. "C'est plus vite fait de le faire moi-même", "Je préfère contrôler"... Ces réflexes sont compréhensibles, mais coûteux.</p>
+
+        <p>Déléguer, c'est <strong>investir du temps pour en gagner</strong>. Former votre secrétaire à une tâche prend 30 minutes. Mais si cette tâche vous prend 5 minutes par jour, vous êtes rentable en 6 jours.</p>
+
+        <h2>Que peut-on déléguer ?</h2>
+
+        <ul class="checklist">
+            <li><strong>Gestion des rendez-vous</strong> — Prise, annulation, rappels</li>
+            <li><strong>Accueil et orientation</strong> — Premiers renseignements patients</li>
+            <li><strong>Préparation des dossiers</strong> — Avant consultation</li>
+            <li><strong>Numérisation</strong> — Documents papier, résultats</li>
+            <li><strong>Relances</strong> — Vaccinations, dépistages, renouvellements</li>
+            <li><strong>Facturation</strong> — Tiers payant, rejets CPAM</li>
+            <li><strong>Commandes</strong> — Fournitures, vaccins, consommables</li>
+        </ul>
+
+        <h2>Et si je suis seul(e) ?</h2>
+
+        <p>Si vous n'avez pas de secrétaire, plusieurs options existent :</p>
+
+        <div class="icon-feature">
+            <div class="icon">📞</div>
+            <div>
+                <strong>Télésecrétariat</strong><br>
+                <span style="font-size: 0.9rem;">Services externalisés qui gèrent vos appels et RDV. Coût : 200-400€/mois.</span>
+            </div>
+        </div>
+
+        <div class="icon-feature">
+            <div class="icon">🤖</div>
+            <div>
+                <strong>Automatisation</strong><br>
+                <span style="font-size: 0.9rem;">Prise de RDV en ligne, rappels SMS automatiques, formulaires pré-consultation.</span>
+            </div>
+        </div>
+
+        <div class="icon-feature">
+            <div class="icon">🏥</div>
+            <div>
+                <strong>Mutualisation</strong><br>
+                <span style="font-size: 0.9rem;">Partager une secrétaire avec des confrères à proximité.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 8: Stratégie 5 -->
+    <div class="page">
+        <h1>Stratégie #5 : Le Mode Hors-Ligne</h1>
+
+        <h2>Pour qui ?</h2>
+
+        <p>Cette stratégie est particulièrement pertinente si vous faites :</p>
+        <ul style="margin-left: 20px;">
+            <li>Des visites à domicile</li>
+            <li>Des gardes ou déplacements</li>
+            <li>Des consultations dans des zones à faible couverture réseau</li>
+        </ul>
+
+        <h2>Le problème du "double travail"</h2>
+
+        <p>Scénario classique : vous faites une visite, prenez des notes sur papier ou sur votre téléphone, puis de retour au cabinet, vous devez tout ressaisir dans le dossier patient.</p>
+
+        <p>Ce double travail est une <strong>perte de temps massive</strong> et une source d'erreurs (informations oubliées ou mal retranscrites).</p>
+
+        <h2>La solution</h2>
+
+        <p>Utilisez des outils qui fonctionnent <strong>sans connexion internet</strong> et se synchronisent automatiquement une fois le réseau retrouvé.</p>
+
+        <div class="tip-box">
+            <strong>💡 Ce que permet le mode hors-ligne de Doclify</strong><br>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Dictée vocale pendant la visite (sans connexion)</li>
+                <li>Transcription et structuration en local sur votre appareil</li>
+                <li>Synchronisation automatique au retour de connexion</li>
+                <li>Aucune donnée perdue, même si la batterie lâche</li>
+            </ul>
+        </div>
+
+        <h2>Checklist visite à domicile optimisée</h2>
+
+        <ul class="checklist">
+            <li>Vérifier que l'app fonctionne en hors-ligne avant de partir</li>
+            <li>Dicter les observations PENDANT la visite, pas après</li>
+            <li>Utiliser des photos (avec consentement) pour les lésions cutanées, etc.</li>
+            <li>Vérifier la synchronisation au retour au cabinet</li>
+        </ul>
+    </div>
+
+    <!-- Page 9: Stratégie 6 -->
+    <div class="page">
+        <h1>Stratégie #6 : L'Optimisation des Réunions</h1>
+
+        <h2>Le constat</h2>
+
+        <p>Staffs, RCP, formations, réunions administratives... Les médecins hospitaliers passent en moyenne <strong>6 heures par semaine en réunion</strong>. Et une bonne partie de ce temps est mal utilisé.</p>
+
+        <h2>Les principes d'une réunion efficace</h2>
+
+        <ol class="numbered-list">
+            <li><strong>Pas de réunion sans ordre du jour</strong> — Si l'organisateur ne peut pas lister les points à traiter, la réunion n'est pas nécessaire</li>
+            <li><strong>Durée définie et respectée</strong> — Une réunion de 25 minutes force à aller à l'essentiel</li>
+            <li><strong>Participants minimum</strong> — Seules les personnes qui doivent décider ou informer sont présentes</li>
+            <li><strong>Décisions documentées</strong> — Chaque réunion produit un compte-rendu avec les actions et responsables</li>
+        </ol>
+
+        <h2>Osez dire non</h2>
+
+        <p>Vous n'êtes pas obligé(e) d'accepter toutes les réunions. Posez-vous ces questions :</p>
+
+        <div class="intro-box">
+            <ul style="margin-left: 20px;">
+                <li>Ma présence est-elle indispensable ?</li>
+                <li>Puis-je envoyer un représentant ou une contribution écrite ?</li>
+                <li>L'information aurait-elle pu être transmise par email ?</li>
+                <li>Ai-je une décision à prendre ou une expertise à apporter ?</li>
+            </ul>
+        </div>
+
+        <p>Si vous répondez "non" à toutes ces questions, <strong>déclinez poliment</strong>. Votre temps a de la valeur.</p>
+
+        <h2>Alternative : le format asynchrone</h2>
+
+        <p>Beaucoup de "réunions" peuvent être remplacées par :</p>
+        <ul style="margin-left: 20px;">
+            <li><strong>Un email structuré</strong> avec points de décision clairs</li>
+            <li><strong>Un document partagé</strong> où chacun commente à son rythme</li>
+            <li><strong>Une vidéo courte</strong> de 3-5 minutes pour présenter un sujet</li>
+        </ul>
+    </div>
+
+    <!-- Page 10: Stratégie 7 -->
+    <div class="page">
+        <h1>Stratégie #7 : La Revue Hebdomadaire</h1>
+
+        <h2>Le principe</h2>
+
+        <p>Prendre 30 minutes chaque semaine pour faire le point sur votre organisation. C'est un investissement qui vous fait gagner plusieurs heures.</p>
+
+        <h2>Le processus en 5 étapes</h2>
+
+        <ol class="numbered-list">
+            <li><strong>Vider les "entrées"</strong> — Traitez tous les papiers, emails, notes qui se sont accumulés</li>
+            <li><strong>Revoir la semaine passée</strong> — Qu'est-ce qui a bien fonctionné ? Qu'est-ce qui a coincé ?</li>
+            <li><strong>Planifier la semaine à venir</strong> — RDV importants, deadlines, priorités</li>
+            <li><strong>Identifier un axe d'amélioration</strong> — UN seul point à améliorer cette semaine</li>
+            <li><strong>Anticiper les problèmes</strong> — Congés de secrétaire, absence de remplacement...</li>
+        </ol>
+
+        <h2>Quand faire cette revue ?</h2>
+
+        <p>La plupart des médecins efficaces font leur revue hebdomadaire :</p>
+        <ul style="margin-left: 20px;">
+            <li><strong>Vendredi fin de journée</strong> — Pour "fermer" la semaine mentalement</li>
+            <li><strong>Dimanche soir</strong> — Pour préparer la semaine à venir</li>
+            <li><strong>Lundi matin tôt</strong> — Avant les premières consultations</li>
+        </ul>
+
+        <p>L'important est la <strong>régularité</strong>, pas le moment choisi.</p>
+
+        <div class="stat-box">
+            <div class="stat-number">30 min</div>
+            <div class="stat-label">investies chaque semaine = plusieurs heures gagnées</div>
+        </div>
+    </div>
+
+    <!-- Page 11: Récapitulatif -->
+    <div class="page">
+        <h1>Récapitulatif : Votre Plan d'Action</h1>
+
+        <p>Voici les 7 stratégies que nous avons couvertes. Cochez celles que vous souhaitez implémenter :</p>
+
+        <ul class="checklist">
+            <li><strong>Dictée vocale médicale</strong> — Multipliez par 3 votre vitesse de documentation</li>
+            <li><strong>Templates intelligents</strong> — Ne repartez plus de zéro pour les consultations types</li>
+            <li><strong>Batch processing</strong> — Regroupez les tâches similaires pour éliminer les transitions</li>
+            <li><strong>Délégation intelligente</strong> — Confiez ce qui peut l'être à votre équipe</li>
+            <li><strong>Mode hors-ligne</strong> — Documentez pendant les visites, pas après</li>
+            <li><strong>Optimisation des réunions</strong> — Protégez votre temps des réunions inutiles</li>
+            <li><strong>Revue hebdomadaire</strong> — 30 minutes pour optimiser votre semaine</li>
+        </ul>
+
+        <div class="intro-box">
+            <h3>📌 Notre recommandation</h3>
+            <p>Ne tentez pas de tout implémenter en même temps. Choisissez <strong>UNE stratégie</strong>, maîtrisez-la pendant 2-3 semaines, puis passez à la suivante.</p>
+            <p>La stratégie #1 (dictée vocale) offre généralement le meilleur retour sur investissement immédiat.</p>
+        </div>
+
+        <h2>Vos gains potentiels</h2>
+
+        <table class="comparison-table">
+            <tr>
+                <th>Stratégie</th>
+                <th>Gain estimé</th>
+            </tr>
+            <tr>
+                <td>Dictée vocale</td>
+                <td>30-45 min/jour</td>
+            </tr>
+            <tr>
+                <td>Templates</td>
+                <td>10-15 min/jour</td>
+            </tr>
+            <tr>
+                <td>Batch processing</td>
+                <td>20-30 min/jour</td>
+            </tr>
+            <tr>
+                <td>Délégation</td>
+                <td>15-30 min/jour</td>
+            </tr>
+            <tr>
+                <td>Mode hors-ligne</td>
+                <td>15-20 min/visite</td>
+            </tr>
+            <tr>
+                <td>Réunions optimisées</td>
+                <td>1-2h/semaine</td>
+            </tr>
+            <tr>
+                <td>Revue hebdomadaire</td>
+                <td>1-2h/semaine (indirect)</td>
+            </tr>
+        </table>
+
+        <p style="text-align: center; margin-top: 30px; font-weight: 600; color: #667eea;">
+            Total potentiel : 10+ heures par semaine
+        </p>
+    </div>
+
+    <!-- Page 12: CTA -->
+    <div class="page">
+        <h1>Passez à l'Action avec Doclify</h1>
+
+        <p>Ce guide vous a donné des stratégies. <strong>Doclify vous donne les outils</strong> pour les appliquer concrètement.</p>
+
+        <h2>Ce que Doclify fait pour vous</h2>
+
+        <div class="icon-feature">
+            <div class="icon">🎤</div>
+            <div>
+                <strong>Dictée → Compte-rendu en 30 secondes</strong><br>
+                <span style="font-size: 0.9rem;">Transcription IA ultra-précise avec vocabulaire médical français. Structuration automatique.</span>
+            </div>
+        </div>
+
+        <div class="icon-feature">
+            <div class="icon">📱</div>
+            <div>
+                <strong>Mode hors-ligne complet</strong><br>
+                <span style="font-size: 0.9rem;">Dictez pendant vos visites, même sans connexion. Synchronisation automatique.</span>
+            </div>
+        </div>
+
+        <div class="icon-feature">
+            <div class="icon">🔐</div>
+            <div>
+                <strong>100% hébergé en France</strong><br>
+                <span style="font-size: 0.9rem;">IA locale, pas d'OpenAI ni Google. Certifié HDS, conforme RGPD.</span>
+            </div>
+        </div>
+
+        <div class="icon-feature">
+            <div class="icon">💶</div>
+            <div>
+                <strong>75€/mois, sans engagement</strong><br>
+                <span style="font-size: 0.9rem;">Rentabilisé dès la première semaine si vous gagnez 30 min/jour.</span>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3>Essayez gratuitement pendant 14 jours</h3>
+            <p>Aucune carte bancaire requise. Installation en 2 minutes.</p>
+            <a href="https://doclify.cloud/?utm_source=lead_magnet&utm_medium=pdf&utm_campaign=guide_productivite" class="cta-button">
+                Commencer l'essai gratuit →
+            </a>
+        </div>
+
+        <div class="footer">
+            <p><strong>🩺 Doclify</strong></p>
+            <p>La transcription médicale intelligente, 100% française.</p>
+            <p style="margin-top: 15px;">
+                doclify.cloud • contact@doclify.cloud
+            </p>
+            <p style="margin-top: 20px; font-size: 0.75rem; color: #999;">
+                © 2025 Doclify. Tous droits réservés.<br>
+                Ce guide est fourni à titre informatif et ne constitue pas un conseil médical ou juridique.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
