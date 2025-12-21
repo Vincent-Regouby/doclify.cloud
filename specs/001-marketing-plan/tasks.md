@@ -23,7 +23,7 @@
 
 - [X] T000 **[RGPD]** Implémenter bannière de consentement cookies sur doclify.cloud AVANT tout tracking (Constitution IV)
 - [ ] T001 [P] Créer/configurer compte Google Analytics 4 sur doclify.cloud (APRÈS T000)
-- [ ] T002 [P] Configurer Google Search Console et vérifier la propriété du site
+- [X] T002 [P] Configurer Google Search Console et vérifier la propriété du site
 - [ ] T003 [P] Créer les 4 objectifs de conversion GA4 (inscription essai, conversion payante, téléchargement lead magnet, inscription webinaire) - ref: quickstart.md
 - [ ] T004 [P] Créer compte AWS SES et vérifier le domaine d'envoi doclify.cloud
 - [ ] T005 [P] Configurer les attributs de contact AWS SES (PRENOM, SPECIALITE, DATE_INSCRIPTION) - ref: contracts/email-sequences.md
