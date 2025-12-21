@@ -69,7 +69,7 @@ a:hover {
 }
 
 /* Header & Navigation */
-header {
+header:not(.article-header) {
   background-color: rgba(10, 10, 10, 0.95);
   backdrop-filter: blur(10px);
   position: fixed;
