@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez Doclify - Demandez une démo, posez vos questions, ou démarrez votre essai gratuit de 14 jours.">
+  <title>Contact - Doclify.cloud</title>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://doclify.cloud/contact.html">
+  <meta property="og:title" content="Contact - Doclify.cloud">
+  <meta property="og:description" content="Contactez Doclify - Demandez une démo, posez vos questions, ou démarrez votre essai gratuit de 14 jours.">
+  <meta property="og:image" content="https://doclify.cloud/img/logo.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://doclify.cloud/contact.html">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo"><img src="img/logo.png" alt="Doclify.cloud" height="75"></a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="application.html">Applications</a></li>
+        <li><a href="materiel.html">Matériel</a></li>
+        <li><a href="blog/">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://my.doclify.cloud/web/login" class="btn-login">Connexion</a></li>
+      </ul>
+
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Contactez-nous</h1>
+      <p class="subtitle">Une question ? Besoin d'une démo ? Notre équipe vous répond sous 24h.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="content-section">
+    <div class="container">
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h2 class="text-center text-orange">Envoyez-nous un message</h2>
+        <p class="text-center" style="margin-bottom: 2rem;">
+          Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.
+        </p>
+
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Nom complet *</label>
+            <input type="text" id="name" name="name" required placeholder="Dr. Jean Dupont">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email professionnel *</label>
+            <input type="email" id="email" name="email" required placeholder="jean.dupont@exemple.fr">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Téléphone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+33 6 12 34 56 78">
+          </div>
+
+          <div class="form-group">
+            <label for="specialty">Spécialité médicale</label>
+            <input type="text" id="specialty" name="specialty" placeholder="Médecine générale, Cardiologie, etc.">
+          </div>
+
+          <div class="form-group">
+            <label for="practice-type">Type de pratique</label>
+            <select id="practice-type" name="practice-type">
+              <option value="">-- Sélectionnez --</option>
+              <option value="individual">Cabinet individuel</option>
+              <option value="group">Cabinet de groupe (2-5 médecins)</option>
+              <option value="clinic">Clinique / Polyclinique</option>
+              <option value="hospital">Hôpital / CHU</option>
+              <option value="other">Autre</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Sujet de votre demande *</label>
+            <select id="subject" name="subject" required>
+              <option value="">-- Sélectionnez --</option>
+              <option value="demo">Demande de démo</option>
+              <option value="trial">Essai gratuit 14 jours</option>
+              <option value="pricing">Questions sur les tarifs</option>
+              <option value="features">Questions techniques</option>
+              <option value="rgpd">Questions RGPD / Sécurité</option>
+              <option value="partnership">Partenariat</option>
+              <option value="other">Autre</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required placeholder="Décrivez votre besoin ou posez vos questions..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label style="display: flex; align-items: start; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" required style="margin-top: 0.25rem; width: auto;">
+              <span style="font-size: 0.9rem; color: var(--text-secondary);">
+                J'accepte que mes données soient utilisées pour répondre à ma demande.
+                <a href="confidentialite.html" style="color: var(--orange-primary);">Politique de confidentialité</a>
+              </span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Envoyer le message</button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="features-grid mt-2">
+        <div class="feature-card">
+          <div class="feature-icon">📧</div>
+          <h3>Email</h3>
+          <p>Pour toute question générale :</p>
+          <a href="mailto:contact@doclify.fr" style="font-weight: 600;">contact@doclify.fr</a>
+          <p style="margin-top: 1rem;">Support technique :</p>
+          <a href="mailto:support@doclify.fr" style="font-weight: 600;">support@doclify.fr</a>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📞</div>
+          <h3>Téléphone</h3>
+          <p>Du lundi au vendredi<br>9h00 - 18h00</p>
+          <a href="tel:+33159133678" style="font-weight: 600; font-size: 1.2rem;">01 59 13 36 78</a>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📍</div>
+          <h3>Adresse</h3>
+          <p>
+            Doclify.cloud<br>
+            92300 Levallois-Perret<br>
+            France
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <h2 class="mt-2 text-center text-orange">Questions Fréquentes</h2>
+
+      <div class="faq-container mt-2">
+        <div class="faq-item">
+          <div class="faq-question">
+            Comment démarrer l'essai gratuit de 14 jours ?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            C'est très simple ! Remplissez le formulaire ci-dessus en sélectionnant "Essai gratuit 14 jours" comme sujet. Notre équipe vous contactera dans les 24h pour configurer votre compte. Aucune carte bancaire n'est requise pour l'essai.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Proposez-vous des démos personnalisées ?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Oui ! Nous proposons des démonstrations en visioconférence (30-45 minutes) adaptées à votre pratique médicale. Sélectionnez "Demande de démo" dans le formulaire et nous vous proposerons plusieurs créneaux.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Quel est votre délai de réponse ?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Nous nous engageons à répondre à toutes les demandes sous 24h ouvrées maximum. Pour les demandes urgentes (support technique), nous répondons généralement sous 4h pendant les heures ouvrées.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Offrez-vous un support en français ?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Absolument ! Notre équipe est 100% francophone. Toutes nos communications (email, téléphone, documentation, interface) sont en français. Nous comprenons les spécificités du système de santé français.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Comment se passe l'onboarding ?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Après votre inscription, nous planifions une session d'onboarding de 30 minutes en visio. Nous configurons votre compte, installons l'application mobile, et vous formons aux fonctionnalités principales. Vous êtes opérationnel en moins d'une heure.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Proposez-vous des formations pour les équipes ?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Oui, pour les plans Pro et Clinique, nous proposons des formations complètes pour vos équipes (médecins, secrétaires médicales, administrateurs). Formation en présentiel ou visio selon vos préférences.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Avez-vous des références clients ?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Oui, nous avons des médecins utilisateurs satisfaits qui acceptent de partager leur expérience. Contactez-nous et nous vous mettrons en relation avec des utilisateurs dans votre spécialité si vous le souhaitez.
+          </div>
+        </div>
+      </div>
+
+      <!-- Alternative Contact Methods -->
+      <h2 class="mt-2 text-center text-orange">Autres Moyens de Nous Contacter</h2>
+
+      <div class="features-grid mt-2">
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Data Protection Officer (DPO)</h3>
+          <p>Pour toute question relative à la protection de vos données personnelles :</p>
+          <a href="mailto:dpo@doclify.fr" style="font-weight: 600;">dpo@doclify.fr</a>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💼</div>
+          <h3>Partenariats & Investisseurs</h3>
+          <p>Opportunités de partenariat ou investissement :</p>
+          <a href="mailto:business@doclify.fr" style="font-weight: 600;">business@doclify.fr</a>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📰</div>
+          <h3>Presse</h3>
+          <p>Demandes presse et relations médias :</p>
+          <a href="mailto:presse@doclify.fr" style="font-weight: 600;">presse@doclify.fr</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Vous préférez commencer directement ?</h2>
+      <p>Lancez votre essai gratuit de 14 jours sans attendre. Aucune carte bancaire requise.</p>
+      <a href="#contact-form" class="btn btn-primary">Remplir le formulaire</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <a href="index.html"><img src="img/logo.png" alt="Doclify.cloud" height="75" style="margin-bottom: 1rem;"></a>
+        <p>La solution de transcription médicale par IA pensée pour les professionnels de santé français.</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Produit</h3>
+        <ul>
+          <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="contact.html">Démo gratuite</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Entreprise</h3>
+        <ul>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Légal</h3>
+        <ul>
+          <li><a href="confidentialite.html">Confidentialité</a></li>
+          <li><a href="cgv.html">CGV</a></li>
+          <li><a href="confidentialite.html#rgpd">RGPD</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Doclify. Tous droits réservés. Données hébergées en France.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
