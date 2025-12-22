@@ -22,9 +22,9 @@
 **Durée estimée**: 4 heures (Jour 1)
 
 - [X] T000 **[RGPD]** Implémenter bannière de consentement cookies sur doclify.cloud AVANT tout tracking (Constitution IV)
-- [ ] T001 [P] Créer/configurer compte Google Analytics 4 sur doclify.cloud (APRÈS T000)
+- [X] T001 [P] Créer/configurer analytics sur doclify.cloud (Umami self-hosted sur umami.app.inetshore.com)
 - [X] T002 [P] Configurer Google Search Console et vérifier la propriété du site
-- [ ] T003 [P] Créer les 4 objectifs de conversion GA4 (inscription essai, conversion payante, téléchargement lead magnet, inscription webinaire) - ref: quickstart.md
+- [ ] T003 [P] Créer les 4 objectifs de conversion Umami (inscription essai, conversion payante, téléchargement lead magnet, inscription webinaire) - ref: quickstart.md
 - [ ] T004 [P] Créer compte AWS SES et vérifier le domaine d'envoi doclify.cloud
 - [ ] T005 [P] Configurer les attributs de contact AWS SES (PRENOM, SPECIALITE, DATE_INSCRIPTION) - ref: contracts/email-sequences.md
 - [ ] T006 [P] Activer module Odoo Social Marketing et connecter comptes LinkedIn (page + fondateur) - ref: research.md
