@@ -48,7 +48,7 @@
 
 - [ ] T008 Optimiser profil LinkedIn page entreprise (bannière 1128×191, description, CTA) - ref: quickstart.md section 3
 - [ ] T009 [P] Optimiser profil LinkedIn fondateur (headline, À propos, mode créateur) - ref: quickstart.md section 4
-- [ ] T010 [P] Optimiser balises title et meta description de toutes les pages existantes de doclify.cloud (FR-002)
+- [X] T010 [P] Optimiser balises title et meta description de toutes les pages existantes de doclify.cloud (FR-002)
 - [ ] T011 Configurer le formulaire d'inscription du site pour envoyer vers AWS SES
 - [ ] T012 [P] Configurer pipeline CRM Odoo avec les étapes funnel (Nouveau lead → Qualifié → Essai démarré → Essai actif → Converti → Perdu) - ref: data-model.md
 - [ ] T013 [P] Créer les sources d'acquisition dans Odoo CRM (linkedin_organic, linkedin_ads, seo, webinaire, parrainage, presse, direct) - ref: data-model.md
