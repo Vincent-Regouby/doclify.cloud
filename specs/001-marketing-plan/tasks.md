@@ -24,7 +24,13 @@
 - [N/A] T000 **[RGPD]** Bannière cookies non nécessaire (Umami est cookie-free, RGPD natif)
 - [X] T001 [P] Créer/configurer analytics sur doclify.cloud (Umami self-hosted sur umami.app.inetshore.com)
 - [X] T002 [P] Configurer Google Search Console et vérifier la propriété du site
-- [ ] T003 [P] Créer les 4 objectifs de conversion Umami (inscription essai, conversion payante, téléchargement lead magnet, inscription webinaire) - ref: quickstart.md
+- [X] T003 [P] Créer les objectifs de conversion Umami - tracking.js déployé sur 21 pages
+  - inscription_essai (clics app.doclify.cloud)
+  - telechargement_lead_magnet (téléchargements PDF)
+  - inscription_webinaire (inscriptions webinaires)
+  - contact_demo (soumissions formulaire contact)
+  - visite_tarifs (navigation vers tarifs)
+  - Note: conversion_payante trackée sur my.doclify.cloud (hors scope)
 - [ ] T004 [P] Créer compte AWS SES et vérifier le domaine d'envoi doclify.cloud
 - [ ] T005 [P] Configurer les attributs de contact AWS SES (PRENOM, SPECIALITE, DATE_INSCRIPTION) - ref: contracts/email-sequences.md
 - [ ] T006 [P] Activer module Odoo Social Marketing et connecter comptes LinkedIn (page + fondateur) - ref: research.md
