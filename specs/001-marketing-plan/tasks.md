@@ -21,7 +21,7 @@
 
 **Durée estimée**: 4 heures (Jour 1)
 
-- [X] T000 **[RGPD]** Implémenter bannière de consentement cookies sur doclify.cloud AVANT tout tracking (Constitution IV)
+- [N/A] T000 **[RGPD]** Bannière cookies non nécessaire (Umami est cookie-free, RGPD natif)
 - [X] T001 [P] Créer/configurer analytics sur doclify.cloud (Umami self-hosted sur umami.app.inetshore.com)
 - [X] T002 [P] Configurer Google Search Console et vérifier la propriété du site
 - [ ] T003 [P] Créer les 4 objectifs de conversion Umami (inscription essai, conversion payante, téléchargement lead magnet, inscription webinaire) - ref: quickstart.md
