@@ -140,7 +140,55 @@ Le marché de l'IA en santé en France compte **191 startups** (vs 102 en 2019).
 
 ## Concurrents Indirects / Adjacents
 
-### 5. Ordotype
+### 5. Simplify
+
+| Critère | Détail |
+|---------|--------|
+| **Site** | [simplify.fr](https://www.simplify.fr) |
+| **Fondée** | 2003 |
+| **Modèle** | **Télésecrétariat externalisé** (humain + IA) |
+| **Prix** | Non communiqué (sur devis) |
+| **Certifications** | **HDS**, ISO 18295, RGPD |
+| **Infrastructure** | 3 centres en France (Bois d'Arcy 78) |
+
+**Services :**
+- **Simplify CR** : Frappe de comptes-rendus médicaux (délai 15 min)
+- **Simplify RDV** : Prise d'appels et gestion de rendez-vous
+- **Simplify RDV IA** : Agent conversationnel 24/7
+- **Simplify No Show** : Réduction absentéisme patients
+- **Simplify Facturation** : Gestion facturation
+
+**Cible :**
+- Hôpitaux et cliniques
+- Centres d'imagerie médicale
+- Cabinets de spécialistes
+
+**Forces :**
+- **Leader établi** depuis 2003 (20+ ans d'expérience)
+- **Certification HDS** (avance sur Doclify)
+- Solution hybride humain + IA (fiabilité)
+- Délais rapides (15 min pour CR)
+- 3 centres en France
+
+**Faiblesses :**
+- **Pas d'outil en autonomie** pour le médecin (externalisation)
+- Prix non transparent (sur devis = cher)
+- Modèle B2B établissements (pas libéraux individuels)
+- Dépendance à des opérateurs humains
+- Pas d'app mobile pour le médecin
+
+**Relation avec Doclify :**
+- Concurrent **indirect** (modèle très différent)
+- Simplify = le médecin dicte, des humains transcrivent
+- Doclify = le médecin dicte, l'IA transcrit en autonomie
+- Cibles différentes : Simplify vise les établissements, Doclify les libéraux
+- **Argument** : "Reprenez le contrôle, plus besoin de dépendre d'un télésecrétariat"
+
+**Source :** [Simplify.fr](https://www.simplify.fr)
+
+---
+
+### 6. Ordotype
 
 | Critère | Détail |
 |---------|--------|
@@ -154,7 +202,7 @@ Le marché de l'IA en santé en France compte **191 startups** (vs 102 en 2019).
 
 ---
 
-### 6. Deeplink Medical
+### 7. Deeplink Medical
 
 | Critère | Détail |
 |---------|--------|
@@ -170,7 +218,7 @@ Le marché de l'IA en santé en France compte **191 startups** (vs 102 en 2019).
 
 ---
 
-### 7. Vulgaroo
+### 8. Vulgaroo
 
 | Critère | Détail |
 |---------|--------|
@@ -184,7 +232,7 @@ Le marché de l'IA en santé en France compte **191 startups** (vs 102 en 2019).
 
 ---
 
-### 8. Solutions internationales disponibles en France
+### 9. Solutions internationales disponibles en France
 
 | Solution | Origine | Prix | RGPD | Français |
 |----------|---------|------|------|----------|
@@ -207,6 +255,7 @@ Le marché de l'IA en santé en France compte **191 startups** (vs 102 en 2019).
 | Doctolib | 79€ | UE (HDS) | ✅ | ❌ | ❌ | Limité (2024) |
 | Loquii | ? | **France** | ✅ | ❌ | ❌ | Toutes |
 | Dragon Medical | 53€ HT | Azure | ❌ | ❌ | ✅ | 25+ |
+| Simplify | Sur devis | **France** (HDS) | ❌ (humain) | ❌ | ❌ | Toutes |
 
 ---
 
