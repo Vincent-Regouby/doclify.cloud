@@ -31,8 +31,29 @@
   - contact_demo (soumissions formulaire contact)
   - visite_tarifs (navigation vers tarifs)
   - Note: conversion_payante trackée sur my.doclify.cloud (hors scope)
-- [ ] T004 [P] Créer compte AWS SES et vérifier le domaine d'envoi doclify.cloud
-- [ ] T005 [P] Configurer les attributs de contact AWS SES (PRENOM, SPECIALITE, DATE_INSCRIPTION) - ref: contracts/email-sequences.md
+- [X] T004 [P] Créer compte AWS SES et vérifier le domaine d'envoi doclify.cloud
+  - Domaine vérifié avec DKIM, SPF, DMARC, MAIL FROM (mail.doclify.cloud)
+  - Mode production actif (50k emails/jour)
+- [ ] T005 [P] **Stratégie de collecte d'emails médecins** (outbound + inbound)
+  - **Infrastructure**:
+    - Base contacts: https://contact-manager.app.inetshore.com/contacts
+    - Envoi emails: n8n + AWS SES
+    - Formulaire contact existant → webhook n8n
+  - **Phase 1 - Scraping données publiques**:
+    - [ ] T005a: Scraper Annuaire Santé Ameli (annuairesante.ameli.fr) - données RPPS publiques
+    - [ ] T005b: Scraper Google Maps/Places API ("médecin [spécialité] [ville]")
+    - [ ] T005c: Scraper Pages Jaunes (pagesjaunes.fr) - professionnels de santé
+    - [ ] T005d: Scraper les sites web des cabinets pour extraire emails
+  - **Phase 2 - Enrichissement**:
+    - [ ] T005e: Croiser les données (nom + ville + spécialité) pour dédupliquer
+    - [ ] T005f: Utiliser Hunter.io ou Dropcontact pour trouver emails manquants
+  - **Phase 3 - Inbound (lead magnets)**:
+    - [ ] T005g: Ajouter formulaires capture email sur landing pages existantes
+    - [ ] T005h: Créer séquence email nurturing dans n8n
+  - **Conformité RGPD**:
+    - Données publiques B2B = intérêt légitime OK
+    - Opt-out obligatoire dans chaque email
+    - Éviter Doctolib (CGU restrictives)
 - [ ] T006 [P] Activer module Odoo Social Marketing et connecter comptes LinkedIn (page + fondateur) - ref: research.md
 - [ ] T007 [P] Configurer les UTM par défaut dans Odoo Social Marketing (utm_source, utm_medium)
 
@@ -49,7 +70,9 @@
 - [ ] T008 Optimiser profil LinkedIn page entreprise (bannière 1128×191, description, CTA) - ref: quickstart.md section 3
 - [ ] T009 [P] Optimiser profil LinkedIn fondateur (headline, À propos, mode créateur) - ref: quickstart.md section 4
 - [X] T010 [P] Optimiser balises title et meta description de toutes les pages existantes de doclify.cloud (FR-002)
-- [ ] T011 Configurer le formulaire d'inscription du site pour envoyer vers AWS SES
+- [X] T011 Configurer le formulaire d'inscription du site pour envoyer vers n8n → contact-manager
+  - Formulaire contact.html déjà connecté au webhook n8n
+  - Webhook: n8n.inetshore.com → contact-manager.app.inetshore.com
 - [ ] T012 [P] Configurer pipeline CRM Odoo avec les étapes funnel (Nouveau lead → Qualifié → Essai démarré → Essai actif → Converti → Perdu) - ref: data-model.md
 - [ ] T013 [P] Créer les sources d'acquisition dans Odoo CRM (linkedin_organic, linkedin_ads, seo, webinaire, parrainage, presse, direct) - ref: data-model.md
 - [ ] T014 Créer le dashboard de suivi initial dans Notion/Google Sheets - ref: contracts/reporting-template.md
