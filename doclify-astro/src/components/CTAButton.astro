@@ -1,0 +1,13 @@
+---
+// CTA Button component
+interface Props {
+  href: string;
+  text: string;
+  variant?: 'primary' | 'secondary';
+}
+
+const { href, text, variant = 'primary' } = Astro.props;
+const buttonClass = variant === 'primary' ? 'btn btn-primary' : 'btn btn-secondary';
+---
+
+<a href={href} class={buttonClass}>{text}</a>

@@ -1,0 +1,70 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/blog.css';
+
+const blogPosts = (await getCollection('blog')).sort(
+  (a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+);
+
+const pageTitle = 'Blog - Doclify.cloud | Actualités et conseils pour médecins';
+const pageDescription = 'Blog Doclify - Articles sur la transcription médicale IA, la productivité médicale, la souveraineté des données de santé et les innovations pour les médecins.';
+const canonical = 'https://doclify.cloud/blog/';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog Doclify",
+  "description": pageDescription,
+  "url": canonical,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Doclify",
+    "url": "https://doclify.cloud"
+  }
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonical={canonical}
+  schema={schema}
+>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Blog Hero -->
+  <section class="blog-hero">
+    <h1>Blog Doclify</h1>
+    <p class="subtitle">Conseils, actualités et innovations pour les professionnels de santé</p>
+  </section>
+
+  <!-- Blog Grid -->
+  <main id="main-content">
+    <div class="blog-grid">
+      {blogPosts.map((post) => (
+        <article class="blog-card">
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span class="blog-card-category">{post.data.category}</span>
+              <span>{new Date(post.data.pubDate).toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' })}</span>
+            </div>
+            <h2><a href={`/blog/${post.slug}`}>{post.data.title}</a></h2>
+            <p>{post.data.description}</p>
+            <a href={`/blog/${post.slug}`} class="read-more">Lire l'article →</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </main>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Prêt à transformer votre pratique ?</h2>
+      <p>Rejoignez les médecins qui gagnent 2 heures par semaine avec Doclify.</p>
+      <a href="https://app.doclify.cloud/" class="btn btn-primary">Essai Gratuit 14 jours</a>
+    </div>
+  </section>
+</BaseLayout>

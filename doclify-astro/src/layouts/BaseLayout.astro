@@ -1,0 +1,112 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonical?: string;
+  schema?: object;
+  noIndex?: boolean;
+}
+
+const {
+  title = 'Transcription Médicale IA pour Médecins | 100% France | Doclify',
+  description = 'Transcription médicale par IA 100% française. Gagnez 2h par semaine sur vos comptes-rendus. Mode hors-ligne, RGPD natif. Essai gratuit 14 jours.',
+  ogImage = 'https://doclify.cloud/img/logo.png',
+  canonical = 'https://doclify.cloud/',
+  schema,
+  noIndex = false
+} = Astro.props;
+
+// Default JSON-LD schema
+const defaultSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Doclify",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "iOS, Android, Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "75",
+    "priceCurrency": "EUR"
+  },
+  "description": "Transcription médicale par IA pour professionnels de santé. Gagnez 2h par semaine sur votre documentation.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Doclify.cloud",
+    "url": "https://doclify.cloud",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Levallois-Perret",
+      "postalCode": "92300",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33159133678"
+  }
+};
+
+const jsonLdSchema = schema || defaultSchema;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+  <meta name="keywords" content="transcription médicale, IA médicale, RGPD, consultation médicale, médecin">
+  <title>{title}</title>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={canonical}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={ogImage}>
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={ogImage}>
+
+  <!-- Canonical -->
+  <link rel="canonical" href={canonical}>
+
+  {noIndex && <meta name="robots" content="noindex, nofollow">}
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLdSchema)} />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.png">
+
+  <!-- Analytics -->
+  <script defer src="https://umami.app.inetshore.com/script.js" data-website-id="19451c74-bee8-4942-9340-6f4d1eefcba6"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Vanta.js Birds Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+</head>
+<body>
+  <Header />
+  <slot />
+  <Footer />
+
+  <!-- Global JavaScript -->
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/tracking.js"></script>
+</body>
+</html>

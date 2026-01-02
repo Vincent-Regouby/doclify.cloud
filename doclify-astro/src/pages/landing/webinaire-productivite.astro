@@ -1,0 +1,591 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Webinaire Gratuit - Récupérez 2h/semaine | Doclify";
+const description = "Inscrivez-vous au webinaire gratuit pour médecins. Découvrez 3 stratégies pour réduire votre charge administrative et récupérer du temps pour vos patients.";
+const canonical = "https://doclify.cloud/landing/webinaire-productivite";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+>
+  <style>
+    :root {
+      --primary: #667eea;
+      --primary-dark: #5a67d8;
+      --secondary: #764ba2;
+      --text: #1a1a2e;
+      --text-light: #6b7280;
+      --bg: #ffffff;
+      --bg-soft: #f8f9ff;
+      --success: #10b981;
+      --warning: #f59e0b;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 60px 0 80px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+      color: white;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-badge span {
+      color: #fbbf24;
+    }
+
+    .hero-content h1 {
+      font-size: 2.8rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-meta-item .icon {
+      font-size: 1.2rem;
+    }
+
+    /* Two Column Layout */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 60px;
+      padding: 60px 0;
+    }
+
+    @media (max-width: 900px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Left Content */
+    .content-left h2 {
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+    }
+
+    .content-left h3 {
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin: 30px 0 15px;
+    }
+
+    .learn-list {
+      list-style: none;
+    }
+
+    .learn-list li {
+      padding: 12px 0;
+      padding-left: 35px;
+      position: relative;
+      border-bottom: 1px solid #eee;
+    }
+
+    .learn-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--success);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .learn-list li strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .learn-list li span {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* Speaker */
+    .speaker {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      padding: 24px;
+      background: var(--bg-soft);
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+
+    .speaker-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .speaker-info h4 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .speaker-info p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* Sticky Form */
+    .form-wrapper {
+      position: sticky;
+      top: 20px;
+    }
+
+    .form-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      border: 1px solid #eee;
+    }
+
+    .form-card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .spots-left {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--warning);
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 14px 24px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+    }
+
+    .form-footer {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    .bonus-box {
+      background: #fef3c7;
+      border: 1px solid #fcd34d;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 20px;
+    }
+
+    .bonus-box h4 {
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bonus-box ul {
+      font-size: 0.85rem;
+      margin-left: 20px;
+      color: var(--text-light);
+    }
+
+    .bonus-box li {
+      margin: 4px 0;
+    }
+
+    /* Trust */
+    .trust-section {
+      padding: 40px 0;
+      background: var(--bg-soft);
+      text-align: center;
+    }
+
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 60px 0;
+    }
+
+    .faq h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .faq-item h4 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* Success state */
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .success-message.show {
+      display: block;
+    }
+
+    .success-message .icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+
+    .success-message h3 {
+      color: var(--success);
+      margin-bottom: 12px;
+    }
+
+    .success-message p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    #registration-form.hidden {
+      display: none;
+    }
+  </style>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">📅 Webinaire gratuit • <span>Places limitées</span></div>
+      <div class="hero-content">
+        <h1>Comment récupérer 2h par semaine<br>sur vos tâches administratives</h1>
+        <p class="hero-subtitle">3 stratégies concrètes pour médecins + démonstration live d'une solution de transcription par IA</p>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="icon">📅</span>
+          <span>Mardi 14 janvier 2025</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="icon">🕗</span>
+          <span>20h30 - 21h30</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="icon">💻</span>
+          <span>En ligne (lien par email)</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="icon">🎁</span>
+          <span>Guide PDF offert</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section>
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-left">
+          <h2>Ce que vous allez apprendre</h2>
+
+          <ul class="learn-list">
+            <li>
+              <strong>Pourquoi la paperasse explose</strong>
+              <span>Comprendre les vraies causes pour agir efficacement</span>
+            </li>
+            <li>
+              <strong>La méthode de dictée optimisée</strong>
+              <span>Comment dicter 3x plus vite qu'en tapant, avec la bonne technique</span>
+            </li>
+            <li>
+              <strong>Le batch processing médical</strong>
+              <span>Regrouper vos tâches pour éliminer les interruptions coûteuses</span>
+            </li>
+            <li>
+              <strong>L'automatisation intelligente</strong>
+              <span>Quelles tâches automatiser sans perdre en qualité</span>
+            </li>
+            <li>
+              <strong>Démonstration live</strong>
+              <span>Voir en direct comment transformer une dictée en compte-rendu structuré</span>
+            </li>
+          </ul>
+
+          <h3>Pour qui est ce webinaire ?</h3>
+          <p>Ce webinaire s'adresse aux médecins (généralistes et spécialistes) qui :</p>
+          <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>Passent trop de temps sur la documentation</li>
+            <li>Finissent leurs comptes-rendus le soir ou le weekend</li>
+            <li>Cherchent des solutions concrètes et applicables</li>
+            <li>S'intéressent aux outils numériques pour le cabinet</li>
+          </ul>
+
+          <!-- Speaker -->
+          <div class="speaker">
+            <div class="speaker-avatar">VR</div>
+            <div class="speaker-info">
+              <h4>Vincent Regouby</h4>
+              <p>Fondateur de Doclify. 10 ans d'expérience dans le numérique santé. A accompagné 50+ médecins dans l'optimisation de leur pratique.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="form-wrapper">
+          <div class="form-card">
+            <form id="registration-form">
+              <h2>Réservez votre place gratuite</h2>
+              <p class="spots-left">⚡ Plus que 47 places disponibles</p>
+
+              <div class="form-group">
+                <label for="email">Email professionnel *</label>
+                <input type="email" id="email" name="email" placeholder="dr.dupont@cabinet.fr" required>
+              </div>
+
+              <div class="form-group">
+                <label for="prenom">Prénom *</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Jean" required>
+              </div>
+
+              <div class="form-group">
+                <label for="specialite">Spécialité</label>
+                <select id="specialite" name="specialite">
+                  <option value="">Sélectionnez...</option>
+                  <option value="generaliste">Médecine générale</option>
+                  <option value="cardiologue">Cardiologie</option>
+                  <option value="dermatologue">Dermatologie</option>
+                  <option value="psychiatre">Psychiatrie</option>
+                  <option value="psychologue">Psychologie</option>
+                  <option value="pediatre">Pédiatrie</option>
+                  <option value="autre">Autre spécialité</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn-primary">
+                Je m'inscris gratuitement →
+              </button>
+
+              <p class="form-footer">
+                Vous recevrez le lien de connexion par email.
+              </p>
+            </form>
+
+            <div class="success-message" id="success-message">
+              <div class="icon">🎉</div>
+              <h3>Inscription confirmée !</h3>
+              <p>Vous allez recevoir un email avec le lien de connexion et un rappel la veille du webinaire.</p>
+              <p style="margin-top: 15px;"><strong>Ajoutez la date à votre agenda !</strong></p>
+            </div>
+
+            <div class="bonus-box">
+              <h4>🎁 Bonus participants</h4>
+              <ul>
+                <li>Guide PDF "Productivité Médecin" (12 pages)</li>
+                <li>Essai Doclify 30 jours (au lieu de 14)</li>
+                <li>Replay disponible 48h</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust -->
+  <section class="trust-section">
+    <div class="container">
+      <div class="trust-badges">
+        <div class="trust-badge">
+          <span>✓</span>
+          <span>100% gratuit</span>
+        </div>
+        <div class="trust-badge">
+          <span>🔐</span>
+          <span>Données protégées</span>
+        </div>
+        <div class="trust-badge">
+          <span>🚫</span>
+          <span>Pas de spam</span>
+        </div>
+        <div class="trust-badge">
+          <span>🎥</span>
+          <span>Replay envoyé</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <h2>Questions fréquentes</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>C'est vraiment gratuit ?</h4>
+          <p>Oui, le webinaire est 100% gratuit. Vous recevrez simplement des informations sur Doclify par email si vous le souhaitez.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Je ne peux pas être là, puis-je avoir le replay ?</h4>
+          <p>Oui, inscrivez-vous et vous recevrez le replay par email sous 24h après le live.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Combien de temps dure le webinaire ?</h4>
+          <p>45 minutes de contenu + 15 minutes de questions/réponses, soit 1h au total.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Quel matériel me faut-il ?</h4>
+          <p>Un ordinateur ou smartphone avec une connexion internet. Le lien vous sera envoyé par email.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('registration-form');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const prenom = document.getElementById('prenom').value;
+
+      if (!email || !prenom) {
+        alert('Veuillez remplir tous les champs obligatoires.');
+        return;
+      }
+
+      // Simulate registration
+      const btn = form.querySelector('button');
+      btn.disabled = true;
+      btn.textContent = 'Inscription en cours...';
+
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      // Track conversion
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'webinar_registration', {
+          'event_category': 'Lead Generation',
+          'event_label': 'Webinaire Productivité'
+        });
+      }
+
+      // Show success
+      form.classList.add('hidden');
+      successMessage.classList.add('show');
+    });
+  </script>
+</BaseLayout>
