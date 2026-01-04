@@ -203,27 +203,31 @@ import CTAButton from '../components/CTAButton.astro';
   </section>
 </BaseLayout>
 
-<script>
-  // Vanta Birds Animation
-  VANTA.BIRDS({
-    el: "#hero-vanta",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.00,
-    minWidth: 200.00,
-    scale: 1.00,
-    scaleMobile: 1.00,
-    backgroundColor: 0x0a0a0a,
-    color1: 0xff6b35,
-    color2: 0xff8555,
-    colorMode: "lerp",
-    birdSize: 1.5,
-    wingSpan: 25.00,
-    speedLimit: 2.00,
-    separation: 60.00,
-    alignment: 30.00,
-    cohesion: 30.00,
-    quantity: 2.00
-  })
+<script is:inline>
+  // Vanta Birds Animation - wait for library to load
+  window.addEventListener('load', function() {
+    if (typeof VANTA !== 'undefined') {
+      VANTA.BIRDS({
+        el: "#hero-vanta",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        backgroundColor: 0x0a0a0a,
+        color1: 0xff6b35,
+        color2: 0xff8555,
+        colorMode: "lerp",
+        birdSize: 1.5,
+        wingSpan: 25.00,
+        speedLimit: 2.00,
+        separation: 60.00,
+        alignment: 30.00,
+        cohesion: 30.00,
+        quantity: 2.00
+      });
+    }
+  });
 </script>
