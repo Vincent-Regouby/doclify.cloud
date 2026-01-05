@@ -1,7 +1,7 @@
 ---
-title: "Comment l'IA révolutionne la transcription médicale en 2026"
-description: "Comment l'intelligence artificielle révolutionne la transcription médicale en 2026. Whisper, LLM, résumés automatiques : tout comprendre sur les nouvelles technologies."
-pubDate: "2026-11-15"
+title: "Comment l'IA révolutionne la transcription médicale en 2025"
+description: "Comment l'intelligence artificielle révolutionne la transcription médicale en 2025. Whisper, LLM, résumés automatiques : tout comprendre sur les nouvelles technologies."
+pubDate: "2025-11-15"
 author: "Doclify"
 category: "Technologie"
 readingTime: "10 min de lecture"
@@ -33,7 +33,7 @@ Whisper est un modèle de reconnaissance vocale automatique (ASR) entraîné sur
 
 ## Les LLM : de la transcription au résumé intelligent
 
-La transcription brute, aussi précise soit-elle, n'est que la première étape. Ce qui fait vraiment la différence en 2026, c'est la capacité des LLM à transformer cette transcription en document médical structuré.
+La transcription brute, aussi précise soit-elle, n'est que la première étape. Ce qui fait vraiment la différence en 2025, c'est la capacité des LLM à transformer cette transcription en document médical structuré.
 
 ### Comment ça fonctionne
 
@@ -55,7 +55,7 @@ Une question cruciale se pose : où tourne l'IA ? Beaucoup de solutions utilisen
 >
 > — Équipe technique Doclify
 
-## Les technologies clés en 2026
+## Les technologies clés en 2025
 
 | Technologie | Fonction | Avantage |
 |------------|----------|----------|
@@ -105,4 +105,4 @@ Des modèles spécialisés pour chaque spécialité médicale : cardiologie, psy
 
 L'intelligence artificielle a atteint un niveau de maturité qui en fait un outil réellement utile pour les médecins. La combinaison de Whisper pour la transcription et des LLM pour la structuration permet de gagner un temps considérable sur la documentation.
 
-En 2026, les praticiens qui adoptent ces technologies ne le font plus par curiosité technologique, mais par nécessité pratique. Face à la charge administrative croissante, l'IA devient un assistant indispensable pour préserver du temps pour ce qui compte vraiment : le soin aux patients.
+En 2025, les praticiens qui adoptent ces technologies ne le font plus par curiosité technologique, mais par nécessité pratique. Face à la charge administrative croissante, l'IA devient un assistant indispensable pour préserver du temps pour ce qui compte vraiment : le soin aux patients.
