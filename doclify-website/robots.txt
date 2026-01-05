@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://doclify.cloud/sitemap.xml

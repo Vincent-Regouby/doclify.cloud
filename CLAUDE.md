@@ -9,7 +9,6 @@ Le site de production utilise **Astro** (dossier `doclify-astro/`).
 ```
 recording-app-website/
 ├── doclify-astro/          # SITE ACTIF (Astro 5.16.6)
-├── doclify-website/        # [ARCHIVE] Ancien site statique
 ├── marketing/              # Plans marketing
 └── specs/                  # Specifications
 ```
@@ -48,7 +47,6 @@ Push sur `main` → Coolify deploie automatiquement depuis `/doclify-astro`
 ## Important
 
 - **TOUJOURS** travailler dans `doclify-astro/`
-- Le dossier `doclify-website/` est archive (ne pas modifier)
 - Node.js >= 20.0.0 requis pour Astro 5.16.6
 
 <!-- MANUAL ADDITIONS START -->

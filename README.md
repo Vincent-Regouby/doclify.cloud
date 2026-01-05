@@ -18,8 +18,6 @@ recording-app-website/
 │   ├── astro.config.mjs    # Configuration Astro
 │   └── package.json        # Dependencies (Astro 5.16.6)
 │
-├── doclify-website/        # [ARCHIVE] Ancien site HTML statique
-│
 ├── marketing/              # Plans et strategies marketing
 ├── logo/                   # Assets logo Doclify
 ├── specs/                  # Specifications techniques
