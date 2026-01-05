@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doclify - Plaquette</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1a2e;
+      line-height: 1.5;
+      background: #ffffff;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      padding: 15mm;
+      margin: 0 auto;
+      background: #ffffff;
+      page-break-after: always;
+      page-break-inside: avoid;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Page 1 - Cover */
+    .cover {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      color: white;
+    }
+
+    .logo {
+      width: 100px;
+      margin-bottom: 25px;
+    }
+
+    .cover h1 {
+      font-size: 52px;
+      font-weight: 800;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cover .tagline {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 30px;
+      color: #e0e0e0;
+    }
+
+    .cover .highlight {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+      color: white;
+      padding: 14px 35px;
+      border-radius: 50px;
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 50px;
+    }
+
+    .cover-badges {
+      display: flex;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .cover-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cover-badge .icon {
+      font-size: 28px;
+    }
+
+    .cover-badge span {
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    .cover-footer {
+      position: absolute;
+      bottom: 20mm;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* Content pages */
+    .content-page {
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #f0f0f0;
+      margin-bottom: 15px;
+    }
+
+    .header-logo {
+      height: 35px;
+    }
+
+    .header-title {
+      font-size: 12px;
+      color: #888;
+      font-weight: 500;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title .icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Problem & Solution boxes */
+    .problem-box {
+      background: #fef3f0;
+      border-radius: 12px;
+      padding: 15px 18px;
+      margin-bottom: 15px;
+    }
+
+    .problem-box h3 {
+      color: #d64933;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .problem-list {
+      list-style: none;
+    }
+
+    .problem-list li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 12px;
+      color: #444;
+    }
+
+    .problem-list li::before {
+      content: '!';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      background: #d64933;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    .solution-box {
+      background: linear-gradient(135deg, #f0fff4 0%, #e6f7ec 100%);
+      border-radius: 12px;
+      padding: 15px 18px;
+      margin-bottom: 15px;
+    }
+
+    .solution-box h3 {
+      color: #22863a;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .solution-list {
+      list-style: none;
+    }
+
+    .solution-list li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 12px;
+      color: #444;
+    }
+
+    .solution-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      background: #22863a;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    /* Stats row */
+    .stats-row {
+      display: flex;
+      justify-content: space-around;
+      padding: 18px 15px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+      border-radius: 12px;
+      margin: 15px 0;
+    }
+
+    .stat-item {
+      text-align: center;
+      color: white;
+    }
+
+    .stat-value {
+      font-size: 28px;
+      font-weight: 800;
+      color: #ff6b35;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: #aaa;
+      margin-top: 3px;
+    }
+
+    /* Architecture diagram */
+    .diagram-container {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 15px 0;
+    }
+
+    .diagram-title {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 15px;
+    }
+
+    /* Steps */
+    .steps-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin: 15px 0;
+    }
+
+    .step {
+      flex: 1;
+      text-align: center;
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 15px 10px;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .step h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 5px;
+    }
+
+    .step p {
+      font-size: 10px;
+      color: #666;
+    }
+
+    /* Features grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .feature-card {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 14px;
+      border: 1px solid #e9ecef;
+    }
+
+    .feature-card .feat-icon {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .feature-card h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 5px;
+    }
+
+    .feature-card p {
+      font-size: 10px;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 15px 0;
+    }
+
+    .pricing-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 18px 14px;
+      text-align: center;
+      border: 2px solid #e9ecef;
+      position: relative;
+    }
+
+    .pricing-card.featured {
+      border-color: #ff6b35;
+      transform: scale(1.03);
+    }
+
+    .pricing-card.featured::before {
+      content: 'Populaire';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    .pricing-card h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 8px;
+    }
+
+    .pricing-card .price {
+      font-size: 26px;
+      font-weight: 800;
+      color: #ff6b35;
+    }
+
+    .pricing-card .price span {
+      font-size: 11px;
+      font-weight: 400;
+      color: #888;
+    }
+
+    .pricing-card .description {
+      font-size: 10px;
+      color: #666;
+      margin: 8px 0;
+    }
+
+    .pricing-features {
+      list-style: none;
+      text-align: left;
+      font-size: 10px;
+      color: #444;
+    }
+
+    .pricing-features li {
+      padding: 3px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .pricing-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #22863a;
+      font-weight: bold;
+    }
+
+    /* Security badges */
+    .security-badges {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 12px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      margin: 12px 0;
+    }
+
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      color: #444;
+    }
+
+    .badge .b-icon {
+      font-size: 16px;
+    }
+
+    /* Contact section */
+    .contact-section {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .contact-section h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+    }
+
+    .contact-item .c-icon {
+      font-size: 14px;
+      color: #ff6b35;
+    }
+
+    .contact-section .address {
+      margin-top: 12px;
+      font-size: 11px;
+      color: #aaa;
+    }
+
+    /* Page footer */
+    .page-footer {
+      position: absolute;
+      bottom: 10mm;
+      left: 15mm;
+      right: 15mm;
+      text-align: center;
+      font-size: 10px;
+      color: #aaa;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        page-break-after: always;
+        margin: 0;
+      }
+    }
+
+    /* Small title */
+    .small-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin: 12px 0 8px 0;
+    }
+
+    /* Tech stack row */
+    .tech-row {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .tech-item {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 8px 15px;
+      font-size: 11px;
+      font-weight: 500;
+      color: #1a1a2e;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page 1: Cover -->
+  <div class="page cover">
+    <img src="../img/logo.png" alt="Doclify" class="logo">
+    <h1>Doclify</h1>
+    <p class="tagline">Transcription Médicale par IA</p>
+    <p class="highlight">Gagnez 2h par semaine sur vos comptes-rendus</p>
+
+    <div class="cover-badges">
+      <div class="cover-badge">
+        <span class="icon">🇫🇷</span>
+        <span>100% France</span>
+      </div>
+      <div class="cover-badge">
+        <span class="icon">🔒</span>
+        <span>RGPD Compliant</span>
+      </div>
+      <div class="cover-badge">
+        <span class="icon">📱</span>
+        <span>Mode Hors-ligne</span>
+      </div>
+      <div class="cover-badge">
+        <span class="icon">🤖</span>
+        <span>IA Locale</span>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      doclify.cloud | contact@doclify.cloud | 01 59 13 36 78
+    </div>
+  </div>
+
+  <!-- Page 2: Problem & Solution -->
+  <div class="page content-page">
+    <div class="header">
+      <img src="../img/logo.png" alt="Doclify" class="header-logo">
+      <span class="header-title">Plaquette Solution 2025-2026</span>
+    </div>
+
+    <div class="section-title">
+      <div class="icon">!</div>
+      Le Problème
+    </div>
+
+    <div class="problem-box">
+      <h3>La charge administrative des médecins</h3>
+      <ul class="problem-list">
+        <li>Certains médecins passent en moyenne 2 à 3 heures par jour sur le résumé et l'analyse des consultations</li>
+        <li>La saisie manuelle des comptes-rendus est chronophage et source d'erreurs</li>
+        <li>Les solutions existantes utilisent des serveurs américains (problème RGPD)</li>
+        <li>Les outils classiques nécessitent une connexion internet permanente</li>
+        <li>La confidentialité des données de santé n'est pas garantie</li>
+      </ul>
+    </div>
+
+    <div class="section-title">
+      <div class="icon">✓</div>
+      Notre Solution
+    </div>
+
+    <div class="solution-box">
+      <h3>Doclify : L'assistant IA du médecin français</h3>
+      <ul class="solution-list">
+        <li>Transcription automatique par IA avec précision de 98% sur le vocabulaire médical</li>
+        <li>Génération de résumés structurés et exploitables en environ 10 minutes</li>
+        <li>Hébergement 100% français - aucune donnée ne quitte la France</li>
+        <li>Mode hors-ligne complet pour les zones sans réseau</li>
+        <li>Diarisation automatique médecin/patient pour une meilleure lisibilité</li>
+      </ul>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-value">2h</div>
+        <div class="stat-label">économisées par semaine</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">98%</div>
+        <div class="stat-label">précision vocabulaire médical</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">~10 min</div>
+        <div class="stat-label">pour 1h30 de consultation</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">100%</div>
+        <div class="stat-label">hébergé en France</div>
+      </div>
+    </div>
+
+    <div class="diagram-container">
+      <div class="diagram-title">Architecture Technique</div>
+      <svg viewBox="0 0 700 140" style="width: 100%; height: auto;">
+        <!-- Mobile App Box -->
+        <rect x="10" y="20" width="180" height="100" rx="12" fill="#1a1a2e" stroke="#ff6b35" stroke-width="2"/>
+        <text x="100" y="50" text-anchor="middle" fill="#ff6b35" font-size="12" font-weight="700">APPLICATION MOBILE</text>
+        <text x="100" y="68" text-anchor="middle" fill="#b0b0b0" font-size="10">Android / Web</text>
+        <rect x="70" y="78" width="60" height="30" rx="5" fill="none" stroke="#ff6b35" stroke-width="1.5"/>
+        <circle cx="100" cy="102" r="3" fill="#ff6b35"/>
+
+        <!-- Arrow 1 -->
+        <path d="M200 70 L250 70" stroke="#ff6b35" stroke-width="2" fill="none"/>
+        <polygon points="250,70 243,65 243,75" fill="#ff6b35"/>
+        <text x="225" y="60" text-anchor="middle" fill="#707070" font-size="8">Audio chiffré</text>
+
+        <!-- Server Box -->
+        <rect x="260" y="20" width="180" height="100" rx="12" fill="#1a1a2e" stroke="#2a2a2a" stroke-width="2"/>
+        <text x="350" y="50" text-anchor="middle" fill="#b0b0b0" font-size="12" font-weight="700">SERVEURS FRANCE</text>
+        <text x="350" y="68" text-anchor="middle" fill="#707070" font-size="10">🇫🇷 IA Locale</text>
+        <rect x="320" y="78" width="60" height="10" rx="2" fill="#2a2a2a" stroke="#ff6b35" stroke-width="1"/>
+        <rect x="320" y="92" width="60" height="10" rx="2" fill="#2a2a2a" stroke="#ff6b35" stroke-width="1"/>
+        <circle cx="328" y="83" r="2" fill="#ff6b35"/>
+        <circle cx="328" y="97" r="2" fill="#ff6b35"/>
+
+        <!-- Arrow 2 -->
+        <path d="M450 70 L500 70" stroke="#ff6b35" stroke-width="2" fill="none"/>
+        <polygon points="500,70 493,65 493,75" fill="#ff6b35"/>
+        <text x="475" y="60" text-anchor="middle" fill="#707070" font-size="8">Résultats</text>
+
+        <!-- Web Interface Box -->
+        <rect x="510" y="20" width="180" height="100" rx="12" fill="#1a1a2e" stroke="#ff6b35" stroke-width="2"/>
+        <text x="600" y="50" text-anchor="middle" fill="#ff6b35" font-size="12" font-weight="700">INTERFACE WEB</text>
+        <text x="600" y="68" text-anchor="middle" fill="#b0b0b0" font-size="10">my.doclify.cloud</text>
+        <rect x="570" y="78" width="60" height="35" rx="3" fill="none" stroke="#ff6b35" stroke-width="1.5"/>
+        <rect x="585" y="113" width="30" height="4" rx="1" fill="#ff6b35"/>
+      </svg>
+      <div class="tech-row">
+        <div class="tech-item">Whisper Large v3</div>
+        <div class="tech-item">Llama 3.1</div>
+        <div class="tech-item">Chiffrement E2E</div>
+      </div>
+    </div>
+
+    <div class="page-footer">Page 2/4 - doclify.cloud</div>
+  </div>
+
+  <!-- Page 3: Features -->
+  <div class="page content-page">
+    <div class="header">
+      <img src="../img/logo.png" alt="Doclify" class="header-logo">
+      <span class="header-title">Fonctionnalités</span>
+    </div>
+
+    <div class="section-title">
+      <div class="icon">1</div>
+      Comment ça marche ?
+    </div>
+
+    <div class="steps-row">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h4>Enregistrez</h4>
+        <p>Lancez l'app mobile et enregistrez votre consultation. Jusqu'à 2h30 d'audio.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h4>Transcription IA</h4>
+        <p>Notre IA locale transcrit, analyse et génère un résumé structuré.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h4>Consultez & Éditez</h4>
+        <p>Accédez via l'interface web pour éditer, rechercher et exporter en PDF.</p>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top: 20px;">
+      <div class="icon">★</div>
+      Fonctionnalités Clés
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feat-icon">🎙️</div>
+        <h4>Enregistrement Intelligent</h4>
+        <p>Jusqu'à 2h30 d'audio avec pause et reprise. Fonctionne même sans connexion internet. Indicateur qualité audio en temps réel.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">🤖</div>
+        <h4>IA 100% Locale</h4>
+        <p>Whisper Large v3 + Llama 3.1 tournent sur nos serveurs français. Zéro donnée envoyée à l'étranger.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">👥</div>
+        <h4>Diarisation Automatique</h4>
+        <p>Identification automatique des locuteurs pour distinguer médecin et patient dans la transcription.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">📝</div>
+        <h4>Résumés Structurés</h4>
+        <p>Génération automatique de résumés avec motif, antécédents, examen, diagnostic et plan de traitement.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">📄</div>
+        <h4>Export PDF</h4>
+        <p>Exportez vos comptes-rendus en PDF professionnel prêt à intégrer au dossier patient.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">🔍</div>
+        <h4>Recherche Full-Text</h4>
+        <p>Retrouvez instantanément n'importe quelle consultation grâce à la recherche intelligente.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">📱</div>
+        <h4>Mode Hors-ligne</h4>
+        <p>Continuez à enregistrer sans connexion. Synchronisation automatique au retour du réseau.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">🔒</div>
+        <h4>Sécurité Maximale</h4>
+        <p>Chiffrement XChaCha20 + AES-256. Audio supprimé après traitement. Hébergement HDS France.</p>
+      </div>
+    </div>
+
+    <div class="page-footer">Page 3/4 - doclify.cloud</div>
+  </div>
+
+  <!-- Page 4: Pricing & Contact -->
+  <div class="page content-page">
+    <div class="header">
+      <img src="../img/logo.png" alt="Doclify" class="header-logo">
+      <span class="header-title">Tarifs & Contact</span>
+    </div>
+
+    <div class="section-title">
+      <div class="icon">€</div>
+      Nos Offres
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h4>Pro</h4>
+        <div class="price">75€<span>/mois</span></div>
+        <p class="description">Pour le médecin libéral</p>
+        <ul class="pricing-features">
+          <li>Enregistrements illimités</li>
+          <li>Transcription IA Whisper</li>
+          <li>Résumés automatiques</li>
+          <li>Diarisation incluse</li>
+          <li>Export PDF</li>
+          <li>Mode hors-ligne</li>
+          <li>Support email</li>
+        </ul>
+      </div>
+      <div class="pricing-card featured">
+        <h4>Groupe</h4>
+        <div class="price">65€<span>/mois/médecin</span></div>
+        <p class="description">Pour les cabinets (min. 3)</p>
+        <ul class="pricing-features">
+          <li>Tout le plan Pro</li>
+          <li>Tableau de bord équipe</li>
+          <li>Gestion des utilisateurs</li>
+          <li>Statistiques d'usage</li>
+          <li>Support prioritaire</li>
+          <li>Formation incluse</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <h4>Clinique</h4>
+        <div class="price" style="font-size: 20px;">Sur devis</div>
+        <p class="description">Pour les établissements</p>
+        <ul class="pricing-features">
+          <li>Tout le plan Groupe</li>
+          <li>Intégration DPI/SI</li>
+          <li>SSO entreprise</li>
+          <li>API personnalisée</li>
+          <li>SLA garanti</li>
+          <li>Account manager dédié</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="security-badges">
+      <div class="badge">
+        <span class="b-icon">🏥</span>
+        <span>Hébergement HDS France</span>
+      </div>
+      <div class="badge">
+        <span class="b-icon">🔒</span>
+        <span>RGPD Compliant</span>
+      </div>
+      <div class="badge">
+        <span class="b-icon">🔐</span>
+        <span>Chiffrement AES-256</span>
+      </div>
+      <div class="badge">
+        <span class="b-icon">🎁</span>
+        <span>Essai 14 jours gratuit</span>
+      </div>
+    </div>
+
+    <div class="contact-section">
+      <h3>Prêt à transformer votre pratique ?</h3>
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="c-icon">🌐</span>
+          <span>doclify.cloud</span>
+        </div>
+        <div class="contact-item">
+          <span class="c-icon">📧</span>
+          <span>contact@doclify.cloud</span>
+        </div>
+        <div class="contact-item">
+          <span class="c-icon">📞</span>
+          <span>01 59 13 36 78</span>
+        </div>
+      </div>
+      <p class="address">Doclify SAS - 92300 Levallois-Perret - France</p>
+    </div>
+
+    <div style="margin-top: 20px; text-align: center;">
+      <p style="font-size: 12px; color: #666; margin-bottom: 8px;">
+        Essai gratuit 14 jours - Sans engagement - Sans carte bancaire
+      </p>
+      <p style="font-size: 14px;">
+        <strong style="color: #ff6b35;">app.doclify.cloud</strong> - Commencez maintenant
+      </p>
+    </div>
+
+    <div class="page-footer">Page 4/4 - doclify.cloud</div>
+  </div>
+
+</body>
+</html>
