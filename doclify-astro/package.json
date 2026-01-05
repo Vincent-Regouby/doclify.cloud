@@ -2,6 +2,9 @@
   "name": "doclify-astro",
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "description": "Doclify - Medical Transcription SaaS Marketing Site",
   "scripts": {
     "dev": "astro dev",
