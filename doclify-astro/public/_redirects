@@ -19,3 +19,7 @@
 /landing/transcription-cardiologue.html /landing/transcription-cardiologue 301
 /landing/transcription-generaliste.html /landing/transcription-generaliste 301
 /landing/transcription-psychologue.html /landing/transcription-psychologue 301
+
+# Redirections URLs invalides/anciennes
+/contactus /contact 301
+/web/login /application 301
