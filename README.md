@@ -1,250 +1,160 @@
-# Doclify Website - Module Odoo 19
+# Doclify.cloud - Site Web Marketing
 
-Site web officiel de Doclify, une solution SaaS de transcription médicale par IA pour psychologues et médecins.
+Site web officiel de Doclify, une solution SaaS de transcription medicale par IA pour psychologues et medecins.
 
-## Apercu
-
-Ce projet contient :
-- Un **module Odoo 19** (`website_doclify`) pour le site web public
-- Une configuration **Docker Compose** pour le développement et les tests
-- Les pages de présentation, tarifs, contact et pages légales
+**URL Production** : https://doclify.cloud
 
 ## Architecture
 
 ```
 recording-app-website/
-├── docker-compose.yml          # Configuration Docker (Odoo 19 + PostgreSQL)
-├── odoo.conf                   # Configuration Odoo (optionnel)
-├── website_doclify/            # Module Odoo
-│   ├── __init__.py
-│   ├── __manifest__.py
-│   ├── controllers/
-│   │   ├── __init__.py
-│   │   └── main.py             # Routes HTTP (8 endpoints)
-│   ├── data/
-│   │   ├── website_data.xml    # Configuration du site
-│   │   └── menu_data.xml       # Menu de navigation
-│   ├── models/
-│   │   └── __init__.py
-│   ├── security/
-│   │   └── ir.model.access.csv # Droits d'accès
-│   ├── static/src/
-│   │   ├── scss/
-│   │   │   ├── primary_variables.scss  # Variables de thème
-│   │   │   └── doclify_theme.scss      # Styles CSS
-│   │   ├── js/
-│   │   │   └── doclify.js              # JavaScript frontend
-│   │   └── img/
-│   └── views/
-│       ├── templates.xml               # Header/footer personnalisés
-│       └── pages/
-│           ├── homepage.xml            # Page d'accueil
-│           ├── features.xml            # Fonctionnalités
-│           ├── pricing.xml             # Tarifs
-│           ├── about.xml               # À propos
-│           ├── contact.xml             # Contact
-│           ├── privacy.xml             # Confidentialité (RGPD)
-│           └── terms.xml               # CGV
-└── README.md
+├── doclify-astro/          # Site web Astro (ACTIF - deploye en production)
+│   ├── src/
+│   │   ├── components/     # Composants reutilisables (Header, Footer, BaseHead)
+│   │   ├── content/        # Collections de contenu (blog en Markdown)
+│   │   ├── layouts/        # Layouts de pages
+│   │   └── pages/          # Routes (file-based routing)
+│   ├── public/             # Assets statiques (images, PDFs, robots.txt)
+│   ├── astro.config.mjs    # Configuration Astro
+│   └── package.json        # Dependencies (Astro 5.16.6)
+│
+├── doclify-website/        # [ARCHIVE] Ancien site HTML statique
+│
+├── marketing/              # Plans et strategies marketing
+├── logo/                   # Assets logo Doclify
+├── specs/                  # Specifications techniques
+└── PRD_*.md                # Product Requirements Document
 ```
 
-## Démarrage rapide
+## Stack Technique
 
-### Prérequis
+- **Framework** : Astro 5.16.6 (Static Site Generator)
+- **Node.js** : >= 20.0.0
+- **Deploiement** : Coolify (Nixpacks + nginx:alpine)
+- **Hebergement** : https://doclify.cloud
 
-- Docker et Docker Compose installés
-- Ports 8079 et 5440 disponibles
-
-### Lancement
+## Developpement Local
 
 ```bash
-# Cloner le projet
-cd /path/to/recording-app-website
+# Aller dans le dossier Astro
+cd doclify-astro
 
-# Démarrer les containers
-docker-compose up -d
+# Installer les dependances
+npm install
 
-# Attendre ~30 secondes pour l'initialisation
-sleep 30
+# Demarrer le serveur de developpement
+npm run dev
+# Le site est accessible sur http://localhost:4321
 
-# Installer le module website_doclify
-docker-compose exec odoo odoo --stop-after-init -d odoo -i website_doclify \
-  --db_host=db --db_user=odoo --db_password=odoo_secret_2024
+# Build de production
+npm run build
 
-# Redémarrer Odoo
-docker-compose restart odoo
+# Preview du build de production
+npm run preview
 ```
 
-### Accès
+## Deploiement
 
-- **Site web** : http://localhost:8079/
-- **Backend Odoo** : http://localhost:8079/web/login
-- **Identifiants** : admin / admin (première connexion)
+Le deploiement est automatique via Coolify :
 
-## Pages disponibles
+1. Push sur la branche `main`
+2. GitHub webhook notifie Coolify
+3. Coolify build avec Nixpacks (detecte Node.js)
+4. Deploiement sur nginx:alpine
+5. Site disponible sur https://doclify.cloud
 
-| Page | URL | Description |
-|------|-----|-------------|
-| Accueil | `/` | Hero, problème/solution, features, CTA |
-| Fonctionnalités | `/fonctionnalites` | 6 fonctionnalités détaillées |
-| Tarifs | `/tarifs` | 49€/mois + FAQ |
-| À propos | `/a-propos` | Histoire, valeurs, équipe |
-| Contact | `/contact` | Formulaire de contact |
-| Confidentialité | `/confidentialite` | Politique RGPD |
-| CGV | `/conditions-generales` | Conditions générales |
-| Espace Médecin | `/web/login` | Connexion au backoffice |
+### Configuration Coolify
 
-## Commandes Docker
+| Parametre | Valeur |
+|-----------|--------|
+| Build Pack | Nixpacks |
+| Base Directory | `/doclify-astro` |
+| Publish Directory | `/dist` |
+| Static Image | nginx:alpine |
+| Domain | doclify.cloud |
 
-```bash
-# Démarrer les containers
-docker-compose up -d
+## Pages du Site
 
-# Arrêter les containers
-docker-compose down
+### Pages Principales (9)
+- `/` - Page d'accueil
+- `/a-propos` - A propos
+- `/application` - Application
+- `/fonctionnalites` - Fonctionnalites
+- `/materiel` - Materiel
+- `/tarifs` - Tarifs
+- `/contact` - Contact
+- `/confidentialite` - Politique de confidentialite
+- `/cgv` - Conditions generales de vente
 
-# Voir les logs Odoo
-docker-compose logs -f odoo
+### Blog (6)
+- `/blog` - Index du blog
+- `/blog/alternative-dragon-medical`
+- `/blog/gain-temps-medecin`
+- `/blog/mode-hors-ligne-medical`
+- `/blog/souverainete-donnees-sante`
+- `/blog/transcription-medicale-ia`
 
-# Redémarrer Odoo (après modifications)
-docker-compose restart odoo
+### Landing Pages (6)
+- `/landing/alternative-dragon`
+- `/landing/guide-productivite`
+- `/landing/webinaire-productivite`
+- `/landing/transcription-cardiologue`
+- `/landing/transcription-generaliste`
+- `/landing/transcription-psychologue`
 
-# Mettre à jour le module après modifications
-docker-compose exec odoo odoo --stop-after-init -d odoo -u website_doclify \
-  --db_host=db --db_user=odoo --db_password=odoo_secret_2024
+## Ajouter du Contenu
 
-# Accéder au shell Odoo
-docker-compose exec odoo odoo shell -d odoo \
-  --db_host=db --db_user=odoo --db_password=odoo_secret_2024
+### Nouveau Article de Blog
 
-# Supprimer toutes les données (reset complet)
-docker-compose down -v
+1. Creer un fichier Markdown dans `doclify-astro/src/content/blog/` :
+
+```markdown
+---
+title: "Titre de l'article"
+description: "Description pour le SEO"
+pubDate: 2026-01-05
+author: "Nom de l'auteur"
+image: "/img/blog/image.jpg"
+tags: ["tag1", "tag2"]
+---
+
+Contenu de l'article...
 ```
 
-## Configuration
+2. L'article sera automatiquement disponible sur `/blog/nom-du-fichier`
 
-### Ports
+### Nouvelle Page
 
-| Service | Port interne | Port externe |
-|---------|--------------|--------------|
-| Odoo HTTP | 8069 | 8079 |
-| Odoo Longpolling | 8072 | 8082 |
-| PostgreSQL | 5432 | 5440 |
+1. Creer un fichier `.astro` dans `doclify-astro/src/pages/`
+2. La page sera disponible selon le nom du fichier
 
-### Variables d'environnement
+## SEO
 
-```yaml
-# PostgreSQL
-POSTGRES_DB: odoo
-POSTGRES_USER: odoo
-POSTGRES_PASSWORD: odoo_secret_2024
+- Sitemap automatique (`/sitemap-index.xml`)
+- Meta tags (title, description, keywords)
+- Open Graph tags (partage social)
+- URLs canoniques
+- robots.txt
 
-# Odoo
-HOST: db
-USER: odoo
-PASSWORD: odoo_secret_2024
-```
+## Performance
 
-## Développement
-
-### Modifier le module
-
-1. Éditez les fichiers dans `website_doclify/`
-2. Mettez à jour le module :
-   ```bash
-   docker-compose exec odoo odoo --stop-after-init -d odoo -u website_doclify \
-     --db_host=db --db_user=odoo --db_password=odoo_secret_2024
-   docker-compose restart odoo
-   ```
-
-### Ajouter une nouvelle page
-
-1. Créer le fichier XML dans `views/pages/nouvelle_page.xml`
-2. Ajouter la route dans `controllers/main.py`
-3. Ajouter le fichier au manifest `__manifest__.py`
-4. Mettre à jour le module
-
-### Personnaliser le thème
-
-Les couleurs sont définies dans `static/src/scss/primary_variables.scss` :
-
-```scss
-$primary: #2563EB;      // Bleu médical
-$secondary: #10B981;    // Vert succès
-$accent: #8B5CF6;       // Violet IA/tech
-$text-dark: #1F2937;    // Gris foncé
-$bg-light: #F9FAFB;     // Gris clair
-```
-
-## Processus de création
-
-### Ce qui a été fait
-
-1. **Analyse du PRD et de l'analyse business** pour comprendre le positionnement de Doclify
-2. **Consultation de la documentation Odoo 19** via Context7 MCP
-3. **Création du module Odoo** avec :
-   - Structure standard Odoo 19
-   - Templates QWeb pour les pages
-   - Contrôleurs Python pour les routes
-   - Assets SCSS/JS pour le thème
-4. **Configuration Docker** avec :
-   - PostgreSQL 15 Alpine
-   - Odoo 19 officiel
-   - Volumes persistants
-   - Mode développement activé
-
-### Problèmes rencontrés et solutions
-
-| Problème | Solution |
-|----------|----------|
-| Modèle `website.seo.metadata` inexistant | Utilisation de la fonction `write` sur le modèle `website` |
-| Référence `website.footer_menu` inexistante | Simplification des menus (uniquement menu principal) |
-| Snippets incompatibles Odoo 19 | Suppression des snippets du manifest (à refaire selon la doc v19) |
-| Permissions fichiers | Correction avec `chmod 755` sur les dossiers |
-
-### Améliorations futures
-
-- [ ] Recréer les snippets compatibles Odoo 19
-- [ ] Ajouter le formulaire de contact fonctionnel (CRM)
-- [ ] Intégrer les traductions i18n
-- [ ] Ajouter un blog
-- [ ] Configurer le SSL/HTTPS pour la production
-- [ ] Optimiser les performances (cache, CDN)
-
-## Déploiement en production
-
-### Checklist
-
-1. [ ] Changer le mot de passe admin
-2. [ ] Configurer un domaine DNS
-3. [ ] Activer HTTPS (nginx/traefik)
-4. [ ] Désactiver le mode développement
-5. [ ] Configurer les sauvegardes
-6. [ ] Configurer le serveur SMTP
-7. [ ] Ajouter Google Analytics
-
-### Variables de production
-
-```yaml
-# docker-compose.prod.yml
-services:
-  odoo:
-    command: []  # Supprimer --dev
-    environment:
-      - PROXY_MODE=True
-```
+- Build time : ~3 secondes
+- 21 pages generees
+- Bundle total : ~48KB (CSS + JS)
+- JavaScript minimal : ~6KB
+- Core Web Vitals optimises
 
 ## Ressources
 
-- [Documentation Odoo 19](https://www.odoo.com/documentation/19.0/)
+- [Documentation Astro](https://docs.astro.build)
 - [PRD Doclify](./PRD_Medical_Recording_SaaS_v3_Consolidated.md)
-- [Analyse Business](../recording-app/BUSINESS_ANALYSIS.md)
+- [Documentation detaillee Astro](./doclify-astro/README.md)
 
 ## Licence
 
-LGPL-3.0 - Compatible avec la licence Odoo.
+ISC License
 
 ---
 
-**Doclify** - Transcription médicale par IA
+**Doclify** - Transcription medicale par IA
 https://doclify.cloud

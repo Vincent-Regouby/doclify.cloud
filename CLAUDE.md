@@ -1,29 +1,55 @@
 # recording-app-website Development Guidelines
 
-Auto-generated from all feature plans. Last updated: 2025-12-20
+Site web marketing Doclify - Transcription medicale par IA
 
-## Active Technologies
+## Architecture Actuelle
 
-- (001-marketing-plan)
+Le site de production utilise **Astro** (dossier `doclify-astro/`).
 
-## Project Structure
-
-```text
-src/
-tests/
+```
+recording-app-website/
+├── doclify-astro/          # SITE ACTIF (Astro 5.16.6)
+├── doclify-website/        # [ARCHIVE] Ancien site statique
+├── marketing/              # Plans marketing
+└── specs/                  # Specifications
 ```
 
-## Commands
+## Technologies
 
-# Add commands for 
+- **Framework** : Astro 5.16.6
+- **Node.js** : >= 20.0.0
+- **Deploiement** : Coolify (Nixpacks)
+- **Production** : https://doclify.cloud
+
+## Commandes
+
+```bash
+# Developpement
+cd doclify-astro && npm run dev
+
+# Build production
+cd doclify-astro && npm run build
+
+# Preview
+cd doclify-astro && npm run preview
+```
+
+## Deploiement
+
+Push sur `main` → Coolify deploie automatiquement depuis `/doclify-astro`
 
 ## Code Style
 
-: Follow standard conventions
+- Composants Astro dans `src/components/`
+- Pages dans `src/pages/`
+- Blog en Markdown dans `src/content/blog/`
+- Suivre les conventions Astro existantes
 
-## Recent Changes
+## Important
 
-- 001-marketing-plan: Added
+- **TOUJOURS** travailler dans `doclify-astro/`
+- Le dossier `doclify-website/` est archive (ne pas modifier)
+- Node.js >= 20.0.0 requis pour Astro 5.16.6
 
 <!-- MANUAL ADDITIONS START -->
 <!-- MANUAL ADDITIONS END -->

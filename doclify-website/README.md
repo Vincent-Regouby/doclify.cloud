@@ -1,4 +1,14 @@
-# Doclify - Site Web Statique
+# [ARCHIVE] Doclify - Site Web Statique
+
+> **ATTENTION : CE DOSSIER EST ARCHIVE**
+>
+> Ce site statique HTML a ete remplace par le site Astro dans `../doclify-astro/`.
+>
+> **NE PAS MODIFIER CE DOSSIER** - Toutes les modifications doivent etre faites dans `doclify-astro/`.
+>
+> Le site de production https://doclify.cloud utilise maintenant Astro.
+
+---
 
 Site web marketing pour Doclify, l'application SaaS de transcription médicale par IA.
 
