@@ -1,0 +1,290 @@
+[
+  {
+    "name": "Homepage",
+    "path": "/",
+    "status": 200,
+    "duration": 154,
+    "contentLength": 45502,
+    "hasContent": true,
+    "success": true,
+    "checks": {
+      "hasDoctype": true,
+      "hasTitle": true,
+      "hasHeader": true,
+      "hasFooter": true,
+      "hasNav": true
+    }
+  },
+  {
+    "name": "Fonctionnalités",
+    "path": "/fonctionnalites",
+    "status": 200,
+    "duration": 91,
+    "contentLength": 66746,
+    "hasContent": true,
+    "success": true,
+    "checks": {
+      "hasDoctype": true,
+      "hasTitle": true,
+      "hasHeader": true,
+      "hasFooter": true,
+      "hasNav": true
+    }
+  },
+  {
+    "name": "Tarifs",
+    "path": "/tarifs",
+    "status": 200,
+    "duration": 75,
+    "contentLength": 55846,
+    "hasContent": true,
+    "success": true,
+    "checks": {
+      "hasDoctype": true,
+      "hasTitle": true,
+      "hasHeader": true,
+      "hasFooter": true,
+      "hasNav": true
+    }
+  },
+  {
+    "name": "Contact",
+    "path": "/contact",
+    "status": 200,
+    "duration": 58,
+    "contentLength": 49944,
+    "hasContent": true,
+    "success": true,
+    "checks": {
+      "hasDoctype": true,
+      "hasTitle": true,
+      "hasHeader": true,
+      "hasFooter": true,
+      "hasNav": true
+    }
+  },
+  {
+    "name": "À propos",
+    "path": "/a-propos",
+    "status": 200,
+    "duration": 61,
+    "contentLength": 54883,
+    "hasContent": true,
+    "success": true,
+    "checks": {
+      "hasDoctype": true,
+      "hasTitle": true,
+      "hasHeader": true,
+      "hasFooter": true,
+      "hasNav": true
+    }
+  },
+  {
+    "name": "Demo",
+    "path": "/demo",
+    "status": 404,
+    "duration": 8,
+    "contentLength": 4298,
+    "hasContent": true,
+    "success": false,
+    "checks": {
+      "hasDoctype": true,
+      "hasTitle": true,
+      "hasHeader": false,
+      "hasFooter": false,
+      "hasNav": false
+    }
+  },
+  {
+    "name": "Blog listing",
+    "path": "/blog",
+    "status": 200,
+    "duration": 55,
+    "contentLength": 45734,
+    "hasContent": true,
+    "success": true,
+    "checks": {
+      "hasDoctype": true,
+      "hasTitle": true,
+      "hasHeader": true,
+      "hasFooter": true,
+      "hasNav": true
+    }
+  },
+  {
+    "name": "Blog article 1",
+    "path": "/blog/guide-productivite-medicale",
+    "status": 404,
+    "duration": 30,
+    "contentLength": 4326,
+    "hasContent": true,
+    "success": false,
+    "checks": {
+      "hasDoctype": true,
+      "hasTitle": true,
+      "hasHeader": false,
+      "hasFooter": false,
+      "hasNav": false
+    }
+  },
+  {
+    "name": "Blog article 2",
+    "path": "/blog/transcription-medicale-gratuite",
+    "status": 404,
+    "duration": 6,
+    "contentLength": 4330,
+    "hasContent": true,
+    "success": false,
+    "checks": {
+      "hasDoctype": true,
+      "hasTitle": true,
+      "hasHeader": false,
+      "hasFooter": false,
+      "hasNav": false
+    }
+  },
+  {
+    "name": "Blog article 3",
+    "path": "/blog/retranscription-medicale-gratuite",
+    "status": 404,
+    "duration": 4,
+    "contentLength": 4332,
+    "hasContent": true,
+    "success": false,
+    "checks": {
+      "hasDoctype": true,
+      "hasTitle": true,
+      "hasHeader": false,
+      "hasFooter": false,
+      "hasNav": false
+    }
+  },
+  {
+    "name": "Blog article 4",
+    "path": "/blog/logiciel-transcription-medicale",
+    "status": 404,
+    "duration": 4,
+    "contentLength": 4330,
+    "hasContent": true,
+    "success": false,
+    "checks": {
+      "hasDoctype": true,
+      "hasTitle": true,
+      "hasHeader": false,
+      "hasFooter": false,
+      "hasNav": false
+    }
+  },
+  {
+    "name": "Blog article 5",
+    "path": "/blog/application-retranscription-audio",
+    "status": 404,
+    "duration": 3,
+    "contentLength": 4332,
+    "hasContent": true,
+    "success": false,
+    "checks": {
+      "hasDoctype": true,
+      "hasTitle": true,
+      "hasHeader": false,
+      "hasFooter": false,
+      "hasNav": false
+    }
+  },
+  {
+    "name": "Blog article 6",
+    "path": "/blog/retranscription-consultation-medicale",
+    "status": 404,
+    "duration": 4,
+    "contentLength": 4336,
+    "hasContent": true,
+    "success": false,
+    "checks": {
+      "hasDoctype": true,
+      "hasTitle": true,
+      "hasHeader": false,
+      "hasFooter": false,
+      "hasNav": false
+    }
+  },
+  {
+    "name": "Landing: Alternative Dragon",
+    "path": "/landing/alternative-dragon",
+    "status": 200,
+    "duration": 67,
+    "contentLength": 68997,
+    "hasContent": true,
+    "success": true,
+    "checks": {
+      "hasDoctype": true,
+      "hasTitle": true,
+      "hasHeader": true,
+      "hasFooter": true,
+      "hasNav": true
+    }
+  },
+  {
+    "name": "Landing: Transcription gratuite",
+    "path": "/landing/transcription-medicale-gratuite",
+    "status": 404,
+    "duration": 3,
+    "contentLength": 4333,
+    "hasContent": true,
+    "success": false,
+    "checks": {
+      "hasDoctype": true,
+      "hasTitle": true,
+      "hasHeader": false,
+      "hasFooter": false,
+      "hasNav": false
+    }
+  },
+  {
+    "name": "Legal: Mentions légales",
+    "path": "/legal/mentions-legales",
+    "status": 404,
+    "duration": 3,
+    "contentLength": 4316,
+    "hasContent": true,
+    "success": false,
+    "checks": {
+      "hasDoctype": true,
+      "hasTitle": true,
+      "hasHeader": false,
+      "hasFooter": false,
+      "hasNav": false
+    }
+  },
+  {
+    "name": "Legal: Politique confidentialité",
+    "path": "/legal/politique-confidentialite",
+    "status": 404,
+    "duration": 4,
+    "contentLength": 4325,
+    "hasContent": true,
+    "success": false,
+    "checks": {
+      "hasDoctype": true,
+      "hasTitle": true,
+      "hasHeader": false,
+      "hasFooter": false,
+      "hasNav": false
+    }
+  },
+  {
+    "name": "Legal: CGU",
+    "path": "/legal/cgu",
+    "status": 404,
+    "duration": 3,
+    "contentLength": 4303,
+    "hasContent": true,
+    "success": false,
+    "checks": {
+      "hasDoctype": true,
+      "hasTitle": true,
+      "hasHeader": false,
+      "hasFooter": false,
+      "hasNav": false
+    }
+  }
+]

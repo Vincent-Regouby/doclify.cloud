@@ -1,0 +1,276 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/landing.css';
+
+const title = "Transcription Médecin Généraliste | Gagnez 2h par semaine | Doclify";
+const description = "Transcription IA pour médecins généralistes. Comptes-rendus automatiques, mode hors-ligne pour visites, vocabulaire médical français. Essai gratuit 14 jours.";
+const canonical = "https://doclify.cloud/landing/transcription-generaliste";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Transcription pour Médecins Généralistes",
+  "description": "Transcription IA pour médecins généralistes. Comptes-rendus automatiques, mode hors-ligne pour visites.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Doclify",
+    "url": "https://doclify.cloud"
+  },
+  "audience": {
+    "@type": "MedicalAudience",
+    "audienceType": "General Practitioner"
+  }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="landing-hero">
+      <div class="landing-hero-content">
+        <div class="landing-hero-text">
+          <span class="landing-badge">Pour les Généralistes</span>
+          <h1>Médecin généraliste : optimisez votre temps de consultation</h1>
+          <p class="subtitle">25 patients par jour, des visites à domicile, et toujours plus de paperasse ? Doclify génère vos comptes-rendus automatiquement pour vous redonner du temps.</p>
+
+          <div class="cta-buttons">
+            <a href="https://app.doclify.cloud/" class="btn btn-primary">Essai Gratuit 14 jours</a>
+            <a href="/fonctionnalites" class="btn btn-secondary">Voir comment ça marche</a>
+          </div>
+
+          <div class="trust-indicators">
+            <div class="trust-item">
+              <span class="icon">⏱️</span>
+              <span>2h gagnées/semaine</span>
+            </div>
+            <div class="trust-item">
+              <span class="icon">🏠</span>
+              <span>Mode visite</span>
+            </div>
+            <div class="trust-item">
+              <span class="icon">🇫🇷</span>
+              <span>100% français</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="landing-hero-visual">
+          <img src="/img/logo.png" alt="Doclify pour Médecins Généralistes" width="500" height="400">
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem / Solution -->
+    <section class="problem-solution">
+      <div class="container">
+        <div class="section-title">
+          <h2>Le quotidien du médecin généraliste</h2>
+          <p>Entre consultations, visites et administratif, chaque minute compte</p>
+        </div>
+
+        <div class="problem-solution-grid">
+          <div class="problem-column">
+            <h2><span>❌</span> Sans outil adapté</h2>
+            <ul class="problem-list">
+              <li>20-30 consultations par jour avec peu de temps pour documenter</li>
+              <li>Notes rapides pendant la consultation, complétion le soir</li>
+              <li>Visites à domicile : notes sur papier puis ressaisie au cabinet</li>
+              <li>Retard permanent sur les comptes-rendus et courriers</li>
+              <li>Fatigue cognitive accumulée en fin de journée</li>
+            </ul>
+          </div>
+
+          <div class="solution-column">
+            <h2><span>✓</span> Avec Doclify</h2>
+            <ul class="solution-list">
+              <li>Dictez entre deux patients, le résumé est prêt immédiatement</li>
+              <li>IA qui structure automatiquement : motif, examen, conclusion, CAT</li>
+              <li>Application mobile hors-ligne pour les visites à domicile</li>
+              <li>Plus de retard : tout est fait en temps réel</li>
+              <li>Finissez votre journée avec vos compte-rendus à jour</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="landing-benefits">
+      <div class="container">
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-number">25+</span>
+            <span class="stat-label">Patients/jour gérés</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">2h</span>
+            <span class="stat-label">Gagnées par semaine</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">30s</span>
+            <span class="stat-label">Par compte-rendu</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Mode hors-ligne</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specialty Features -->
+    <section class="specialty-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Conçu pour la médecine générale</h2>
+          <p>Des fonctionnalités pensées pour votre pratique quotidienne</p>
+        </div>
+
+        <div class="specialty-features">
+          <ul class="specialty-list">
+            <li>
+              <span class="icon">🏠</span>
+              <div>
+                <strong>Mode visite à domicile</strong>
+                Application mobile avec mode hors-ligne complet. Dictez chez le patient, synchronisation automatique au cabinet.
+              </div>
+            </li>
+            <li>
+              <span class="icon">⚡</span>
+              <div>
+                <strong>Consultations rapides</strong>
+                Parfait pour les consultations de 15-20 minutes. Dictez en 2 minutes, résumé prêt en 30 secondes.
+              </div>
+            </li>
+            <li>
+              <span class="icon">📋</span>
+              <div>
+                <strong>Vocabulaire généraliste</strong>
+                IA entraînée sur tous les domaines : infections, chronique, prévention, pédiatrie, gériatrie...
+              </div>
+            </li>
+            <li>
+              <span class="icon">💊</span>
+              <div>
+                <strong>Médicaments reconnus</strong>
+                Base de données des médicaments français intégrée. Noms commerciaux et DCI reconnus.
+              </div>
+            </li>
+            <li>
+              <span class="icon">📤</span>
+              <div>
+                <strong>Export facile</strong>
+                Copie en un clic vers votre logiciel métier. Compatible avec tous les systèmes.
+              </div>
+            </li>
+          </ul>
+
+          <div>
+            <div class="stats-row" style="flex-direction: column; align-items: flex-start; gap: 2rem;">
+              <div class="stat-item" style="text-align: left;">
+                <span class="stat-number">75€</span>
+                <span class="stat-label">par mois, tout inclus</span>
+              </div>
+              <div class="stat-item" style="text-align: left;">
+                <span class="stat-number">14j</span>
+                <span class="stat-label">Essai gratuit</span>
+              </div>
+              <div class="stat-item" style="text-align: left;">
+                <span class="stat-number">0€</span>
+                <span class="stat-label">Engagement minimum</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="landing-testimonial">
+      <div class="container">
+        <blockquote class="testimonial-quote">
+          Je vois 28 patients par jour et je fais 5 visites à domicile par semaine. Avant Doclify, je restais au cabinet jusqu'à 20h pour finir mes notes. Maintenant, je pars à 19h avec tout terminé. C'est un gain de qualité de vie énorme.
+        </blockquote>
+        <div class="testimonial-author-landing">
+          <div class="avatar">Dr</div>
+          <div class="info">
+            <h3>Dr Marie B.</h3>
+            <p>Médecin généraliste, Nantes</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="landing-benefits">
+      <div class="container">
+        <div class="section-title">
+          <h2>Les avantages pour votre cabinet</h2>
+          <p>Gagnez du temps sur chaque consultation</p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <span class="benefit-icon">🏃</span>
+            <h3>Rythme soutenu</h3>
+            <p>Adapté aux journées chargées. 30 secondes pour un résumé, même entre deux patients.</p>
+          </div>
+
+          <div class="benefit-card">
+            <span class="benefit-icon">📴</span>
+            <h3>Visites hors-ligne</h3>
+            <p>Pas de réseau chez le patient ? Aucun problème. Tout se synchronise automatiquement après.</p>
+          </div>
+
+          <div class="benefit-card">
+            <span class="benefit-icon">🏠</span>
+            <h3>Finir à l'heure</h3>
+            <p>Plus de comptes-rendus à rattraper le soir. Tout est fait en temps réel pendant la journée.</p>
+          </div>
+
+          <div class="benefit-card">
+            <span class="benefit-icon">📊</span>
+            <h3>Résumés structurés</h3>
+            <p>L'IA organise : motif, antécédents, examen, diagnostic, traitement, suivi.</p>
+          </div>
+
+          <div class="benefit-card">
+            <span class="benefit-icon">🔍</span>
+            <h3>Recherche rapide</h3>
+            <p>Retrouvez un détail dans vos anciennes consultations en quelques secondes.</p>
+          </div>
+
+          <div class="benefit-card">
+            <span class="benefit-icon">💰</span>
+            <h3>ROI immédiat</h3>
+            <p>75€/mois = 2h gagnées/semaine. Le temps récupéré vaut bien plus que l'abonnement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="landing-cta">
+      <div class="container">
+        <h2>Reprenez le contrôle de votre temps</h2>
+        <p>Testez Doclify pendant 14 jours. Découvrez comment gagner 2 heures par semaine.</p>
+
+        <div class="cta-buttons">
+          <a href="https://app.doclify.cloud/" class="btn btn-primary">Commencer l'essai gratuit</a>
+          <a href="/contact" class="btn btn-secondary">Demander une démo</a>
+        </div>
+
+        <p class="guarantee">✓ Essai gratuit 14 jours &nbsp;•&nbsp; ✓ Sans carte bancaire &nbsp;•&nbsp; ✓ Sans engagement</p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

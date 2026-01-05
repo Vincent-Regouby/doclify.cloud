@@ -1,0 +1,379 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Fonctionnalités Transcription Médicale IA | Mode Hors-ligne | Doclify';
+const description = 'Fonctionnalités Doclify : transcription IA médicale, résumés automatiques, mode hors-ligne, app mobile, export vers logiciels métier. 100% RGPD. Essai gratuit.';
+const canonical = 'https://doclify.cloud/fonctionnalites';
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Fonctionnalités Complètes</h1>
+      <p class="subtitle">Enregistrez vos consultations en un clic, où que vous soyez</p>
+    </div>
+  </section>
+
+  <!-- How it works diagram -->
+  <section class="features" style="padding-bottom: 2rem;">
+    <div class="container">
+      <h2 class="text-center" style="color: var(--orange-primary); margin-bottom: 2rem;">Comment ça fonctionne ?</h2>
+
+      <div class="feature-card" style="max-width: 900px; margin: 0 auto; padding: 2.5rem;">
+        <svg viewBox="0 0 800 280" style="width: 100%; height: auto;">
+          <!-- Definitions -->
+          <defs>
+            <marker id="arrowhead-fonc" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#ff6b35"/>
+            </marker>
+            <!-- 3D shadow filter -->
+            <filter id="shadow3d-fonc" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="4" dy="6" stdDeviation="4" flood-color="#ff6b35" flood-opacity="0.3"/>
+            </filter>
+            <filter id="shadowHover-fonc" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="6" dy="10" stdDeviation="8" flood-color="#ff6b35" flood-opacity="0.5"/>
+            </filter>
+            <linearGradient id="highlight-fonc" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.3"/>
+              <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Mobile App Box - Clickable 3D Button -->
+          <a href="https://app.doclify.cloud/" target="_blank" class="svg-button-link">
+            <g class="clickable-box mobile-box" style="cursor: pointer;">
+              <!-- 3D Base shadow -->
+              <rect x="24" y="51" width="220" height="160" rx="15" fill="#0a0a0a"/>
+              <!-- Main box -->
+              <rect class="box-main" x="20" y="45" width="220" height="160" rx="15" fill="#1a1a1a" stroke="#ff6b35" stroke-width="2" filter="url(#shadow3d-fonc)"/>
+              <!-- Highlight edge for 3D effect -->
+              <rect x="20" y="45" width="220" height="8" rx="15" fill="url(#highlight-fonc)" opacity="0.3"/>
+              <text x="130" y="85" text-anchor="middle" fill="#ff6b35" font-size="14" font-weight="700" style="pointer-events: none;">APPLICATION MOBILE</text>
+              <text x="130" y="110" text-anchor="middle" fill="#b0b0b0" font-size="11" style="pointer-events: none;">Android / Web</text>
+              <!-- Mobile icon -->
+              <rect x="105" y="130" width="50" height="55" rx="8" fill="none" stroke="#ff6b35" stroke-width="1.5" style="pointer-events: none;"/>
+              <circle cx="130" cy="175" r="4" fill="#ff6b35" style="pointer-events: none;"/>
+              <text x="130" y="199" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="600" style="pointer-events: none;">Enregistrement</text>
+              <!-- Click indicator -->
+              <text x="130" y="215" text-anchor="middle" fill="#ff6b35" font-size="8" opacity="0.7" class="click-hint" style="pointer-events: none;">▶ Cliquer pour ouvrir</text>
+            </g>
+          </a>
+
+          <!-- Arrow 1 -->
+          <path d="M250 125 L320 125" stroke="#ff6b35" stroke-width="2" fill="none" marker-end="url(#arrowhead-fonc)"/>
+          <text x="285" y="110" text-anchor="middle" fill="#707070" font-size="9">Audio chiffré</text>
+
+          <!-- Cloud/Server Box (not clickable) -->
+          <rect x="330" y="45" width="140" height="160" rx="15" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="2"/>
+          <text x="400" y="85" text-anchor="middle" fill="#b0b0b0" font-size="14" font-weight="700">SERVEURS</text>
+          <text x="400" y="105" text-anchor="middle" fill="#707070" font-size="10">France 🇫🇷</text>
+          <!-- Server icon -->
+          <rect x="375" y="120" width="50" height="12" rx="3" fill="#2a2a2a" stroke="#ff6b35" stroke-width="1"/>
+          <rect x="375" y="137" width="50" height="12" rx="3" fill="#2a2a2a" stroke="#ff6b35" stroke-width="1"/>
+          <rect x="375" y="154" width="50" height="12" rx="3" fill="#2a2a2a" stroke="#ff6b35" stroke-width="1"/>
+          <circle cx="382" cy="126" r="2" fill="#ff6b35"/>
+          <circle cx="382" cy="143" r="2" fill="#ff6b35"/>
+          <circle cx="382" cy="160" r="2" fill="#ff6b35"/>
+          <text x="400" y="190" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="600">IA Transcription</text>
+          <text x="400" y="202" text-anchor="middle" fill="#707070" font-size="9">+ Résumé</text>
+
+          <!-- Arrow 2 -->
+          <path d="M480 125 L550 125" stroke="#ff6b35" stroke-width="2" fill="none" marker-end="url(#arrowhead-fonc)"/>
+          <text x="515" y="110" text-anchor="middle" fill="#707070" font-size="9">Résultats</text>
+
+          <!-- Web App Box - Clickable 3D Button -->
+          <a href="https://my.doclify.cloud/" target="_blank" class="svg-button-link">
+            <g class="clickable-box web-box" style="cursor: pointer;">
+              <!-- 3D Base shadow -->
+              <rect x="564" y="51" width="220" height="160" rx="15" fill="#0a0a0a"/>
+              <!-- Main box -->
+              <rect class="box-main" x="560" y="45" width="220" height="160" rx="15" fill="#1a1a1a" stroke="#ff6b35" stroke-width="2" filter="url(#shadow3d-fonc)"/>
+              <!-- Highlight edge for 3D effect -->
+              <rect x="560" y="45" width="220" height="8" rx="15" fill="url(#highlight-fonc)" opacity="0.3"/>
+              <text x="670" y="85" text-anchor="middle" fill="#ff6b35" font-size="14" font-weight="700" style="pointer-events: none;">INTERFACE WEB</text>
+              <text x="670" y="110" text-anchor="middle" fill="#b0b0b0" font-size="11" style="pointer-events: none;">my.doclify.cloud</text>
+              <!-- Desktop icon -->
+              <rect x="640" y="125" width="60" height="40" rx="3" fill="none" stroke="#ff6b35" stroke-width="1.5" style="pointer-events: none;"/>
+              <rect x="655" y="165" width="30" height="5" rx="1" fill="#ff6b35" style="pointer-events: none;"/>
+              <rect x="665" y="170" width="10" height="8" fill="#ff6b35" style="pointer-events: none;"/>
+              <text x="670" y="195" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="600" style="pointer-events: none;">Patients & Consultations</text>
+              <!-- Click indicator -->
+              <text x="670" y="215" text-anchor="middle" fill="#ff6b35" font-size="8" opacity="0.7" class="click-hint" style="pointer-events: none;">▶ Cliquer pour ouvrir</text>
+            </g>
+          </a>
+
+          <!-- Bottom text -->
+          <text x="400" y="272" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="600">Les deux environnements sont complémentaires et indispensables</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Features -->
+  <section class="features">
+    <div class="container">
+
+      <!-- Recording Feature -->
+      <div class="feature-detail">
+        <div class="feature-card">
+          <div class="feature-icon">🎙️</div>
+          <h2>Enregistrement Audio Professionnel</h2>
+          <p>Capturez vos consultations avec une qualité audio optimale, directement depuis votre smartphone iOS ou Android.</p>
+
+          <h3>Capacités d'enregistrement</h3>
+          <ul>
+            <li><strong>Durée maximale :</strong> Jusqu'à 2h30 d'audio continu</li>
+            <li><strong>Pause/Reprise :</strong> Mettez en pause et reprenez quand vous voulez</li>
+            <li><strong>Qualité audio :</strong> Codec M4A haute qualité adapté à la voix</li>
+            <li><strong>Indicateur qualité :</strong> Visualisation en temps réel du niveau audio</li>
+            <li><strong>Gestion interruptions :</strong> Résiste aux appels téléphoniques entrants</li>
+          </ul>
+
+          <h3>Fonctionnalités avancées</h3>
+          <ul>
+            <li>Compteur de temps en direct</li>
+            <li>Fonctionnement offline et synchronisation quand le réseau est disponible</li>
+            <li>Enregistrement chiffré pendant le traitement, supprimé après transcription</li>
+            <li>Interface intuitive et accessible</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Transcription Feature -->
+      <div class="feature-detail mt-2">
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h2>Transcription IA Automatique</h2>
+          <p>Notre intelligence artificielle locale transforme vos enregistrements en texte structuré avec une précision exceptionnelle.</p>
+
+          <h3>Technologie Whisper</h3>
+          <ul>
+            <li><strong>Modèle :</strong> Whisper Large v3 d'OpenAI optimisé pour le français médical</li>
+            <li><strong>Précision :</strong> Plus de 95% de précision sur vocabulaire médical</li>
+            <li><strong>Vitesse :</strong> 3 à 5 minutes pour transcrire, analyser et résumer 1h30 de consultation (GPU)</li>
+            <li><strong>Ponctuation automatique :</strong> Virgules, points, majuscules</li>
+          </ul>
+
+          <h3>Traitement intelligent</h3>
+          <ul>
+            <li>Détection automatique de la voix (VAD)</li>
+            <li>Suppression des silences inutiles</li>
+            <li>Reconnaissance du contexte médical</li>
+            <li>Gestion des accents et dialectes français</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Summary Feature -->
+      <div class="feature-detail mt-2">
+        <div class="feature-card">
+          <div class="feature-icon">📝</div>
+          <h2>Résumés Intelligents</h2>
+          <p>Générez automatiquement des résumés structurés et professionnels de vos consultations.</p>
+
+          <h3>Intelligence artificielle Llama 3.1</h3>
+          <ul>
+            <li><strong>Résumé factuel :</strong> Extraction des informations clés sans interprétation</li>
+            <li><strong>Structure claire :</strong> Organisation par sections (motif, examen, observations)</li>
+            <li><strong>Ton professionnel :</strong> Adapté au vocabulaire médical</li>
+            <li><strong>Longueur optimale :</strong> 3-5 paragraphes concentrés</li>
+            <li><strong>Pas de diagnostic :</strong> Résumé neutre et descriptif uniquement</li>
+          </ul>
+
+          <h3>Mots-clés automatiques</h3>
+          <ul>
+            <li>Extraction des termes médicaux importants</li>
+            <li>Indexation pour recherche rapide</li>
+            <li>Catégorisation automatique</li>
+          </ul>
+
+          <h3>Prompts par spécialité</h3>
+          <ul>
+            <li><strong>Co-conçus avec des professionnels de santé</strong></li>
+            <li>Chaque spécialité a ses propres prompts adaptés (psychologue, psychiatre, médecin généraliste...)</li>
+            <li>Comptes-rendus personnalisés selon votre pratique</li>
+            <li>Choix du format de résumé selon vos besoins</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Offline Mode -->
+      <div class="feature-detail mt-2">
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h2>Mode Offline</h2>
+          <p>Travaillez sans interruption, même sans connexion internet.</p>
+
+          <h3>Fonctionnement en mode déconnecté</h3>
+          <ul>
+            <li><strong>Enregistrement offline :</strong> Continuez à enregistrer partout</li>
+            <li><strong>Queue locale :</strong> Stockage sécurisé sur le téléphone</li>
+            <li><strong>Synchronisation auto :</strong> Upload automatique au retour du réseau</li>
+            <li><strong>Indicateur de statut :</strong> Visualisation des uploads en attente</li>
+          </ul>
+
+          <h3>Fiabilité garantie</h3>
+          <ul>
+            <li>Aucune perte de données en cas de coupure réseau</li>
+            <li>Retry automatique en cas d'échec d'upload</li>
+            <li>Persistence de l'état même après fermeture de l'app</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Security Feature -->
+      <div class="feature-detail mt-2">
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h2>Sécurité et RGPD</h2>
+          <p>Conformité totale aux normes de sécurité médicales et au RGPD européen.</p>
+
+          <h3>Chiffrement multicouche</h3>
+          <ul>
+            <li><strong>Mobile :</strong> Chiffrement XChaCha20-Poly1305 avant upload</li>
+            <li><strong>Transit :</strong> TLS 1.3 avec certificate pinning</li>
+            <li><strong>Stockage :</strong> AES-256-GCM sur serveurs sécurisés</li>
+            <li><strong>Base de données :</strong> PostgreSQL avec TDE (Transparent Data Encryption)</li>
+          </ul>
+
+          <h3>Conformité RGPD</h3>
+          <ul>
+            <li>Hébergement 100% France (pas de transfert hors UE)</li>
+            <li>IA locale - aucune donnée envoyée à des services tiers</li>
+            <li>Droit à l'oubli : suppression complète en 1 clic</li>
+            <li>Export de données personnelles (portabilité)</li>
+            <li>Logs d'audit immutables</li>
+          </ul>
+
+          <h3>Politique de rétention</h3>
+          <ul>
+            <li>Audio supprimé automatiquement après traitement</li>
+            <li>Transcriptions conservées selon vos paramètres</li>
+            <li>Backups chiffrés avec rotation automatique</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Web Interface -->
+      <div class="feature-detail mt-2">
+        <div class="feature-card">
+          <div class="feature-icon">💻</div>
+          <h2>Interface Web Intuitive</h2>
+          <p>Accédez à toutes vos consultations depuis n'importe quel navigateur web.</p>
+
+          <h3>Consultation et édition</h3>
+          <ul>
+            <li><strong>Vue liste :</strong> Toutes vos consultations avec filtres et tri</li>
+            <li><strong>Recherche full-text :</strong> Trouvez n'importe quelle consultation en &lt; 1 seconde</li>
+            <li><strong>Édition en ligne :</strong> Modifiez vos transcriptions directement</li>
+            <li><strong>Versioning :</strong> Historique des modifications conservé</li>
+            <li><strong>Export PDF/CSV :</strong> Pour archivage ou partage</li>
+          </ul>
+
+          <h3>Organisation</h3>
+          <ul>
+            <li>Filtres par date, patient, mots-clés</li>
+            <li>Tri personnalisable</li>
+            <li>Tags et catégories</li>
+            <li>Statistiques d'utilisation</li>
+          </ul>
+
+          <h3>Responsive design</h3>
+          <ul>
+            <li>Fonctionne sur desktop, tablette et mobile</li>
+            <li>Interface adaptative selon la taille d'écran</li>
+            <li>Mode sombre par défaut (confort visuel)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Upload Technology -->
+      <div class="feature-detail mt-2">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h2>Upload Résilient</h2>
+          <p>Technologie S3 Multipart pour des uploads fiables, même avec de gros fichiers.</p>
+
+          <h3>Optimisation intelligente</h3>
+          <ul>
+            <li><strong>Découpage automatique :</strong> Fichiers découpés en parts de 10-25 MB</li>
+            <li><strong>Upload parallèle :</strong> Jusqu'à 3 parts simultanément</li>
+            <li><strong>Reprise après crash :</strong> Continue exactement où vous étiez</li>
+            <li><strong>Retry exponentiel :</strong> Tentatives automatiques en cas d'échec</li>
+            <li><strong>Progression détaillée :</strong> Barre de progression en temps réel</li>
+          </ul>
+
+          <h3>Performance</h3>
+          <ul>
+            <li>Upload 100 MB en moins de 30 secondes (avec bonne connexion)</li>
+            <li>Fonctionne même sur connexion lente ou instable</li>
+            <li>Optimisation de la bande passante</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Prêt à essayer toutes ces fonctionnalités ?</h2>
+      <p>Commencez votre essai gratuit de 14 jours. Aucune carte bancaire requise.</p>
+      <a href="/contact" class="btn btn-primary">Démarrer l'essai gratuit</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* 3D Clickable SVG Boxes */
+  .clickable-box {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center center;
+  }
+
+  .clickable-box:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  .clickable-box:hover .box-main {
+    filter: url(#shadowHover-fonc);
+    stroke-width: 3;
+  }
+
+  .clickable-box:active {
+    transform: translateY(2px) scale(0.98);
+  }
+
+  .clickable-box .click-hint {
+    transition: opacity 0.3s ease;
+  }
+
+  .clickable-box:hover .click-hint {
+    opacity: 1 !important;
+  }
+
+  /* Pulse animation on hover */
+  @keyframes pulse-glow {
+    0%, 100% {
+      filter: drop-shadow(0 0 8px rgba(255, 107, 53, 0.4));
+    }
+    50% {
+      filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.8));
+    }
+  }
+
+  .clickable-box:hover {
+    animation: pulse-glow 1.5s ease-in-out infinite;
+  }
+
+  /* Click ripple effect */
+  .clickable-box:active .box-main {
+    fill: #252525;
+  }
+
+  .svg-button-link {
+    text-decoration: none;
+  }
+</style>

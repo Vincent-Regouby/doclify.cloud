@@ -1,0 +1,26 @@
+{
+  "name": "doclify-astro",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Doclify - Medical Transcription SaaS Marketing Site",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^5.16.6"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "chrome-launcher": "^1.2.1",
+    "playwright": "^1.57.0",
+    "puppeteer-core": "^24.34.0"
+  }
+}

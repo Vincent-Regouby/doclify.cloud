@@ -1,0 +1,151 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/blog.css';
+
+export async function getStaticPaths() {
+  const blogPosts = await getCollection('blog');
+  return blogPosts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const pageTitle = `${post.data.title} | Doclify Blog`;
+const canonical = `https://doclify.cloud/blog/${post.slug}`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "datePublished": post.data.pubDate,
+  "dateModified": post.data.pubDate,
+  "author": {
+    "@type": "Organization",
+    "name": post.data.author
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Doclify",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://doclify.cloud/img/logo.png"
+    }
+  }
+};
+
+// Get all posts for related articles
+const allPosts = (await getCollection('blog')).filter(p => p.slug !== post.slug);
+const relatedPosts = allPosts.slice(0, 2);
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={post.data.description}
+  canonical={canonical}
+  schema={schema}
+>
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="reading-progress"></div>
+
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/blog">Blog</a>
+      <span>›</span>
+      <span>{post.data.category}</span>
+    </nav>
+
+    <div class="article-meta">
+      <span>{new Date(post.data.pubDate).toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' })}</span>
+      <span>{post.data.readingTime}</span>
+      <span>{post.data.category}</span>
+    </div>
+
+    <h1>{post.data.title}</h1>
+
+    <p class="lead">{post.data.description}</p>
+  </header>
+
+  <!-- Article Content -->
+  <main id="main-content">
+    <article class="article-content">
+      <Content />
+
+      <!-- Share Buttons -->
+      <div class="share-buttons">
+        <a
+          href={`https://www.linkedin.com/sharing/share-offsite/?url=${canonical}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="share-btn linkedin"
+        >
+          Partager sur LinkedIn
+        </a>
+        <a
+          href={`https://twitter.com/intent/tweet?url=${canonical}&text=${encodeURIComponent(post.data.title)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="share-btn twitter"
+        >
+          Partager sur Twitter
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Related Articles -->
+  {relatedPosts.length > 0 && (
+    <section class="related-articles">
+      <h2>Articles connexes</h2>
+      <div class="related-grid">
+        {relatedPosts.map((relatedPost) => (
+          <article class="blog-card">
+            <div class="blog-card-content">
+              <h2><a href={`/blog/${relatedPost.slug}`}>{relatedPost.data.title}</a></h2>
+              <p>{relatedPost.data.description}</p>
+              <a href={`/blog/${relatedPost.slug}`} class="read-more">Lire l'article →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Prêt à découvrir l'IA médicale ?</h2>
+      <p>Testez Doclify gratuitement pendant 14 jours. Aucune carte bancaire requise.</p>
+      <a href="https://app.doclify.cloud/" class="btn btn-primary">Essai Gratuit 14 jours</a>
+    </div>
+  </section>
+
+  <script>
+    // Reading progress bar
+    window.addEventListener('scroll', function() {
+      const article = document.querySelector('.article-content');
+      const progressBar = document.getElementById('reading-progress');
+      if (article && progressBar) {
+        const articleTop = article.offsetTop;
+        const articleHeight = article.offsetHeight;
+        const windowHeight = window.innerHeight;
+        const scrolled = window.scrollY - articleTop + windowHeight;
+        const progress = Math.min(Math.max(scrolled / articleHeight * 100, 0), 100);
+        progressBar.style.width = progress + '%';
+      }
+    });
+  </script>
+</BaseLayout>
