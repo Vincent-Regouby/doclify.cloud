@@ -1,0 +1,380 @@
+<!--
+  INETSHORE ECOSYSTEM - Version Odoo FOND CLAIR
+  À coller dans un bloc HTML/Embed Code dans Odoo
+-->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+.inet-ecosystem {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-card: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+
+    --inetshore-primary: #4f46e5;
+    --inetshore-light: #eef2ff;
+    --doclify-primary: #059669;
+    --doclify-light: #ecfdf5;
+    --prooj-primary: #d97706;
+    --prooj-light: #fffbeb;
+    --odoo-primary: #714B67;
+    --odoo-light: #faf5f9;
+
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+    --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.inet-ecosystem * {
+    box-sizing: border-box;
+}
+
+.inet-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Hero */
+.inet-hero {
+    text-align: center;
+    padding: 60px 24px 40px;
+}
+
+.inet-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--inetshore-light);
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--inetshore-primary);
+    margin-bottom: 24px;
+}
+
+.inet-badge::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--inetshore-primary);
+    border-radius: 50%;
+}
+
+.inet-hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px 0;
+    color: var(--text-primary);
+}
+
+.inet-hero h1 span {
+    color: var(--inetshore-primary);
+}
+
+.inet-hero p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+/* Products */
+.inet-products {
+    padding: 20px 0 60px;
+}
+
+.inet-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+@media (max-width: 700px) {
+    .inet-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+}
+
+/* Cards */
+.inet-card {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 32px 28px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+}
+
+a.inet-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--card-color);
+}
+
+.inet-card.no-link {
+    cursor: default;
+}
+
+.inet-card.no-link:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+}
+
+.inet-card.is-inetshore { --card-color: var(--inetshore-primary); --card-light: var(--inetshore-light); }
+.inet-card.is-doclify { --card-color: var(--doclify-primary); --card-light: var(--doclify-light); }
+.inet-card.is-prooj { --card-color: var(--prooj-primary); --card-light: var(--prooj-light); }
+.inet-card.is-odoo { --card-color: var(--odoo-primary); --card-light: var(--odoo-light); }
+
+.inet-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    background: var(--card-light);
+    color: var(--card-color);
+}
+
+.inet-soon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 4px 10px;
+    background: var(--prooj-light);
+    color: var(--prooj-primary);
+    font-size: 0.7rem;
+    font-weight: 600;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.inet-partner {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 4px 10px;
+    background: var(--odoo-light);
+    color: var(--odoo-primary);
+    font-size: 0.7rem;
+    font-weight: 600;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.inet-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: var(--text-primary);
+}
+
+.inet-domain {
+    font-size: 0.85rem;
+    color: var(--card-color);
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.inet-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 16px;
+}
+
+.inet-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.inet-tag {
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.inet-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--card-color);
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: gap 0.3s ease;
+}
+
+a.inet-card:hover .inet-link {
+    gap: 10px;
+}
+
+.inet-link svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+a.inet-card:hover .inet-link svg {
+    transform: translateX(3px);
+}
+
+.inet-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.88rem;
+}
+</style>
+
+<div class="inet-ecosystem">
+    <div class="inet-container">
+        <!-- Hero -->
+        <div class="inet-hero">
+            <div class="inet-badge">Ecosystem Inetshore</div>
+            <h1>Des solutions <span>innovantes</span> pour votre activité</h1>
+            <p>Inetshore accompagne les professionnels dans leur transformation numérique avec des outils SaaS performants et des expertises métier.</p>
+        </div>
+
+        <!-- Products -->
+        <div class="inet-products">
+            <div class="inet-grid">
+
+                <!-- Inetshore IA -->
+                <a href="https://inetshore.com" target="_blank" rel="noopener" class="inet-card is-inetshore">
+                    <div class="inet-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/>
+                            <circle cx="7.5" cy="14.5" r="1.5"/>
+                            <circle cx="16.5" cy="14.5" r="1.5"/>
+                        </svg>
+                    </div>
+                    <h3>Inetshore IA</h3>
+                    <div class="inet-domain">inetshore.com</div>
+                    <p class="inet-desc">Mise en place de solutions d'intelligence artificielle pour les entreprises. Nous vous accompagnons de l'audit à l'intégration de l'IA dans vos processus métier.</p>
+                    <div class="inet-tags">
+                        <span class="inet-tag">Intelligence Artificielle</span>
+                        <span class="inet-tag">Conseil</span>
+                        <span class="inet-tag">Intégration</span>
+                    </div>
+                    <span class="inet-link">
+                        Découvrir nos services
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Odoo -->
+                <div class="inet-card is-odoo no-link">
+                    <span class="inet-partner">Partenaire</span>
+                    <div class="inet-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>Odoo</h3>
+                    <div class="inet-domain">Intégrateur certifié</div>
+                    <p class="inet-desc">Spécialiste de l'implémentation de la solution Odoo. ERP, CRM, comptabilité, e-commerce : nous déployons et personnalisons Odoo pour répondre à vos besoins.</p>
+                    <div class="inet-tags">
+                        <span class="inet-tag">ERP</span>
+                        <span class="inet-tag">CRM</span>
+                        <span class="inet-tag">E-commerce</span>
+                        <span class="inet-tag">Comptabilité</span>
+                    </div>
+                    <span class="inet-info">
+                        Expertise Odoo depuis 2015
+                    </span>
+                </div>
+
+                <!-- Doclify -->
+                <a href="https://doclify.cloud" target="_blank" rel="noopener" class="inet-card is-doclify">
+                    <div class="inet-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                            <line x1="12" y1="19" x2="12" y2="23"/>
+                            <line x1="8" y1="23" x2="16" y2="23"/>
+                        </svg>
+                    </div>
+                    <h3>Doclify</h3>
+                    <div class="inet-domain">doclify.cloud</div>
+                    <p class="inet-desc">Transcription médicale par intelligence artificielle. Dictez vos comptes-rendus, Doclify les transcrit instantanément avec une précision remarquable.</p>
+                    <div class="inet-tags">
+                        <span class="inet-tag">IA médicale</span>
+                        <span class="inet-tag">Transcription</span>
+                        <span class="inet-tag">RGPD</span>
+                    </div>
+                    <span class="inet-link">
+                        Découvrir Doclify
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Prooj -->
+                <a href="https://prooj.cloud" target="_blank" rel="noopener" class="inet-card is-prooj">
+                    <span class="inet-soon">Coming Soon</span>
+                    <div class="inet-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                    </div>
+                    <h3>Prooj</h3>
+                    <div class="inet-domain">prooj.cloud</div>
+                    <p class="inet-desc">Planification et suivi budgétaire de projets. Gardez le contrôle sur vos projets, vos ressources et vos budgets en temps réel.</p>
+                    <div class="inet-tags">
+                        <span class="inet-tag">Planification</span>
+                        <span class="inet-tag">Budget</span>
+                        <span class="inet-tag">Reporting</span>
+                    </div>
+                    <span class="inet-link">
+                        Bientôt disponible
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </span>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</div>
