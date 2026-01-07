@@ -117,37 +117,33 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       if (isValid) {
-        // Envoi vers webhook n8n
-        const webhookUrl = 'https://n8n.inetshore.com/webhook/ce20bece-0055-44e4-9d44-8e80783f9339';
-        const jwtToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkb2NsaWZ5LWNvbnRhY3QtZm9ybSIsImlzcyI6ImRvY2xpZnkuY2xvdWQiLCJpYXQiOjE3NjU5NTc3NTZ9.Th4jttReg0Qh5DrwcT5MXZ22da9YL4Fj4f1rJR298hQ';
-
-        // Construire les paramètres GET
-        const params = new URLSearchParams({
-          name: name,
-          email: email,
-          phone: phone || '',
-          specialty: specialty || '',
-          practiceType: practiceType || '',
-          subject: subject || '',
-          message: message
-        });
-
-        fetch(`${webhookUrl}?${params.toString()}`, {
-          method: 'GET',
+        // Envoi via POST à notre API route sécurisée
+        fetch('/api/contact', {
+          method: 'POST',
           headers: {
-            'Authorization': `Bearer ${jwtToken}`
-          }
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: phone || '',
+            specialty: specialty || '',
+            practiceType: practiceType || '',
+            subject: subject || '',
+            message: message
+          })
         })
-        .then(response => {
-          if (response.ok) {
+        .then(response => response.json().then(data => ({ ok: response.ok, data })))
+        .then(({ ok, data }) => {
+          if (ok) {
             showNotification('Merci ! Nous avons bien reçu votre message. Notre équipe vous contactera sous 24h.', 'success');
             contactForm.reset();
           } else {
-            showNotification('Une erreur est survenue. Veuillez réessayer ou nous contacter directement.', 'error');
+            showNotification(data.error || 'Une erreur est survenue. Veuillez réessayer ou nous contacter directement.', 'error');
           }
         })
         .catch(error => {
-          console.error('Erreur webhook:', error);
+          console.error('Erreur envoi formulaire:', error);
           showNotification('Une erreur est survenue. Veuillez réessayer ou nous contacter directement.', 'error');
         });
       } else {
