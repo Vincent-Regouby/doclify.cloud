@@ -32,6 +32,24 @@
   --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
+/* SVG Architecture Diagram Theme Colors */
+.svg-shadow { fill: #0a0a0a; }
+.svg-box-bg { fill: #1a1a1a; }
+.svg-text-primary { fill: #ffffff; }
+.svg-text-secondary { fill: #b0b0b0; }
+.svg-text-muted { fill: #707070; }
+.svg-server-icon { fill: #2a2a2a; }
+.svg-server-border { stroke: #2a2a2a; }
+
+/* SVG Light Mode */
+[data-theme="light"] .svg-shadow { fill: #d0d0d0; }
+[data-theme="light"] .svg-box-bg { fill: #ffffff; }
+[data-theme="light"] .svg-text-primary { fill: #1a1a1a; }
+[data-theme="light"] .svg-text-secondary { fill: #4a4a4a; }
+[data-theme="light"] .svg-text-muted { fill: #6a6a6a; }
+[data-theme="light"] .svg-server-icon { fill: #e8e8e8; }
+[data-theme="light"] .svg-server-border { stroke: #d0d0d0; }
+
 * {
   margin: 0;
   padding: 0;

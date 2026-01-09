@@ -40,17 +40,17 @@ const canonical = 'https://doclify.cloud/application';
           <a href="https://app.doclify.cloud/" target="_blank" class="svg-button-link">
             <g class="clickable-box mobile-box" style="cursor: pointer;">
               <!-- 3D Base shadow -->
-              <rect x="24" y="51" width="220" height="160" rx="15" fill="#0a0a0a"/>
+              <rect class="svg-shadow" x="24" y="51" width="220" height="160" rx="15"/>
               <!-- Main box -->
-              <rect class="box-main" x="20" y="45" width="220" height="160" rx="15" fill="#1a1a1a" stroke="#ff6b35" stroke-width="2" filter="url(#shadow3d)"/>
+              <rect class="box-main svg-box-bg" x="20" y="45" width="220" height="160" rx="15" stroke="#ff6b35" stroke-width="2" filter="url(#shadow3d)"/>
               <!-- Highlight edge for 3D effect -->
               <rect x="20" y="45" width="220" height="8" rx="15" fill="url(#highlight)" opacity="0.3"/>
               <text x="130" y="85" text-anchor="middle" fill="#ff6b35" font-size="14" font-weight="700" style="pointer-events: none;">APPLICATION MOBILE</text>
-              <text x="130" y="110" text-anchor="middle" fill="#b0b0b0" font-size="11" style="pointer-events: none;">Android / Web</text>
+              <text class="svg-text-secondary" x="130" y="110" text-anchor="middle" font-size="11" style="pointer-events: none;">Android / Web</text>
               <!-- Mobile icon -->
               <rect x="105" y="130" width="50" height="55" rx="8" fill="none" stroke="#ff6b35" stroke-width="1.5" style="pointer-events: none;"/>
               <circle cx="130" cy="175" r="4" fill="#ff6b35" style="pointer-events: none;"/>
-              <text x="130" y="199" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="600" style="pointer-events: none;">Enregistrement</text>
+              <text class="svg-text-primary" x="130" y="199" text-anchor="middle" font-size="10" font-weight="600" style="pointer-events: none;">Enregistrement</text>
               <!-- Click indicator -->
               <text x="130" y="215" text-anchor="middle" fill="#ff6b35" font-size="8" opacity="0.7" class="click-hint" style="pointer-events: none;">▶ Cliquer pour ouvrir</text>
             </g>
@@ -58,42 +58,42 @@ const canonical = 'https://doclify.cloud/application';
 
           <!-- Arrow 1 -->
           <path d="M250 125 L320 125" stroke="#ff6b35" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
-          <text x="285" y="110" text-anchor="middle" fill="#707070" font-size="9">Audio chiffré</text>
+          <text class="svg-text-muted" x="285" y="110" text-anchor="middle" font-size="9">Audio chiffré</text>
 
           <!-- Cloud/Server Box (not clickable) -->
-          <rect x="330" y="45" width="140" height="160" rx="15" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="2"/>
-          <text x="400" y="85" text-anchor="middle" fill="#b0b0b0" font-size="14" font-weight="700">SERVEURS</text>
-          <text x="400" y="105" text-anchor="middle" fill="#707070" font-size="10">France 🇫🇷</text>
+          <rect class="svg-box-bg svg-server-border" x="330" y="45" width="140" height="160" rx="15" stroke-width="2"/>
+          <text class="svg-text-secondary" x="400" y="85" text-anchor="middle" font-size="14" font-weight="700">SERVEURS</text>
+          <text class="svg-text-muted" x="400" y="105" text-anchor="middle" font-size="10">France 🇫🇷</text>
           <!-- Server icon -->
-          <rect x="375" y="120" width="50" height="12" rx="3" fill="#2a2a2a" stroke="#ff6b35" stroke-width="1"/>
-          <rect x="375" y="137" width="50" height="12" rx="3" fill="#2a2a2a" stroke="#ff6b35" stroke-width="1"/>
-          <rect x="375" y="154" width="50" height="12" rx="3" fill="#2a2a2a" stroke="#ff6b35" stroke-width="1"/>
+          <rect class="svg-server-icon" x="375" y="120" width="50" height="12" rx="3" stroke="#ff6b35" stroke-width="1"/>
+          <rect class="svg-server-icon" x="375" y="137" width="50" height="12" rx="3" stroke="#ff6b35" stroke-width="1"/>
+          <rect class="svg-server-icon" x="375" y="154" width="50" height="12" rx="3" stroke="#ff6b35" stroke-width="1"/>
           <circle cx="382" cy="126" r="2" fill="#ff6b35"/>
           <circle cx="382" cy="143" r="2" fill="#ff6b35"/>
           <circle cx="382" cy="160" r="2" fill="#ff6b35"/>
-          <text x="400" y="190" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="600">IA Transcription</text>
-          <text x="400" y="202" text-anchor="middle" fill="#707070" font-size="9">+ Résumé</text>
+          <text class="svg-text-primary" x="400" y="190" text-anchor="middle" font-size="10" font-weight="600">IA Transcription</text>
+          <text class="svg-text-muted" x="400" y="202" text-anchor="middle" font-size="9">+ Résumé</text>
 
           <!-- Arrow 2 -->
           <path d="M480 125 L550 125" stroke="#ff6b35" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
-          <text x="515" y="110" text-anchor="middle" fill="#707070" font-size="9">Résultats</text>
+          <text class="svg-text-muted" x="515" y="110" text-anchor="middle" font-size="9">Résultats</text>
 
           <!-- Web App Box - Clickable 3D Button -->
           <a href="https://my.doclify.cloud/" target="_blank" class="svg-button-link">
             <g class="clickable-box web-box" style="cursor: pointer;">
               <!-- 3D Base shadow -->
-              <rect x="564" y="51" width="220" height="160" rx="15" fill="#0a0a0a"/>
+              <rect class="svg-shadow" x="564" y="51" width="220" height="160" rx="15"/>
               <!-- Main box -->
-              <rect class="box-main" x="560" y="45" width="220" height="160" rx="15" fill="#1a1a1a" stroke="#ff6b35" stroke-width="2" filter="url(#shadow3d)"/>
+              <rect class="box-main svg-box-bg" x="560" y="45" width="220" height="160" rx="15" stroke="#ff6b35" stroke-width="2" filter="url(#shadow3d)"/>
               <!-- Highlight edge for 3D effect -->
               <rect x="560" y="45" width="220" height="8" rx="15" fill="url(#highlight)" opacity="0.3"/>
               <text x="670" y="85" text-anchor="middle" fill="#ff6b35" font-size="14" font-weight="700" style="pointer-events: none;">INTERFACE WEB</text>
-              <text x="670" y="110" text-anchor="middle" fill="#b0b0b0" font-size="11" style="pointer-events: none;">my.doclify.cloud</text>
+              <text class="svg-text-secondary" x="670" y="110" text-anchor="middle" font-size="11" style="pointer-events: none;">my.doclify.cloud</text>
               <!-- Desktop icon -->
               <rect x="640" y="125" width="60" height="40" rx="3" fill="none" stroke="#ff6b35" stroke-width="1.5" style="pointer-events: none;"/>
               <rect x="655" y="165" width="30" height="5" rx="1" fill="#ff6b35" style="pointer-events: none;"/>
               <rect x="665" y="170" width="10" height="8" fill="#ff6b35" style="pointer-events: none;"/>
-              <text x="670" y="195" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="600" style="pointer-events: none;">Patients & Consultations</text>
+              <text class="svg-text-primary" x="670" y="195" text-anchor="middle" font-size="10" font-weight="600" style="pointer-events: none;">Patients & Consultations</text>
               <!-- Click indicator -->
               <text x="670" y="215" text-anchor="middle" fill="#ff6b35" font-size="8" opacity="0.7" class="click-hint" style="pointer-events: none;">▶ Cliquer pour ouvrir</text>
             </g>
@@ -108,7 +108,7 @@ const canonical = 'https://doclify.cloud/application';
           </defs>
 
           <!-- Bottom text -->
-          <text x="400" y="272" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="600">Les deux environnements sont complémentaires et indispensables</text>
+          <text class="svg-text-primary" x="400" y="272" text-anchor="middle" font-size="14" font-weight="600">Les deux environnements sont complémentaires et indispensables</text>
         </svg>
       </div>
     </div>
