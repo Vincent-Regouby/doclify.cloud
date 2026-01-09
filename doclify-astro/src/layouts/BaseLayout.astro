@@ -55,6 +55,17 @@ const jsonLdSchema = schema || defaultSchema;
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <!-- Theme initialization - MUST be first to prevent flash -->
+  <script is:inline>
+    (function() {
+      var savedTheme = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content={description}>
   <meta name="keywords" content="transcription médicale, IA médicale, RGPD, consultation médicale, médecin">

@@ -183,16 +183,18 @@ nav {
   background: var(--bg-hover);
 }
 
-/* Afficher l'icône appropriée selon le thème */
-.theme-icon-light {
+/* Afficher l'icône du thème opposé (action à effectuer) */
+/* Mode sombre (défaut) : afficher soleil pour passer en clair */
+.theme-icon-dark {
+  display: none;
+}
+
+/* Mode clair : afficher lune pour passer en sombre */
+[data-theme="light"] .theme-icon-light {
   display: none;
 }
 
 [data-theme="light"] .theme-icon-dark {
-  display: none;
-}
-
-[data-theme="light"] .theme-icon-light {
   display: inline;
 }
 
