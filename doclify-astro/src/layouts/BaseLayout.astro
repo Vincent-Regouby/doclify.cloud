@@ -96,9 +96,60 @@ const jsonLdSchema = schema || defaultSchema;
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Vanta.js Birds Animation -->
-  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script is:inline src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+  <!-- Vanta.js Birds Animation - Chargé uniquement sur la homepage -->
+  <script is:inline>
+    // Charger Vanta uniquement sur la page d'accueil
+    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+      (function loadVanta() {
+        // Charger Three.js d'abord
+        var threeScript = document.createElement('script');
+        threeScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js';
+        threeScript.async = true;
+        threeScript.onload = function() {
+          // Puis charger Vanta
+          var vantaScript = document.createElement('script');
+          vantaScript.src = 'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js';
+          vantaScript.async = true;
+          vantaScript.onload = function() {
+            // Initialiser Vanta quand tout est chargé
+            if (typeof VANTA !== 'undefined' && document.getElementById('hero-vanta')) {
+              // Adapter la couleur de fond au thème
+              var isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+              window.vantaEffect = VANTA.BIRDS({
+                el: "#hero-vanta",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                backgroundColor: isDark ? 0x0a0a0a : 0xf8f9fa,
+                color1: 0xff6b35,
+                color2: 0xff8555,
+                colorMode: "lerp",
+                birdSize: 1.5,
+                wingSpan: 25.00,
+                speedLimit: 2.00,
+                separation: 60.00,
+                alignment: 30.00,
+                cohesion: 30.00,
+                quantity: 2.00
+              });
+            }
+          };
+          vantaScript.onerror = function() {
+            console.warn('Failed to load Vanta.js - animation disabled');
+          };
+          document.head.appendChild(vantaScript);
+        };
+        threeScript.onerror = function() {
+          console.warn('Failed to load Three.js - animation disabled');
+        };
+        document.head.appendChild(threeScript);
+      })();
+    }
+  </script>
 </head>
 <body>
   <Header />

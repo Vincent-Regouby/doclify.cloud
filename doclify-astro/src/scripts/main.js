@@ -3,7 +3,47 @@
  * Handles navigation, mobile menu, smooth scrolling, and interactions
  */
 
+/**
+ * Theme Management
+ * Gère le switch entre mode clair et foncé
+ */
+(function initTheme() {
+  // Récupérer le thème sauvegardé ou la préférence système
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  // Appliquer le thème (respecte la préférence système)
+  const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+  if (theme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
+
+  // Theme Toggle
+  const themeToggle = document.querySelector('.theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+      if (newTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+
+      localStorage.setItem('theme', newTheme);
+
+      // Mettre à jour la couleur de fond de Vanta si présent
+      if (window.vantaEffect) {
+        window.vantaEffect.setOptions({
+          backgroundColor: newTheme === 'light' ? 0xf8f9fa : 0x0a0a0a
+        });
+      }
+    });
+  }
 
   // Mobile Menu Toggle
   const hamburger = document.querySelector('.hamburger');
@@ -81,45 +121,113 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Form Validation
+  // Form Validation with Security Enhancements
+
+  // Maximum field lengths for DoS protection
+  const MAX_LENGTHS = {
+    name: 100,
+    email: 254,
+    phone: 20,
+    specialty: 100,
+    subject: 200,
+    message: 5000
+  };
+
+  // Sanitization helper - removes HTML tags and trims
+  function sanitizeInput(input) {
+    if (!input) return '';
+    return input.replace(/<[^>]*>/g, '').trim();
+  }
+
+  // Email validation - RFC 5322 simplified (covers 99% of valid emails)
+  function validateEmail(email) {
+    if (!email) return false;
+    const re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+    return re.test(email) && email.length <= 254;
+  }
+
+  // French phone number validation (optional field but must be valid if filled)
+  function validatePhone(phone) {
+    if (!phone) return true; // Phone is optional
+    // Format français : 01-09 ou +33
+    const re = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
+    return re.test(phone.replace(/\s/g, ''));
+  }
+
   const contactForm = document.getElementById('contact-form');
 
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
 
-      // Get form values
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const specialty = document.getElementById('specialty').value.trim();
-      const practiceType = document.getElementById('practice-type').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value.trim();
+      // Get and sanitize form values
+      const name = sanitizeInput(document.getElementById('name').value);
+      const email = sanitizeInput(document.getElementById('email').value);
+      const phone = sanitizeInput(document.getElementById('phone').value);
+      const specialty = sanitizeInput(document.getElementById('specialty').value);
+      const practiceType = sanitizeInput(document.getElementById('practice-type').value);
+      const subject = sanitizeInput(document.getElementById('subject').value);
+      const message = sanitizeInput(document.getElementById('message').value);
 
-      // Simple validation
+      // Enhanced validation with length checks
       let isValid = true;
       let errorMessage = '';
 
-      if (!name) {
+      if (!name || name.length > MAX_LENGTHS.name) {
         isValid = false;
-        errorMessage += 'Le nom est requis.\n';
+        errorMessage += 'Le nom est requis (max 100 caractères).\n';
       }
 
-      if (!email || !validateEmail(email)) {
+      if (!validateEmail(email)) {
         isValid = false;
         errorMessage += 'Un email valide est requis.\n';
       }
 
-      if (!message) {
+      if (!validatePhone(phone)) {
         isValid = false;
-        errorMessage += 'Le message est requis.\n';
+        errorMessage += 'Le numéro de téléphone n\'est pas valide (format attendu : 06 12 34 56 78 ou +33 6 12 34 56 78).\n';
+      }
+
+      if (phone && phone.length > MAX_LENGTHS.phone) {
+        isValid = false;
+        errorMessage += 'Le téléphone est trop long (max 20 caractères).\n';
+      }
+
+      if (specialty && specialty.length > MAX_LENGTHS.specialty) {
+        isValid = false;
+        errorMessage += 'La spécialité est trop longue (max 100 caractères).\n';
+      }
+
+      if (subject && subject.length > MAX_LENGTHS.subject) {
+        isValid = false;
+        errorMessage += 'Le sujet est trop long (max 200 caractères).\n';
+      }
+
+      if (!message || message.length > MAX_LENGTHS.message) {
+        isValid = false;
+        errorMessage += 'Le message est requis (max 5000 caractères).\n';
       }
 
       if (isValid) {
-        // Construire l'URL avec les paramètres
+        /*
+         * SECURITY NOTE - Site Statique Astro
+         * -----------------------------------
+         * Le JWT token et l'URL du webhook sont exposés côté client.
+         * C'est une limitation inhérente aux sites statiques sans backend.
+         *
+         * Mitigations en place :
+         * - Token JWT avec claims limités (subject: "doclify-contact-form")
+         * - Validation et sanitization côté client
+         * - Webhook n8n configuré pour n'accepter que les requêtes autorisées
+         *
+         * Pour une sécurité renforcée, envisager :
+         * - Cloudflare Workers / Netlify Functions comme proxy
+         * - Rate limiting sur le webhook n8n
+         * - Honeypot fields pour détecter les bots
+         */
+        // Préparer les données du formulaire (déjà sanitizées)
         const webhookUrl = 'https://n8n.inetshore.com/webhook/ce20bece-0055-44e4-9d44-8e80783f9339';
-        const params = new URLSearchParams({
+        const formData = {
           name: name,
           email: email,
           phone: phone || '',
@@ -127,14 +235,16 @@ document.addEventListener('DOMContentLoaded', function() {
           practiceType: practiceType || '',
           subject: subject || '',
           message: message
-        });
+        };
 
-        // Envoyer via GET avec authentification JWT
-        fetch(`${webhookUrl}?${params.toString()}`, {
-          method: 'GET',
+        // Envoyer via POST avec JSON body et authentification JWT
+        fetch(webhookUrl, {
+          method: 'POST',
           headers: {
+            'Content-Type': 'application/json',
             'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkb2NsaWZ5LWNvbnRhY3QtZm9ybSIsImlzcyI6ImRvY2xpZnkuY2xvdWQiLCJpYXQiOjE3NjU5NTc3NTZ9.Th4jttReg0Qh5DrwcT5MXZ22da9YL4Fj4f1rJR298hQ'
-          }
+          },
+          body: JSON.stringify(formData)
         })
         .then(response => {
           if (response.ok) {
@@ -154,12 +264,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Email validation helper
-  function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  }
-
   // Notification system
   function showNotification(message, type = 'info') {
     // Remove existing notifications
@@ -171,19 +275,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
-    notification.style.cssText = `
-      position: fixed;
-      top: 100px;
-      right: 20px;
-      background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
-      color: white;
-      padding: 1rem 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      z-index: 10000;
-      max-width: 400px;
-      animation: slideIn 0.3s ease;
-    `;
     notification.textContent = message;
 
     document.body.appendChild(notification);
@@ -195,33 +286,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 5000);
   }
 
-  // Add CSS animations for notifications
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes slideIn {
-      from {
-        transform: translateX(400px);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideOut {
-      from {
-        transform: translateX(0);
-        opacity: 1;
-      }
-      to {
-        transform: translateX(400px);
-        opacity: 0;
-      }
-    }
-  `;
-  document.head.appendChild(style);
-
   // Header scroll effect
   const header = document.querySelector('header');
   let lastScroll = 0;
@@ -230,10 +294,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentScroll = window.pageYOffset;
 
     if (currentScroll > 100) {
-      header.style.background = 'rgba(10, 10, 10, 0.98)';
-      header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+      header.style.opacity = '0.98';
+      header.style.boxShadow = '0 2px 20px var(--shadow-color)';
     } else {
-      header.style.background = 'rgba(10, 10, 10, 0.95)';
+      header.style.opacity = '0.95';
       header.style.boxShadow = 'none';
     }
 
@@ -276,33 +340,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const backToTopButton = document.createElement('button');
   backToTopButton.innerHTML = '↑';
   backToTopButton.className = 'back-to-top';
-  backToTopButton.style.cssText = `
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--orange-primary), var(--orange-glow));
-    color: white;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    opacity: 0;
-    transition: all 0.3s ease;
-    z-index: 999;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
-  `;
 
   document.body.appendChild(backToTopButton);
 
   window.addEventListener('scroll', () => {
     if (window.pageYOffset > 500) {
-      backToTopButton.style.opacity = '1';
-      backToTopButton.style.pointerEvents = 'auto';
+      backToTopButton.classList.add('visible');
     } else {
-      backToTopButton.style.opacity = '0';
-      backToTopButton.style.pointerEvents = 'none';
+      backToTopButton.classList.remove('visible');
     }
   });
 
@@ -311,16 +356,6 @@ document.addEventListener('DOMContentLoaded', function() {
       top: 0,
       behavior: 'smooth'
     });
-  });
-
-  backToTopButton.addEventListener('mouseenter', () => {
-    backToTopButton.style.transform = 'translateY(-5px)';
-    backToTopButton.style.boxShadow = '0 6px 25px rgba(255, 107, 53, 0.6)';
-  });
-
-  backToTopButton.addEventListener('mouseleave', () => {
-    backToTopButton.style.transform = 'translateY(0)';
-    backToTopButton.style.boxShadow = '0 4px 15px rgba(255, 107, 53, 0.4)';
   });
 
   // Pricing card interaction
