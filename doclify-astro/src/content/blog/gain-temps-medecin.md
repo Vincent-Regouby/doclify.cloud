@@ -116,7 +116,7 @@ Même en étant conservateur et en divisant par 3, on arrive facilement à **2 h
 
 > **Et en euros ?**
 >
-> Un abonnement Doclify coûte 75€/mois. Si vous valorisez votre heure à 50€ (estimation basse), 2 heures gagnées par semaine = 400€/mois de temps récupéré. Le ROI est de 5x.
+> Un abonnement Doclify coûte 59€/mois. Si vous valorisez votre heure à 50€ (estimation basse), 2 heures gagnées par semaine = 400€/mois de temps récupéré. Le ROI est de 5x.
 
 ## Comment commencer ?
 

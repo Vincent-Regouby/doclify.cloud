@@ -50,7 +50,7 @@ Fini les licences à 200€ ou 300€ par mois. Les médecins veulent un tarif t
 
 | Critère | Dragon Medical | Doclify |
 |---------|---------------|---------|
-| Prix mensuel | 150-200€ | 75€ |
+| Prix mensuel | 150-200€ | 59€ |
 | Résumés IA automatiques | Non | Oui |
 | Application mobile native | Non | iOS + Android |
 | Mode hors-ligne | Non | Oui |
