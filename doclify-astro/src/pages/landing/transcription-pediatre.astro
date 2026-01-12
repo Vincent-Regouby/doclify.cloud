@@ -1,0 +1,252 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/landing.css';
+
+const title = "Transcription Pédiatre | Comptes-rendus pédiatriques IA | Doclify";
+const description = "Transcription IA pour pédiatres. Comptes-rendus de consultations, vaccinations et développement générés automatiquement. Vocabulaire pédiatrique intégré. Essai gratuit.";
+const canonical = "https://doclify.cloud/landing/transcription-pediatre";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Transcription pour Pédiatres",
+  "description": "Transcription IA pour pédiatres. Comptes-rendus de consultations, vaccinations et développement générés automatiquement.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Doclify",
+    "url": "https://doclify.cloud"
+  },
+  "audience": {
+    "@type": "MedicalAudience",
+    "audienceType": "Pediatrician"
+  }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="landing-hero">
+      <div class="landing-hero-content">
+        <div class="landing-hero-text">
+          <span class="landing-badge">Pour les Pédiatres</span>
+          <h1>Transcription IA pour pédiatres : consultations documentées en 30 secondes</h1>
+          <p class="subtitle">Entre les pleurs, les vaccinations et les questions des parents, documentez vos consultations sans perdre le contact avec l'enfant. Doclify génère vos comptes-rendus automatiquement.</p>
+
+          <div class="cta-buttons">
+            <a href="https://app.doclify.cloud/" class="btn btn-primary">Essai Gratuit 14 jours</a>
+            <a href="/fonctionnalites" class="btn btn-secondary">Voir les fonctionnalités</a>
+          </div>
+
+          <div class="trust-indicators">
+            <div class="trust-item">
+              <span class="icon">👶</span>
+              <span>Vocabulaire pédiatrique</span>
+            </div>
+            <div class="trust-item">
+              <span class="icon">⚡</span>
+              <span>Résumé en 30s</span>
+            </div>
+            <div class="trust-item">
+              <span class="icon">🔒</span>
+              <span>RGPD natif</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="landing-hero-visual">
+          <picture><source srcset="/img/logo.webp" type="image/webp"><img src="/img/logo.png" loading="lazy" alt="Doclify pour Pédiatres" width="500" height="400"></picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem / Solution -->
+    <section class="problem-solution">
+      <div class="container">
+        <div class="section-title">
+          <h2>Le quotidien du pédiatre moderne</h2>
+          <p>Consultations rapides, enfants agités et parents inquiets : comment tout documenter ?</p>
+        </div>
+
+        <div class="problem-solution-grid">
+          <div class="problem-column">
+            <h2><span>❌</span> La réalité actuelle</h2>
+            <ul class="problem-list">
+              <li>Consultations de 15-20 minutes avec peu de temps pour documenter</li>
+              <li>Difficile de taper au clavier en examinant un enfant</li>
+              <li>Parents qui posent des questions pendant l'examen</li>
+              <li>Courbes de croissance et vaccinations à mettre à jour</li>
+              <li>Notes incomplètes rattrapées entre deux patients</li>
+            </ul>
+          </div>
+
+          <div class="solution-column">
+            <h2><span>✓</span> Avec Doclify</h2>
+            <ul class="solution-list">
+              <li>Dictez après la consultation, résumé prêt en 30 secondes</li>
+              <li>Gardez les mains libres pour l'examen clinique</li>
+              <li>IA qui structure automatiquement : motif, examen, développement, vaccins</li>
+              <li>Vocabulaire pédiatrique reconnu (percentiles, réflexes, otites...)</li>
+              <li>Comptes-rendus complets, sans oubli</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specialty Features -->
+    <section class="specialty-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Optimisé pour la pédiatrie</h2>
+          <p>Une IA entraînée sur le vocabulaire et les pratiques pédiatriques</p>
+        </div>
+
+        <div class="specialty-features">
+          <ul class="specialty-list">
+            <li>
+              <span class="icon">📊</span>
+              <div>
+                <strong>Suivi du développement</strong>
+                Vocabulaire complet : acquisitions motrices, langage, socialisation. L'IA structure les observations par domaine.
+              </div>
+            </li>
+            <li>
+              <span class="icon">💉</span>
+              <div>
+                <strong>Vaccinations</strong>
+                Reconnaissance des vaccins pédiatriques : ROR, DTP, méningocoque, HPV... Documentation automatique des rappels.
+              </div>
+            </li>
+            <li>
+              <span class="icon">📈</span>
+              <div>
+                <strong>Croissance et biométrie</strong>
+                Termes reconnus : percentiles, courbes de croissance, IMC, périmètre crânien, fontanelles.
+              </div>
+            </li>
+            <li>
+              <span class="icon">🩺</span>
+              <div>
+                <strong>Pathologies pédiatriques</strong>
+                Otites, bronchiolites, gastro-entérites, éruptions... Vocabulaire spécifique parfaitement reconnu.
+              </div>
+            </li>
+            <li>
+              <span class="icon">📋</span>
+              <div>
+                <strong>Export universel</strong>
+                Copie en un clic, compatible avec tous les logiciels de cabinet pédiatrique.
+              </div>
+            </li>
+          </ul>
+
+          <div>
+            <div class="stats-row" style="flex-direction: column; align-items: flex-start; gap: 2rem;">
+              <div class="stat-item" style="text-align: left;">
+                <span class="stat-number">30s</span>
+                <span class="stat-label">Compte-rendu généré</span>
+              </div>
+              <div class="stat-item" style="text-align: left;">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Précision vocabulaire</span>
+              </div>
+              <div class="stat-item" style="text-align: left;">
+                <span class="stat-number">2h</span>
+                <span class="stat-label">Gagnées par semaine</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="landing-testimonial">
+      <div class="container">
+        <blockquote class="testimonial-quote">
+          En pédiatrie, impossible de taper au clavier pendant qu'on examine un bébé ou qu'on rassure un enfant. Avec Doclify, je dicte mes observations juste après la consultation et le compte-rendu est prêt avant le patient suivant. Les parents reçoivent un résumé clair et complet.
+        </blockquote>
+        <div class="testimonial-author-landing">
+          <div class="avatar">Dr</div>
+          <div class="info">
+            <h3>Dr Isabelle R.</h3>
+            <p>Pédiatre, Cabinet de pédiatrie, Bordeaux</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="landing-benefits">
+      <div class="container">
+        <div class="section-title">
+          <h2>Les avantages pour votre cabinet pédiatrique</h2>
+          <p>Gagnez en efficacité tout en gardant le contact avec vos jeunes patients</p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <span class="benefit-icon">👶</span>
+            <h3>Contact préservé</h3>
+            <p>Plus besoin de taper pendant l'examen. Gardez les mains libres pour l'enfant et le regard vers les parents.</p>
+          </div>
+
+          <div class="benefit-card">
+            <span class="benefit-icon">⚡</span>
+            <h3>Consultations rapides</h3>
+            <p>Adapté au rythme soutenu des consultations pédiatriques. 30 secondes pour un résumé complet.</p>
+          </div>
+
+          <div class="benefit-card">
+            <span class="benefit-icon">📱</span>
+            <h3>Mobile et bureau</h3>
+            <p>Utilisez Doclify sur votre smartphone entre deux patients ou sur votre poste au cabinet.</p>
+          </div>
+
+          <div class="benefit-card">
+            <span class="benefit-icon">🔄</span>
+            <h3>Intégration facile</h3>
+            <p>Export en un clic vers votre logiciel métier. Compatible avec tous les systèmes de cabinet.</p>
+          </div>
+
+          <div class="benefit-card">
+            <span class="benefit-icon">📊</span>
+            <h3>Résumés structurés</h3>
+            <p>L'IA organise : motif, examen, développement, vaccinations, conclusion, conseils aux parents.</p>
+          </div>
+
+          <div class="benefit-card">
+            <span class="benefit-icon">🔒</span>
+            <h3>Sécurité maximale</h3>
+            <p>Données chiffrées, hébergées en France. Conformité RGPD et protection des données des mineurs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="landing-cta">
+      <div class="container">
+        <h2>Optimisez votre pratique pédiatrique</h2>
+        <p>Testez Doclify gratuitement pendant 14 jours. Découvrez comment documenter sans perdre le contact avec vos jeunes patients.</p>
+
+        <div class="cta-buttons">
+          <a href="https://app.doclify.cloud/" class="btn btn-primary">Démarrer l'essai gratuit</a>
+          <a href="/contact" class="btn btn-secondary">Planifier une démo</a>
+        </div>
+
+        <p class="guarantee">✓ Essai gratuit 14 jours &nbsp;•&nbsp; ✓ Sans carte bancaire &nbsp;•&nbsp; ✓ 59€/mois ensuite</p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
